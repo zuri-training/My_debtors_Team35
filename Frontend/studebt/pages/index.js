@@ -1,12 +1,18 @@
-import Head from 'next/head'
+import Layout from '../components/layout'
+import HomeLayout from '../components/home-layout'
 
-export default function Home() {
+export default function Home( props ) {
   return (
-    <div>
-      <Head>
-        <title>stuDebt</title>
-        <met name='Keywords' content='studebt - students debt tracking platform'/>
-      </Head>
-    </div>
+    <>
+      <h1>Home</h1>
+    </>
+  )
+}
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <Layout title="Home">
+      <HomeLayout>{page}</HomeLayout>
+    </Layout>
   )
 }
