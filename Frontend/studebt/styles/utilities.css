@@ -203,3 +203,13 @@ input.error {
     background-color: var(--btn-disable);
 }
 
+.btn-full {
+    width: 100%;
+}
+
+/* Card */
+
+.card {
+    padding: 24px;
+    border-radius: 16px;
+}
