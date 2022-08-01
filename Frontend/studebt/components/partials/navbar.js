@@ -1,21 +1,30 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Navbar( props ) {
     return (
         <nav>
-            <a className="navbar-brand" href="/">
+            <Link href="/">
+            <a className="navbar-brand">
                 <Image src="/studept-logo.jpg" alt="stuDept" width={200} height={200} />
             </a>
+            </Link>
             <div>
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="/">Home</a>
+                        <Link href="/">
+                        <a className="nav-link" >Home</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/school/dashboard">School Dashboard</a>
+                        <Link href="/school/dashboard">
+                        <a className="nav-link" >School Dashboard</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/student/dashboard">Student Dashboard</a>
+                        <Link href="/school/students">
+                        <a className="nav-link">Student Dashboard</a>
+                        </Link>
                     </li>
               
                 </ul>

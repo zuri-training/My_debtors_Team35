@@ -1,34 +1,49 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HomeNavbar( props ) {
     return (
         <nav>
-            <a className="navbar-brand" href="#">
+            <Link href="/">
+            <a className="navbar-brand" >
                 <Image src="/studept-logo.jpg" alt="stuDept" width={200} height={200} />
             </a>
+            </Link>
             <div>
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="/">Home</a>
+                        <Link href="/">
+                        <a className="nav-link">Home</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/school/dashboard">Circular</a>
+                        <Link href="/school/dashboard">
+                        <a className="nav-link" >Circular</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/student/dashboard">FAQs</a>
+                        <Link href="/school/students">
+                        <a className="nav-link">FAQs</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/student/dashboard">Contact Us</a>
+                        <Link href="/student/dashboard">
+                        <a className="nav-link">Contact Us</a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/student/dashboard">
+                        <Link href="/student/dashboard">
+                        <a className="nav-link">
                             <button className="btn btn-primary">Login</button>
                         </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/student/dashboard">
+                        <Link href="/student/dashboard">
+                        <a className="nav-link">
                             <button className="btn btn-primary">Sign Up</button>
                         </a>
+                        </Link>
                     </li>
               
                 </ul>

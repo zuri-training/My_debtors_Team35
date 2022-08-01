@@ -1,4 +1,5 @@
-// footer 
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HomeFooter( props ) {
     return (
@@ -7,19 +8,29 @@ export default function HomeFooter( props ) {
             <nav>
                 <ul>
                     <li>
-                        <a href="/">About Us</a>
+                        <Link href="/">
+                        <a>About Us</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/school/dashboard">School Dashboard</a>
+                        <Link href="/school/dashboard">
+                        <a >School Dashboard</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/student/dashboard">Student Dashboard</a>
+                        <Link href="/student/dashboard">
+                        <a>Student Dashboard</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/school/dashboard">Community</a>
+                        <Link href="/student/dashboard">
+                        <a>Community</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/student/dashboard">Business</a>
+                        <Link href="/student/dashboard">
+                        <a>Business</a>
+                        </Link>
                     </li>
 
                 </ul>
