@@ -14,6 +14,7 @@ const styles = () => {
             <Link href={''}>
                 <a href="" className="btn btn-pri">Home</a>
             </Link>
+            <div className='card'></div>
         </div>
     )
 }
