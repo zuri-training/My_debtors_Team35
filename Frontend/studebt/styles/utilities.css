@@ -23,6 +23,16 @@ body {
     --warning: #E2B93B;
     --error: #EB5757;
 
+    /* Button color */
+
+    --primary-btn: #44C2FD;
+    --secondary-btn: #C6B0FF;
+    --btn-hover: #22617F;
+    --btn-active: #A1E0FE;
+    --btn-disable: #E0E0E0;
+
+
+
     /* black colors */
 
     --black1: #000000;
@@ -158,4 +168,38 @@ input.error {
 /* Input field incomplete */
 /* Input field incomplete */
 
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    padding: 1em 5em;
+    border-radius: 8px;
+    color: var(--white);
+    font-weight: 700;
+    border: none;
+    /* line-height: 22px; */
+}
+
+.btn-pri {
+    background-color:var(--primary-btn);
+}
+
+.btn-sec {
+    background-color:var(--secondary-btn);
+}
+
+/* Button Defaults */
+
+.btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.btn:active {
+    background-color: var(--btn-hover);
+}
+
+.btn:disabled {
+    background-color: var(--btn-disable);
+}
 
