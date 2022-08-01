@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
 :root {
 
     /* colors */
@@ -23,4 +29,85 @@
     --grey3: #828282;
     --grey4: #BDBDBD;
     --grey5: #E0E0E0;
+}
+
+/* Typography */
+
+
+/* Heading Typography */
+
+h1 {
+    font-size: 56px;
+    line-height: 61.6px;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 52.8px;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 44px;
+}
+
+h4 {
+    font-size: 32px;
+    line-height: 35.2px;
+}
+
+h5 {
+    font-size: 24px;
+    line-height: 26.4px;
+}
+
+h6 {
+    font-size: 20px;
+    line-height: 22px;
+}
+
+/* Body Typography */
+
+.lt-bold {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+}
+.lt-regular {
+    font-size: 18px;
+    line-height: 25.2px;
+    font-weight: 400;
+}
+
+.mt-bold {
+    font-size: 18px;
+    line-height: 25.2px;
+    font-weight: 700;
+}
+.mt-regular {
+    font-size: 18px;
+    line-height: 25.2px;
+    font-weight: 400;
+}
+
+.nt-bold {
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 700;
+}
+.nt-regular {
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 400;
+}
+
+.st-bold {
+    font-size: 14px;
+    line-height: 19.6px;
+    font-weight: 700;
+}
+.st-regular {
+    font-size: 14px;
+    line-height: 19.6px;
+    font-weight: 400;
 }
