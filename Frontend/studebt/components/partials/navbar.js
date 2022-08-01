@@ -5,7 +5,7 @@ export default function Navbar( props ) {
     return (
         <nav>
             <Link href="/">
-            <a className="navbar-brand">
+            <a className="navbar-brand" >
                 <Image src="/studept-logo.jpg" alt="stuDept" width={200} height={200} />
             </a>
             </Link>
