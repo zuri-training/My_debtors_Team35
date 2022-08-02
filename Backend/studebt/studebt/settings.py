@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'studebt_db',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'Rebecca@1@1',
         'HOST': 'localhost',
         'PORT': '5432',
     #     The above are my local credentials (NAME, USER and PASSWORD )
