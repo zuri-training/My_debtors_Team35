@@ -1,0 +1,31 @@
+.side-bar-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 250px;
+    padding: 50px 20px;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.side-bar.top .first-item {
+    margin-bottom: 110px;
+}
+
+.side-bar-menu-item img {
+    margin-right: 15px;
+}
+
+.side-bar-menu-item svg:hover {
+    color: white
+}
+.side-bar-menu-item svg:hover {
+    color: white
+}

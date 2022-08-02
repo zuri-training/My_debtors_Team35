@@ -26,7 +26,7 @@ body {
     /* Button color */
 
     --primary-btn: #44C2FD;
-    --secondary-btn: #C6B0FF;
+    --secondary-btn: #7650D4;
     --btn-hover: #22617F;
     --btn-active: #A1E0FE;
     --btn-disable: #E0E0E0;
@@ -213,4 +213,28 @@ input.error {
     padding: 24px;
     border-radius: 8px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* A tag */
+
+a {
+    text-decoration: none;
+}
+
+
+/* Side bar Elements */
+
+.side-bar-menu-item {
+    padding: 1em;
+    width: 100%;
+    color: var(--black2);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-bar-menu-item:hover {
+    background-color: var(--secondary-btn);
+    color: var(--white);
 }
