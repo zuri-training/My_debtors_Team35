@@ -1,0 +1,24 @@
+.container {
+    position: relative;
+    /* width: 1728px;
+    height: 1117px; */
+
+    background: #4f4fb7;
+}
+
+.navbar--menu {
+    width: 66px;
+    height: 33px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+
+    color: #7650D5;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
