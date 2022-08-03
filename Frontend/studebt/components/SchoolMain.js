@@ -107,10 +107,108 @@ const SchoolMain = () => {
 
                         </div>
                     </div>
+                    <div className="main-center-bottom-debtors">
+                        <div className="main-center-bottom-debtors-debtor">
+                            <div className="main-center-bottom-debtors-debtor-profile-img">
+                                <img src="/images/profile.png" alt="" />
+                            </div>
+                            <div className="main-center-bottom-debtors-debotor-name">
+                                Olayeni Adeyemo Samuel
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-unique-id">
+                                AGG1810690
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-debt-amount">
+                                N5,000
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-debt-status new-debt st-bold">
+                                New
+                            </div>
+                        </div>
+                        <div className="main-center-bottom-debtors-debtor">
+                            <div className="main-center-bottom-debtors-debtor-profile-img">
+                                <img src="/images/profile.png" alt="" />
+                            </div>
+                            <div className="main-center-bottom-debtors-debotor-name">
+                                Olayeni Adeyemo Samuel
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-unique-id">
+                                AGG1810690
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-debt-amount">
+                                N5,000
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-debt-status denied-debt st-bold">
+                                Denied
+                            </div>
+                        </div>
+                        <div className="main-center-bottom-debtors-debtor">
+                            <div className="main-center-bottom-debtors-debtor-profile-img">
+                                <img src="/images/profile.png" alt="" />
+                            </div>
+                            <div className="main-center-bottom-debtors-debotor-name">
+                                Olayeni Adeyemo Samuel
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-unique-id">
+                                AGG1810690
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-debt-amount">
+                                N5,000
+                            </div>
+                            <div className="main-center-bottom-debtors-debtor-debt-status cleared-debt st-bold">
+                                Cleared
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="school-main-left">
+            <div className="school-main-right">
+                <div className="school-main-right-inventory-box">
 
+                </div>
+                <div className="school-main-right-comments-box">
+                    <div className="school-main-right-comments-box-header">
+                        <div className="mt-bold">
+                            Comments
+                        </div>
+                        <Link href=''>
+                            <a className='text-underline'>More</a>
+                        </Link>
+                    </div>
+                    <div className="school-main-right-comments-box-comment">
+                        <img src="/images/profile.png" alt="" />
+                        <div className="school-main-right-comments-box-debtors-details">
+                            <div className="st-bold">
+                                Olayeni Adeyemo Samuel
+                            </div>
+                            <div className="st-regular">
+                                AGG1810690
+                            </div>
+                        </div>
+                    </div>
+                    <div className="school-main-right-comments-box-comment">
+                        <img src="/images/profile.png" alt="" />
+                        <div className="school-main-right-comments-box-debtors-details">
+                            <div className="st-bold">
+                                Olayeni Adeyemo Samuel
+                            </div>
+                            <div className="st-regular">
+                                AGG1810690
+                            </div>
+                        </div>
+                    </div>
+                    <div className="school-main-right-comments-box-comment">
+                        <img src="/images/profile.png" alt="" />
+                        <div className="school-main-right-comments-box-debtors-details">
+                            <div className="st-bold">
+                                Olayeni Adeyemo Samuel
+                            </div>
+                            <div className="st-regular">
+                                AGG1810690
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

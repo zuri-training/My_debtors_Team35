@@ -16,7 +16,16 @@
     --btn-hover: #22617F;
     --btn-active: #A1E0FE;
     --btn-disable: #E0E0E0;
+    --debtor-bg: #e8dfff71;
 
+    /* Debt Status Color */
+
+    --new-debt-bg: #B0E6FF;
+    --new-debt-color: #0068E2;
+    --denied-debt-bg: #FFAEAE;
+    --denied-debt-color:#E21F1F;
+    --cleared-debt-color: #00C042;
+    --cleared-debt-bg: #CBFFDD;
 
 
     /* black colors */
@@ -37,7 +46,9 @@
 
 .side-bar-container {
     grid-area: s;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -119,6 +130,8 @@
     grid-template-columns: 2.5fr 1fr;
     grid-gap: 40px;
     margin-right: 40px;
+    padding-bottom: 25px;
+    /* overflow: hidden; */
 }
 
 /* School Main Layout */
@@ -130,6 +143,7 @@
 .school-main-center {
     /* background-color: rgba(255, 192, 203, 0.553); */
     /* border: 2px solid black; */
+    /* overflow: scroll; */
 }
 
 /* Main-center-top  */
@@ -167,6 +181,7 @@
     justify-content: space-between;
     margin-left: 14px;
     margin-bottom: 32px;
+    /* overflow: show; */
 }
 
 .main-center-chart-top {
@@ -218,6 +233,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .main-center-bottom-filter-left {
@@ -228,9 +244,104 @@
     width: 100%;
 }
 
+/* Main ceneter bottom debtors */
+
+.main-center-bottom-debors {
+
+}
+
+.main-center-bottom-debtors-debtor {
+    color: var(--secondary-btn);
+    background-color: var(--debtor-bg);
+    border-radius: 10px;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--grey4);
+    margin-bottom: 6px;
+}
+
+.main-center-bottom-debtors-debtor-debt-status {
+    max-width: 84px;
+    width: 100%;
+    padding: 5px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-debt {
+    background-color: var(--new-debt-bg);
+    color: var(--new-debt-color);
+}
+
+.denied-debt {
+    background-color: var(--denied-debt-bg);
+    color: var(--denied-debt-color);
+}
+
+.cleared-debt {
+    background-color: var(--cleared-debt-bg);
+    color: var(--cleared-debt-color);
+}
+
 /* School Main Right */
 .school-main-right {
-    background-color: rgba(0, 128, 0, 0.451);
+    /* background-color: rgba(0, 128, 0, 0.451); */
+}
+
+/* School Main Inventory */
+
+.school-main-right-inventory-box {
+    height: 467px;
+    width: 100%;
+    box-shadow: 0px 0px 10px 0.1px var(--grey5);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* background-color: yellow; */
+}
+
+.school-main-right-comments-box {
+    width: 100%;
+    height: 397px;
+    border-radius: 10px;
+    padding: 40px 10px;
+    box-shadow: 0px 0px 10px 0.1px var(--grey5);
+}
+
+.school-main-right-comments-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.school-main-right-comments-box-comment {
+    background-color: var(--debtor-bg);
+    width: 100%;
+    padding: 15px 24px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 3px solid var(--grey4);
+    margin-bottom: 10px;
+}
+
+.school-main-right-comments-box-debtors-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 18px;
+    height: 100%;
+}
+
+.school-main-right-comments-box-debtors-details .st-regular {
+    color: var(--grey4);
 }
 
 /* School Dashboard Layout */
