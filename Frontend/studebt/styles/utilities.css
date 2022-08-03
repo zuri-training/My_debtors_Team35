@@ -225,12 +225,6 @@ a {
 /* Side bar Elements */
 
 /* Color classes */
-
---info: #2F80ED;
-    --success: #27AE60;
-    --warning: #E2B93B;
-    --error: #EB5757;
-
 .info {
     color: var(--info);
 }
@@ -245,4 +239,18 @@ a {
 
 .error {
     color: var(--warning);
+}
+
+.primary-btn {
+    color: var(--primary-btn);
+}
+
+.secondary-btn {
+    color: var(--secondary-btn);
+}
+
+/* Text Decoration */
+
+.text-underline {
+    text-decoration: underline;
 }

@@ -1,3 +1,40 @@
+:root {
+
+    /* colors */
+
+    /* state colors */
+
+    --info: #2F80ED;
+    --success: #27AE60;
+    --warning: #E2B93B;
+    --error: #EB5757;
+
+    /* Button color */
+
+    --primary-btn: #44C2FD;
+    --secondary-btn: #7650D4;
+    --btn-hover: #22617F;
+    --btn-active: #A1E0FE;
+    --btn-disable: #E0E0E0;
+
+
+
+    /* black colors */
+
+    --black1: #000000;
+    --black2: #1D1D1D;
+    --black3: #282828;
+    --white: #FFFFFF;
+
+    /* Grey colors */
+
+    --Gray1: #333333;
+    --grey2: #4F4F4F;
+    --grey3: #828282;
+    --grey4: #BDBDBD;
+    --grey5: #E0E0E0;
+}
+
 .side-bar-container {
     grid-area: s;
     height: 100vh;
@@ -10,7 +47,7 @@
     padding: 70px 20px;
     /* Remove the backgorund color */
     
-    background-color: rgba(0, 255, 255, 0.14); 
+    /* background-color: rgba(0, 255, 255, 0.14);  */
 }
 
 .side-bar {
@@ -65,7 +102,7 @@
     grid-area: t;
     max-height: 120px;
     height: 100%;
-    background-color: rgba(255, 0, 0, 0.201);
+    /* background-color: rgba(255, 0, 0, 0.201); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,7 +113,7 @@
 /* School Main */
 
 .school-main {
-    background-color: rgba(0, 0, 255, 0.317);
+    /* background-color: rgba(0, 0, 255, 0.317); */
     grid-area: m;
     display: grid;
     grid-template-columns: 2.5fr 1fr;
@@ -91,15 +128,18 @@
 
 
 .school-main-center {
-    background-color: rgba(255, 192, 203, 0.553);
+    /* background-color: rgba(255, 192, 203, 0.553); */
+    /* border: 2px solid black; */
 }
 
 /* Main-center-top  */
 
 .main-center-top {
+    margin-left: 14px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-bottom: 24px;
 }
 
 .outstanding-debt {
@@ -118,8 +158,74 @@
 
 /* Main center chart */
 
-.Main-center-chart {
+.main-center-chart {
+    padding: 24px 40px;
+    border: 2px solid var(--grey4);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 14px;
+    margin-bottom: 32px;
+}
 
+.main-center-chart-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main-center-chart-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.main-center-chart-bottom-rates-direction p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main-center-chart-bottom-chart {
+    margin-left: 10px;
+    margin-right: 120px;
+}
+
+.main-center-chart-bottom-chart img {
+    width: 100%;
+}
+
+/* School Main Center Bottom */
+
+
+
+/* School Main center bottom top */
+
+.main-center-bottom-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 11px;
+}
+
+.main-center-bottom-top-more a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* Main center bottom filter */
+.main-center-bottom-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-center-bottom-filter-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 40%;
+    width: 100%;
 }
 
 /* School Main Right */
