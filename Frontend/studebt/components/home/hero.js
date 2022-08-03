@@ -14,7 +14,7 @@ function Hero(props) {
                     <p className="mt-0 mb-4 text-700 line-height-3">Get notified when you
                         have a pending student that needs to be cleared.</p>
                     <Link href="/sign-up">
-                        <Button label="Sign up" type="button" className="p-button-raised" />
+                        <Button label="Sign up" type="button" className="p-button-raised p-button-primary" />
                     </Link>
                 </section>
             </div>

@@ -13,3 +13,7 @@ footer .p-menu {
 footer .pi{
     font-size: 1.5em !important;
 }
+
+.p-button-primary {
+    background: var(--primary-color);
+}
