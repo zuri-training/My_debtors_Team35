@@ -1,4 +1,5 @@
 .side-bar-container {
+    grid-area: s;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,4 +57,87 @@
 
 .top .side-bar-menu-item {
     margin-bottom: 40px;
+}
+
+/* School Top bar */
+
+.school-topbar {
+    grid-area: t;
+    max-height: 120px;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.201);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 40px;
+    padding-right: 40px;
+}
+
+/* School Main */
+
+.school-main {
+    background-color: rgba(0, 0, 255, 0.317);
+    grid-area: m;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-gap: 40px;
+    margin-right: 40px;
+}
+
+/* School Main Layout */
+
+/* School Main Center */
+
+
+
+.school-main-center {
+    background-color: rgba(255, 192, 203, 0.553);
+}
+
+/* Main-center-top  */
+
+.main-center-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.outstanding-debt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 15px;
+}
+
+.outstanding-debt-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+/* Main center chart */
+
+.Main-center-chart {
+
+}
+
+/* School Main Right */
+.school-main-right {
+    background-color: rgba(0, 128, 0, 0.451);
+}
+
+/* School Dashboard Layout */
+
+.school-dashboard-layout {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 120px 1fr;
+    grid-template-areas: 
+        's t t t t t'
+        's m m m m m'
+    ;
 }

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import '../styles/utilities.css'
 import '../styles/schoolDash.css'
+
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false

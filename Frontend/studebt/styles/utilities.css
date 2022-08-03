@@ -224,3 +224,25 @@ a {
 
 /* Side bar Elements */
 
+/* Color classes */
+
+--info: #2F80ED;
+    --success: #27AE60;
+    --warning: #E2B93B;
+    --error: #EB5757;
+
+.info {
+    color: var(--info);
+}
+
+.success {
+    color: var(--success);
+}
+
+.warning {
+    color: var(--warning);
+}
+
+.error {
+    color: var(--warning);
+}
