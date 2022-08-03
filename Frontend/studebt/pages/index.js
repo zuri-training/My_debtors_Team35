@@ -1,10 +1,11 @@
 import Layout from '../components/layout'
 import HomeLayout from '../components/home-layout'
+import Hero from '../components/home/hero'
 
 export default function Home( props ) {
   return (
     <>
-      <h1>Home</h1>
+      <Hero />
     </>
   )
 }
