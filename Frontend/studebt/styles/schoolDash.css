@@ -5,8 +5,11 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 250px;
-    padding: 50px 20px;
+    max-width: 260px;
+    padding: 70px 20px;
+    /* Remove the backgorund color */
+    
+    background-color: rgba(0, 255, 255, 0.14); 
 }
 
 .side-bar {
@@ -28,4 +31,29 @@
 }
 .side-bar-menu-item svg:hover {
     color: white
+}
+
+.icons:hover {
+    color: white;
+}
+
+.side-bar-menu-item {
+    height: 65px;
+    padding: 0px 40px;
+    width: 100%;
+    color: var(--black2);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.side-bar-menu-item:hover {
+    background-color: var(--secondary-btn);
+    color: var(--white);
+}
+
+.top .side-bar-menu-item {
+    margin-bottom: 40px;
 }
