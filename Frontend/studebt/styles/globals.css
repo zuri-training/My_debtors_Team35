@@ -1,0 +1,19 @@
+img{
+    max-width: 100%;
+}
+
+footer .p-menuitem-text{
+    color: #fff !important
+}
+
+footer .p-menu {
+    background-color: inherit !important;
+}
+
+footer .pi{
+    font-size: 1.5em !important;
+}
+
+.p-button-primary {
+    background: var(--primary-color);
+}
