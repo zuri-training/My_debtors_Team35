@@ -17,3 +17,17 @@ footer .pi{
 .p-button-primary {
     background: var(--primary-color);
 }
+
+#home-reviews .p-card-body {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius-top: 30px;
+}
+
+#home-reviews .p-rating .p-rating-icon.pi-star-fill{
+    color: #ffac33;
+}
+
+#home-reviews .p-rating .p-rating-icon {
+    color: #adacab;
+}

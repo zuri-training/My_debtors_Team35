@@ -41,7 +41,8 @@ function CustomerReviews(props) {
         );
         const footer = (
             <span>
-                <Rating readonly={true} cancel={false} value={review.rating} />
+                <Rating 
+                readonly={true} cancel={false} value={review.rating} />
             </span>
         );
 
@@ -56,7 +57,7 @@ function CustomerReviews(props) {
 
     return (
 
-        <div className="surface-0 text-center px-4 md:px-8 my-8">
+        <div id="home-reviews" className="surface-0 text-center px-4 md:px-8 my-8">
             <div className="mb-3 font-bold text-2xl mb-6">
                 <span className="text-900">Check out reviews</span>
             </div>
