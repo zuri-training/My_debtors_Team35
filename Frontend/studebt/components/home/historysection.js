@@ -2,7 +2,7 @@
 function HistorySection(props) {
     return (
 
-        <div className="grid px-8 my-4 justify-content-center">
+        <div className="grid px-4 md:px-8 mx-0 my-4 justify-content-center">
             <div className="col-12 md:col-3">
                 <div className="bg-blue-400 shadow-2 p-3 border-1 border-50 border-round-md py-4">
                     <div className="flex justify-content-between mb-3">

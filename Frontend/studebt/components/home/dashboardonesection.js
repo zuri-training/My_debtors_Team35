@@ -5,7 +5,7 @@ import { Button } from 'primereact/button'
 function DashboardOneSection(props) {
     return (
 
-        <div className="grid grid-nogutter surface-0 text-800  px-7 my-4">
+        <div className="grid grid-nogutter surface-0 text-800 px-4 md:px-8 my-4">
             <div className="col-12 md:col-8 p-image">
                 <img src="/assets/images/home-dashboardone.jpg" alt="home-dashboard" />
             </div>

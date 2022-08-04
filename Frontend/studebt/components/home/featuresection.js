@@ -1,7 +1,7 @@
 function FeatureSection(props) {
     return (
 
-        <div className="surface-0 text-center px-7 my-8">
+        <div className="surface-0 text-center px-4 md:px-8 my-8">
             <div className="mb-3 font-bold text-2xl">
                 <span className="text-900">Why use StuDebt</span>
             </div>

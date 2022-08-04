@@ -5,6 +5,7 @@ import HistorySection from '../components/home/historysection'
 import FeatureSection from '../components/home/featuresection'
 import  DashboardOneSection  from '../components/home/dashboardonesection'
 import  DashboardTwoSection  from '../components/home/dashboardtwosection'
+import CustomerReviews from '../components/home/customerreviews'
 
 export default function Home( props ) {
   return (
@@ -14,6 +15,7 @@ export default function Home( props ) {
       <FeatureSection />
       <DashboardOneSection />
       <DashboardTwoSection />
+      <CustomerReviews />
     </>
   )
 }
