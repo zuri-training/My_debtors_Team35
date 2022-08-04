@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student sign up</title>
+    <link rel="stylesheet" href="./css/logins_signups.css" />
+  </head>
+  <body>
+    <main class="gencont">
+      <div class="logodiv">
+        <div class="logo-sec">
+          <img src="images/logo-2.svg" alt="logo" />
+          <h1 class="blackcol">stuDEBT</h1>
+        </div>
+        <p class="lt-regular">
+          Signing up as a student, it is mandatory you sign up with your
+          registered National Identity Number (NIN)
+        </p>
+      </div>
+      <div class="form">
+        <p class="msg001 msg003">
+          Already a student? <a href="student_login.html"> Log in</a>
+        </p>
+        <h2 class="head0">Sign up as a student</h2>
+        <form action="#">
+          <div>
+            <label for="nstdnt">Name of Student</label><br />
+            <input type="text" id="nstdnt" name="nstdnt" required />
+          </div>
+          <div>
+            <label for="stdnin">NIN</label><br />
+            <input type="number" id="stdnin" name="stdnin" required />
+          </div>
+          <div>
+            <label for="stdemail">Email Adress</label><br />
+            <input type="email" id="stdemail" name="stdemail" required />
+          </div>
+          <div>
+            <label for="stnphon">Phone Number</label><br />
+            <input type="number" id="stnphon" name="stnphon" />
+          </div>
+          <div>
+            <label for="sstdpaswd">Password</label><br />
+            <input type="password" id="sstdpaswd" name="sstdpaswd" required />
+          </div>
+          <button class="btn btn-sec btn-lag">Sign Up</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student login</title>
+    <link rel="stylesheet" href="./css/logins_signups.css" />
+  </head>
+  <body>
+    <main class="gencont">
+      <div class="logodiv">
+        <div class="logo-sec">
+          <img src="images/logo-2.svg" alt="logo" />
+          <h1 class="blackcol">stuDEBT</h1>
+        </div>
+        <p class="lt-regular">
+          Login as a student, with your National Identity Number (NIN) and
+          password
+        </p>
+      </div>
+      <div class="form">
+        <p class="msg001 msg002">
+          Not a student?<a href="student_sign_up.html"> Sig up</a>
+        </p>
+        <h2 class="head0">Log in to stuDebt</h2>
+        <p class="welcomep">Log in to contend your debts</p>
+        <form action="#">
+          <div>
+            <label for="stdid">NIN</label><br />
+            <input type="number" id="stdid" name="stdid" required />
+          </div>
+          <div>
+            <label for="stdpassword">Password</label><br />
+            <input
+              type="password"
+              id="stdpassword"
+              name="stdpassword"
+              required
+            />
+          </div>
+          <a class="fgtpswd" href="#">Forgot Password?</a>
+          <button type="submit" class="btn btn-sec btn-lag" value="log in">
+            Log in
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
