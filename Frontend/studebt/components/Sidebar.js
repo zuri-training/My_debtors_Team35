@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Sidebar = () => {
     return (
@@ -39,14 +38,13 @@ const Sidebar = () => {
             <div className="side-bar bottom">
                 <Link href=''>
                     <a className="side-bar-menu-item">
-                        <FontAwesomeIcon icon="fa-solid fa-gear" className="icons" />
                         <img src="/images/setting.svg" />
                         Settings
                     </a>
                 </Link>
                 <Link href=''>
                     <a className="side-bar-menu-item">
-                        <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" />
+                        <img src="/images/logout.svg" alt="" />
                         Logout
                     </a>
                 </Link>

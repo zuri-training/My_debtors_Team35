@@ -48,6 +48,7 @@
     grid-area: s;
     position: fixed;
     top: 0;
+    left: 0;
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -56,9 +57,6 @@
     width: 100%;
     max-width: 260px;
     padding: 70px 20px;
-    /* Remove the backgorund color */
-    
-    /* background-color: rgba(0, 255, 255, 0.14);  */
 }
 
 .side-bar {
@@ -68,22 +66,11 @@
 }
 
 .side-bar.top .first-item {
-    margin-bottom: 110px;
+    margin-bottom: 80px;
 }
 
 .side-bar-menu-item img {
-    margin-right: 15px;
-}
-
-.side-bar-menu-item svg:hover {
-    color: white
-}
-.side-bar-menu-item svg:hover {
-    color: white
-}
-
-.icons:hover {
-    color: white;
+    margin-right: 20px;
 }
 
 .side-bar-menu-item {
@@ -93,7 +80,7 @@
     color: var(--black2);
     border-radius: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     font-size: 24px;
 }
@@ -101,6 +88,15 @@
 .side-bar-menu-item:hover {
     background-color: var(--secondary-btn);
     color: var(--white);
+}
+
+.side-bar-menu-item:active {
+    background-color: var(--secondary-btn);
+    color: var(--white);
+}
+
+.bottom .side-bar-menu-item {
+    margin-bottom: 40px;
 }
 
 .top .side-bar-menu-item {
@@ -113,25 +109,34 @@
     grid-area: t;
     max-height: 120px;
     height: 100%;
-    /* background-color: rgba(255, 0, 0, 0.201); */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 40px;
+    padding-right: 40px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+.school-topbar .topbar-right {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 40px;
-    padding-right: 40px;
+    width: 100%;
+    max-width: 360px;
 }
 
 /* School Main */
 
 .school-main {
-    /* background-color: rgba(0, 0, 255, 0.317); */
     grid-area: m;
     display: grid;
     grid-template-columns: 2.5fr 1fr;
     grid-gap: 40px;
     margin-right: 40px;
     padding-bottom: 25px;
-    /* overflow: hidden; */
 }
 
 /* School Main Layout */
@@ -141,9 +146,7 @@
 
 
 .school-main-center {
-    /* background-color: rgba(255, 192, 203, 0.553); */
-    /* border: 2px solid black; */
-    /* overflow: scroll; */
+    
 }
 
 /* Main-center-top  */
@@ -154,6 +157,49 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 24px;
+    height: 60px;
+}
+
+.main-center-top .search-container input[type=text]::placeholder {
+    color: var(--grey5);
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.main-center-top .search-container input[type=text] {
+    width: 100%;
+    outline: none;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 2px 10px 0.1px var(--grey5);
+    padding: 15px 56px;
+    font-size: 24px;
+    color: var(--grey3);
+    margin-right: 40px;
+}
+
+.main-center-top .search-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-center-top .search-container #search-icon {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.main-center-top .search-container .add-debtor {
+    box-shadow: 0px 2px 20px 0.1px var(--grey5);
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-btn);
 }
 
 .outstanding-debt {
@@ -181,7 +227,7 @@
     justify-content: space-between;
     margin-left: 14px;
     margin-bottom: 32px;
-    /* overflow: show; */
+    height: 378px;
 }
 
 .main-center-chart-top {
@@ -244,6 +290,10 @@
     width: 100%;
 }
 
+.main-center-bottom-filter-right img {
+    margin-left: 24px;
+}
+
 /* Main ceneter bottom debtors */
 
 .main-center-bottom-debors {
@@ -302,7 +352,25 @@
     border-radius: 10px;
     margin-bottom: 40px;
     /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 40px;
 }
+
+.school-main-right-inventory-box-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: auto; */
+}
+
+.school-main-right-inventory-box-pie {
+    margin: 0 auto;
+}
+
+/* School Main Right Comments Box */
 
 .school-main-right-comments-box {
     width: 100%;
@@ -327,7 +395,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 3px solid var(--grey4);
+    border: 2px solid var(--grey4);
     margin-bottom: 10px;
 }
 
@@ -344,11 +412,15 @@
     color: var(--grey4);
 }
 
+#school-dashboard-chat-icon {
+    margin-left: auto;
+}
+
 /* School Dashboard Layout */
 
 .school-dashboard-layout {
     height: 100vh;
-    width: 100%;
+    /* width: 100%; */
     display: grid;
     grid-gap: 40px;
     grid-template-columns: 260px 1fr;
@@ -357,4 +429,23 @@
         's t t t t t'
         's m m m m m'
     ;
+}
+
+@media (max-width: 1450px) {
+    .school-dashboard-layout {
+        grid-template-areas:
+        't t t t t t'
+        'm m m m m m'
+        ;
+    }
+
+    .side-bar-container {
+        display: none;
+    }
+}
+
+@media (max-width: 1140px) {
+    .school-main {
+        grid-template-columns: 1fr;
+    }
 }

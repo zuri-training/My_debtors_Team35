@@ -17,10 +17,11 @@ const SchoolMain = () => {
                     </div>
                     <div className="search-container">
                         <div className="search">
-                            <input type="text" />
+                            <input type="text" placeholder='Search' />
+                            <img src="/images/search.svg" alt="" id='search-icon' />
                         </div>
                         <div className="add-debtor">
-
+                            <img src="/images/plus.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,8 @@ const SchoolMain = () => {
                             </div>
                         </div>
                         <div className="main-center-bottom-filter-right">
-
+                            <img src="/images/sort.svg" alt="" id='debtors-sort-icon' />
+                            <img src="/images/option.svg" alt="" id='debtors-option-icon' />
                         </div>
                     </div>
                     <div className="main-center-bottom-debtors">
@@ -164,7 +166,17 @@ const SchoolMain = () => {
             </div>
             <div className="school-main-right">
                 <div className="school-main-right-inventory-box">
-
+                    <div className="school-main-right-inventory-box-top">
+                        <div className="st-bold">
+                            Inventory
+                        </div>
+                        <div className="school-main-right-invertory-box-top-right secondary-btn text-underline">
+                            This Month
+                        </div>
+                    </div>
+                    <div className="school-main-right-inventory-box-pie">
+                        <img src="/images/piechart.png" alt="" />
+                    </div>
                 </div>
                 <div className="school-main-right-comments-box">
                     <div className="school-main-right-comments-box-header">
@@ -185,6 +197,7 @@ const SchoolMain = () => {
                                 AGG1810690
                             </div>
                         </div>
+                        <img src="/images/chat.svg" alt="" id='school-dashboard-chat-icon' />
                     </div>
                     <div className="school-main-right-comments-box-comment">
                         <img src="/images/profile.png" alt="" />
@@ -196,6 +209,7 @@ const SchoolMain = () => {
                                 AGG1810690
                             </div>
                         </div>
+                        <img src="/images/chat.svg" alt="" id='school-dashboard-chat-icon' />
                     </div>
                     <div className="school-main-right-comments-box-comment">
                         <img src="/images/profile.png" alt="" />
@@ -207,6 +221,7 @@ const SchoolMain = () => {
                                 AGG1810690
                             </div>
                         </div>
+                        <img src="/images/chat.svg" alt="" id='school-dashboard-chat-icon' />
                     </div>
                 </div>
             </div>
