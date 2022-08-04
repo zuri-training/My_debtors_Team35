@@ -447,16 +447,26 @@
 
 @media (max-width: 1140px) {
     .school-dashboard-layout {
-        grid-template-rows: 55px 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 16px;
+        display: block;
     }
 
     .school-main {
-        grid-template-columns: 1fr;
+        display: block;
+        margin-top: 20px;
     }
 
     /* Top Bar */
+
+    .school-topbar {
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        left: 0;
+        right: 0;
+        margin: 0;
+        height: 55px;
+        padding: 0 20px;
+    }
 
     .notification img, .profile-image img {
         width: 23px;
@@ -521,12 +531,29 @@
         margin-right: 24px;
     }
 
+    .main-center-bottom-filter-right {
+        display: none;
+    }
+
+    /* Main right */
+
+    .school-main-right {
+        margin-top: 40px;
+    }
+
+    .main-center-bottom-debtors-debtor {
+        padding: 15px 20px;
+    }
+
     /* Debtors Name */
 
-    .main-center-bottom-debtors-debotor-name,
+    .main-center-bottom-debtors-debotor-name {
+        font-size: 12px;
+    }
+
     .main-center-bottom-debtors-debtor-unique-id, 
     .main-center-bottom-debtors-debtor-debt-amount {
-        font-size: 12px;
+        display: none;
     }
 
     .main-center-bottom-debtors-debtor-profile-img {
@@ -541,5 +568,13 @@
     .main-center-bottom-debtors-debtor-debt-status {
         font-size: 10px;
         max-width: 56px;
+    }
+
+    .school-main-right-comments-box-comment {
+        padding: 15px 20px;
+    }
+
+    .school-main-right-comments-box-comment img {
+        width: 30px;
     }
 }
