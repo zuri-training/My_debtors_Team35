@@ -105,6 +105,10 @@
 
 /* School Top bar */
 
+#menu-open {
+    display: none;
+}
+
 .school-topbar {
     grid-area: t;
     max-height: 120px;
@@ -440,8 +444,40 @@
         ;
     }
 
+    /* Top bar  */
+
+    #menu-open {
+        display: block;
+        width: 30px;
+    }
+
+    /* Side bar */
+
     .side-bar-container {
-        display: none;
+        background-color: white;
+        left: -300px;
+        transition: .5s;
+        z-index: 100;
+        padding: 24px 20px;
+        width: 170px;
+    }
+
+    .side-bar-menu-item {
+        height: 40px;
+        font-size: 14px;
+        margin: 0px 0px 15px 0px;
+        width: 125px;
+        padding: 0 18px;
+    }
+
+    .top .side-bar-menu-item, 
+    .bottom .side-bar-menu-item  {
+        margin-bottom: 15px;
+    }
+
+    .side-bar-menu-item img {
+        width: 20px;
+        margin-right: 8px;
     }
 }
 
@@ -489,18 +525,19 @@
         border-radius: 10px;
         box-shadow: 0px 0px 4px 0px var(--grey4);
         height: auto;
+        align-items: center;
     }
 
     .main-center-top h4 {
         font-size: 18px;
     }
 
-    .main-center-top .succes {
+    span.success {
         font-size: 10px;
     }
 
     .main-center-top h6 {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .main-center-top .search-container input[type=text] {
@@ -509,14 +546,27 @@
 
     .main-center-top .search-container .search {
         border: 1px solid var(--grey4);
-        padding: 10px 12px;
+        height: 30px;
+        width: 30px;
         border-radius: 50px;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 16px;
     }
 
     .main-center-top .search-container #search-icon {
         position: static;
-        width: 20px;
+        width: 10px;
+    }
+
+    .main-center-top .search-container .add-debtor {
+        width: 30px;
+        height: 30px;
+    }
+
+    .main-center-top .search-container .add-debtor img {
+        width: 10px;
     }
 
     /* Main center chart */
@@ -577,4 +627,8 @@
     .school-main-right-comments-box-comment img {
         width: 30px;
     }
+
+    /* Side bar */
+
+
 }
