@@ -152,7 +152,6 @@
 /* Main-center-top  */
 
 .main-center-top {
-    margin-left: 14px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -175,6 +174,9 @@
     padding: 15px 56px;
     font-size: 24px;
     color: var(--grey3);
+}
+
+.main-center-top .search-container .search {
     margin-right: 40px;
 }
 
@@ -225,7 +227,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 14px;
     margin-bottom: 32px;
     height: 378px;
 }
@@ -340,7 +341,6 @@
 
 /* School Main Right */
 .school-main-right {
-    /* background-color: rgba(0, 128, 0, 0.451); */
 }
 
 /* School Main Inventory */
@@ -351,7 +351,6 @@
     box-shadow: 0px 0px 10px 0.1px var(--grey5);
     border-radius: 10px;
     margin-bottom: 40px;
-    /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -363,7 +362,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: auto; */
 }
 
 .school-main-right-inventory-box-pie {
@@ -420,7 +418,6 @@
 
 .school-dashboard-layout {
     height: 100vh;
-    /* width: 100%; */
     display: grid;
     grid-gap: 40px;
     grid-template-columns: 260px 1fr;
@@ -432,6 +429,10 @@
 }
 
 @media (max-width: 1450px) {
+
+    .school-main {
+        margin: 0px 20px;
+    }
     .school-dashboard-layout {
         grid-template-areas:
         't t t t t t'
@@ -445,7 +446,100 @@
 }
 
 @media (max-width: 1140px) {
+    .school-dashboard-layout {
+        grid-template-rows: 55px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 16px;
+    }
+
     .school-main {
         grid-template-columns: 1fr;
+    }
+
+    /* Top Bar */
+
+    .notification img, .profile-image img {
+        width: 23px;
+        margin-left: 15px;
+    }
+
+    .topbar-right h5, .topbar-left h4 {
+        display: none;
+    }
+
+    .school-topbar .topbar-right {
+        justify-content: flex-end;
+    }
+
+
+    /* main center Top  */
+
+    .main-center-top {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 4px 0px var(--grey4);
+        height: auto;
+    }
+
+    .main-center-top h4 {
+        font-size: 18px;
+    }
+
+    .main-center-top .succes {
+        font-size: 10px;
+    }
+
+    .main-center-top h6 {
+        font-size: 16px;
+    }
+
+    .main-center-top .search-container input[type=text] {
+        display: none;
+    }
+
+    .main-center-top .search-container .search {
+        border: 1px solid var(--grey4);
+        padding: 10px 12px;
+        border-radius: 50px;
+
+    }
+
+    .main-center-top .search-container #search-icon {
+        position: static;
+        width: 20px;
+    }
+
+    /* Main center chart */
+
+    .main-center-chart {
+        padding: 25px 15px;
+    }
+
+    /* Main center bottom filter */
+
+    .main-center-bottom-filter-button {
+        margin-right: 24px;
+    }
+
+    /* Debtors Name */
+
+    .main-center-bottom-debtors-debotor-name,
+    .main-center-bottom-debtors-debtor-unique-id, 
+    .main-center-bottom-debtors-debtor-debt-amount {
+        font-size: 12px;
+    }
+
+    .main-center-bottom-debtors-debtor-profile-img {
+        width: 30px;
+        margin-right: 24px;
+    }
+
+    .main-center-bottom-debtors-debtor-profile-img img {
+        width: 100%;
+    }
+
+    .main-center-bottom-debtors-debtor-debt-status {
+        font-size: 10px;
+        max-width: 56px;
     }
 }
