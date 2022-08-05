@@ -21,7 +21,11 @@ footer .pi{
 #home-reviews .p-card-body {
     background: var(--primary-color);
     color: #ffffff;
-    border-radius-top: 30px;
+    border-radius: 25px;
+
+    /* border radius top
+     */
+
 }
 
 #home-reviews .p-rating .p-rating-icon.pi-star-fill{

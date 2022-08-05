@@ -37,17 +37,17 @@ function CustomerReviews(props) {
     const reviewTemplate = (review) => {
         
         const header = (
-            <img alt="Card" src={review.image} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} />
+            <img className='border-round-md' alt="Card" src={review.image} onError={(e) => e.target.src='/assets/images/default.jpg'} />
         );
         const footer = (
             <span>
                 <Rating 
-                readonly={true} cancel={false} value={review.rating} />
+                readOnly={true} cancel={false} value={review.rating} />
             </span>
         );
 
         return (
-            <Card title={review.name} style={{ width: '25em' }} footer={footer} header={header}>
+            <Card className="border-round-md" title={review.name} style={{ width: '25em' }} footer={footer} header={header}>
                 <p className="m-0" style={{ lineHeight: '1.5' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
                     quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
             </Card>
