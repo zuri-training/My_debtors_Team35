@@ -13,7 +13,7 @@ class GlobalStudent(models.Model):
 class DebtorsPosting(models.Model):
     school_id = models.IntegerField()
     global_student_id = models.CharField(max_length=120)
-    debt_amount = models.DecimalField(decimal_places=2, max_digits=10000)
+    debt_amount = models.DecimalField(decimal_places=2, max_digits=1000)
     debt_status = models.CharField(max_length=120)
     debt_type = models.CharField(max_length=120)
     debt_creation_date = models.DateField(auto_now_add=True)
