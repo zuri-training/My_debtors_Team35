@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SchoolMenuStudentsTopBar = () => {
+    
     return (
-        <div className='school-menu-students-topbar'>
+        <div className='school-menu-students-topbar toggle-ham' >
             <div className="school-menu-students-topbar-menuham">
                 <img src="/images/Menu-icon.svg" alt="" />
             </div>

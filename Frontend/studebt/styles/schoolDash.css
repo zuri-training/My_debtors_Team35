@@ -458,6 +458,12 @@
 
 @media (max-width: 1450px) {
 
+    /* Toggle ham */
+
+    .side-bar-container.toggle-ham {
+        left: 0;
+    }
+
     .school-topbar {
         padding: 0px 20px;
     }

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const SchoolTopBar = () => {
+const SchoolTopBar = ({ setToggle }) => {
+    function toggleHam() {
+        setToggle(prevToggle => !prevToggle)
+    }
     return (
         <div className='school-topbar'>
-            <img src="/images/Menu-icon.svg" alt="" id='menu-open'/>
+            <img src="/images/Menu-icon.svg" alt="" id='menu-open' onClick={toggleHam}/>
             <div className="topbar-left">
                 <h4>Overview</h4>
             </div>

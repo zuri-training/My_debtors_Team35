@@ -3,13 +3,15 @@ import PageLayout from '../../components/page-layout'
 import Sidebar from '../../components/Sidebar';
 import SchoolTopBar from '../../components/SchoolTopBar';
 import SchoolMain from '../../components/SchoolMain';
+import { useState } from 'react';
 
 
-export default function Dashboard ( props ) {
+export default function Dashboard () {
+    const [toggle, setToggle] = useState(false)
     return (
         <div className='school-dashboard-layout'>
-            <Sidebar />
-            <SchoolTopBar />
+            <Sidebar toggle={toggle} setToggle={setToggle} />
+            <SchoolTopBar setToggle={setToggle}/>
             <SchoolMain />
         </div>
     );

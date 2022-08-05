@@ -1,22 +1,24 @@
 import Link from "next/link"
+import { useState } from "react"
 
-const Sidebar = () => {
+const Sidebar = ( {toggle, setToggle} ) => {
+    
     return (
-        <div className="side-bar-container">
+        <div className= {toggle ? 'side-bar-container toggle-ham' : 'side-bar-container'}>
             <div className="side-bar top">
-                <Link href=''>
-                    <a className="side-bar-menu-item first-item sidebar-menu">
-                    <img src="/images/Menu-icon.svg" alt="" />
+                <Link href='' >
+                    <a className="side-bar-menu-item first-item sidebar-menu" onClick={()=> setToggle(!setToggle)}>
+                    <img src="/images/Menu-icon.svg" alt=""  />
                         Menu
                     </a>
                 </Link>
-                <Link href=''>
+                <Link href='/school/dashboard'>
                     <a className="side-bar-menu-item">
                         <img src="/images/Over-view.svg" />
                         Overview
                     </a>
                 </Link>
-                <Link href=''>
+                <Link href='/school/students'>
                     <a className="side-bar-menu-item">
                         <img src="/images/Profile.svg" />
                         Students
@@ -28,7 +30,7 @@ const Sidebar = () => {
                         Account
                     </a>
                 </Link>
-                <Link href=''>
+                <Link href='/school/appeals'>
                     <a className="side-bar-menu-item">
                         <img src="/images/appeal.svg" />
                         Appeals
