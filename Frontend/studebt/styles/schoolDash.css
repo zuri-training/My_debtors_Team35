@@ -82,7 +82,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .side-bar-menu-item:hover {
@@ -116,7 +116,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-right: 40px;
     padding-right: 40px;
     position: sticky;
     top: 0;
@@ -344,13 +343,38 @@
 }
 
 /* School Main Right */
-.school-main-right {
-}
 
 /* School Main Inventory */
 
+.school-main-right-debtors-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+
+/* .school-main-rights-debtors-edit-update- img,
+.school-main-rights-debtors-edit-add-debt {
+
+} */
+.school-main-rights-debtors-edit-update-debt,
+.school-main-rights-debtors-edit-add-debt {
+    background-color: var(--secondary-btn);
+    font-size: 14px;
+    max-width: 170px;
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    padding: 15px 30px;
+}
+
 .school-main-right-inventory-box {
-    height: 467px;
+    height: 385px;
     width: 100%;
     box-shadow: 0px 0px 10px 0.1px var(--grey5);
     border-radius: 10px;
@@ -433,6 +457,17 @@
 }
 
 @media (max-width: 1450px) {
+
+    .school-topbar {
+        padding: 0px 20px;
+    }
+
+    .school-main-rights-debtors-edit-add-debt,
+    .school-main-rights-debtors-edit-update-debt {
+        max-width: 150px;
+        font-size: 12px;
+        /* padding: 10px 20px; */
+    }
 
     .school-main {
         margin: 0px 20px;

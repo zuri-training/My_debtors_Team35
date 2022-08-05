@@ -45,7 +45,7 @@ const SchoolMain = () => {
                     </div>
                 </div>
                 <div className="main-center-bottom">
-                    <div className="main-center-bottom-top">
+                    {/* <div className="main-center-bottom-top">
                         <h6 className=''>Appeals</h6>
                         <div className="main-center-bottom-top-more">
                             <Link href=""><a className='secondary-btn'>More</a></Link>
@@ -108,7 +108,7 @@ const SchoolMain = () => {
                             <img src="/images/sort.svg" alt="" id='debtors-sort-icon' />
                             <img src="/images/option.svg" alt="" id='debtors-option-icon' />
                         </div>
-                    </div>
+                    </div> */}
                     <div className="main-center-bottom-debtors">
                         <div className="main-center-bottom-debtors-debtor">
                             <div className="main-center-bottom-debtors-debtor-profile-img">
@@ -165,6 +165,16 @@ const SchoolMain = () => {
                 </div>
             </div>
             <div className="school-main-right">
+                <div className="school-main-right-debtors-edit" >
+                    <div className="school-main-rights-debtors-edit-update-debt">
+                        <img src="/images/Plus.png" alt="" />
+                        <div className="">Update Debt</div>
+                    </div>
+                    <div className="school-main-rights-debtors-edit-add-debt">
+                        <img src="/images/Plus.png" alt="" />
+                        <div className="">Add Debt</div>
+                    </div>
+                </div>
                 <div className="school-main-right-inventory-box">
                     <div className="school-main-right-inventory-box-top">
                         <div className="st-bold">
