@@ -1,0 +1,207 @@
+:root {
+
+    /* colors */
+
+    /* state colors */
+
+    --info: #2F80ED;
+    --success: #27AE60;
+    --warning: #E2B93B;
+    --error: #EB5757;
+
+    /* Button color */
+
+    --primary-btn: #44C2FD;
+    --secondary-btn: #7650D4;
+    --btn-hover: #22617F;
+    --btn-active: #A1E0FE;
+    --btn-disable: #E0E0E0;
+    --debtor-bg: #e8dfff71;
+
+    /* Secondary Button color variant */
+
+    --secondary-variant-10: #E8DFFF;
+
+    
+    /* Debt Status Color */
+
+    --new-debt-bg: #B0E6FF;
+    --new-debt-color: #0068E2;
+    --denied-debt-bg: #FFAEAE;
+    --denied-debt-color:#E21F1F;
+    --cleared-debt-color: #00C042;
+    --cleared-debt-bg: #CBFFDD;
+
+
+    /* black colors */
+
+    --black1: #000000;
+    --black2: #1D1D1D;
+    --black3: #282828;
+    --white: #FFFFFF;
+
+    /* Grey colors */
+
+    --Gray1: #333333;
+    --grey2: #4F4F4F;
+    --grey3: #828282;
+    --grey4: #BDBDBD;
+    --grey5: #E0E0E0;
+}
+
+/* Top Bar */
+
+.school-menu-students-topbar {
+    grid-area: t;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 80px;
+}
+
+.menu-students-topbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-students-topbar-right input[type='text'] {
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 1px 2px 5px 1px var(--grey4);
+    outline: none;
+    border: none;
+    padding: 0 60px;
+}
+
+.menu-students-topbar-right .menu-students-topbar-search-container {
+    position: relative;
+    margin-right: 40px;
+}
+
+.menu-students-topbar-right .menu-students-topbar-search-container img {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 27px;
+}
+
+.menu-students-topbar-right input[type='text']::placeholder {
+    font-size: 24px;
+    color: var(--grey4);
+    font-weight: 440;
+}
+
+/* Top bar add debtor */
+
+.menu-students-topbar-add-debtors {
+    height: 50px;
+    width: 50px;
+    background-color: var(--secondary-btn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 1px 2px 5px 1px var(--grey4);
+    margin-right: 40px;
+}
+
+.menu-students-topbar-notification {
+    margin-right: 30px;
+}
+
+/* Main */
+
+/* Main top pagination Sort */
+
+.school-menu-students-main-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.school-menu-students-main-top-pagination {
+    max-width: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.school-menu-students-main-top-pagination-right {
+    margin-left: 10px;
+}
+
+.school-menu-students-main-top-pagination-right,
+.school-menu-students-main-top-pagination-left {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background-color: var(--secondary-variant-10);
+}
+
+.school-menu-students-main {
+    grid-area: m;
+    padding: 60px 40px;
+}
+
+.table-heading {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--secondary-btn);
+}
+
+.school-menu-students-main-top-students-table-students-data,
+.school-menu-students-main-top-students-table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--grey4);
+    padding: 20px 0;
+}
+
+.school-menu-students-main-top-students-table-heading-SN {
+    max-width: 116px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-ID {
+    max-width: 240px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-name {
+    max-width: 400px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-amount {
+    max-width: 280px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-class {
+    max-width: 170px;
+    width: 100%;
+}
+
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-SN {
+    color: var(--grey3);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-ID {
+    color: var(--grey2);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-name {
+    color: var(--black2);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-amount {
+    color: var(--grey1);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-class {
+    color: var(--grey3);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-edit img {
+    width: 22px;
+}
