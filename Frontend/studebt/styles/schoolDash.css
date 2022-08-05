@@ -523,6 +523,15 @@
 }
 
 @media (max-width: 1140px) {
+
+
+    /* Toggle ham */
+
+    .side-bar-container.toggle-ham {
+        left: 0;
+
+    }
+
     .school-dashboard-layout {
         display: block;
     }
