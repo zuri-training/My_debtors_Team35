@@ -251,6 +251,11 @@ a {
 
 /* Text Decoration */
 
+a {
+    display: inline-block;
+}
+
 .text-underline {
-    text-decoration: underline;
+    padding-bottom: 5px;
+    border-bottom: 2px solid --secondary-btn;
 }

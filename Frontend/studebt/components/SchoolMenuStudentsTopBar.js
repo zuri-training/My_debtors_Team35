@@ -3,6 +3,9 @@ import React from 'react'
 const SchoolMenuStudentsTopBar = () => {
     return (
         <div className='school-menu-students-topbar'>
+            <div className="school-menu-students-topbar-menuham">
+                <img src="/images/Menu-icon.svg" alt="" />
+            </div>
             <div className="menu-students-topbar-left">
                 <h4>Students</h4>
             </div>

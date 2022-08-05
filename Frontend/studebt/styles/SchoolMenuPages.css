@@ -51,12 +51,24 @@
 
 /* Top Bar */
 
+.school-menu-students-topbar-menuham {
+    display: none;
+}
+
+.school-menu-students-topbar-menuham img {
+    width: 100%;
+}
+
 .school-menu-students-topbar {
     grid-area: t;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding-right: 80px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 99;
 }
 
 .menu-students-topbar-right {
@@ -110,14 +122,29 @@
     margin-right: 30px;
 }
 
-/* Main */
+.menu-students-topbar-profile-img img {
+    width: 100%;
+}
+
+.menu-students-topbar-notification img {
+    width: 100%;
+}
+/* School Dashboard Students Main */
 
 /* Main top pagination Sort */
 
 .school-menu-students-main-top {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.school-menu-students-main-top-right {
+    display: flex;
     justify-content: flex-end;
     align-items: center;
+    max-width: 195px;
+    width: 100%;
 }
 
 .school-menu-students-main-top-pagination {
@@ -204,4 +231,80 @@
 }
 .school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-edit img {
     width: 22px;
+}
+
+
+
+/* School Dashboard Menu pages responsive */
+
+@media (max-width: 1450px) {
+
+    /* Top Bar */
+    .school-menu-students-topbar {
+        padding: 0 40px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1140px) {
+    
+    /* Top bar */
+
+    .school-menu-students-topbar {
+        padding: 25px 20px;
+    }
+
+    .menu-students-topbar-notification {
+        width: 25px;
+    }
+
+    .menu-students-topbar-profile-img {
+        width: 40px;
+    }
+
+    .school-menu-students-topbar-menuham {
+        display: block;
+        width: 30px;
+    }
+
+    .menu-students-topbar-left {
+        display: none;
+    }
+
+    .menu-students-topbar-right input[type='text'] {
+        display: none;
+    }
+
+    .menu-students-topbar-right .menu-students-topbar-search-container img {
+        position: static;
+    }
+
+    .menu-students-topbar-add-debtors,
+    .menu-students-topbar-right .menu-students-topbar-search-container {
+        display: none;
+    }
+
+    /* Schooll Main Students Page */
+
+    .school-menu-students-main {
+        padding: 30px 20px;
+    }
+
+    /* Students Data Table */
+
+    .school-menu-students-main-top-students-table-heading-amount,
+    .school-menu-students-main-top-students-table-heading-ID,
+    .school-menu-students-main-top-students-table-heading-class {
+        display: none;
+    }
+
+    .school-menu-students-main-top-students-table-heading-ID,
+    .school-menu-students-main-top-students-table-heading-name {
+        padding-right: 20px;
+        font-size: 12px;
+    }
+
+    .school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-edit img {
+        width: 17px;
+    }
 }

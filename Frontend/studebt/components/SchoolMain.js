@@ -21,7 +21,7 @@ const SchoolMain = () => {
                             <img src="/images/search.svg" alt="" id='search-icon' />
                         </div>
                         <div className="add-debtor">
-                            <img src="/images/plus.png" alt="" />
+                            <img src="/images/Plus.png" alt="" />
                         </div>
                     </div>
                 </div>
