@@ -1,7 +1,7 @@
 import Layout from '../../components/layout'
 import PageLayout from '../../components/page-layout'
 import Sidebar from '../../components/Sidebar';
-import SchoolMenuAppealMain from '../../components/SchoolMenuStudentsMain';
+import SchoolMenuAppealsMain from '../../components/SchoolMenuAppealsMain';
 import SchoolMenuStudentsTopBar from '../../components/SchoolMenuStudentsTopBar';
 
 
@@ -10,7 +10,7 @@ export default function Dashboard ( props ) {
         <div className='school-dashboard-layout'>
             <Sidebar />
             <SchoolMenuStudentsTopBar />
-            <SchoolMenuStudentsMain />
+            <SchoolMenuAppealsMain />
         </div>
     );
 }

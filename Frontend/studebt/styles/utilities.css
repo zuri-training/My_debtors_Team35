@@ -256,6 +256,6 @@ a {
 }
 
 .text-underline {
-    padding-bottom: 5px;
-    border-bottom: 2px solid --secondary-btn;
+    /* padding-bottom: 5px; */
+    border-bottom: 2px solid var(--secondary-btn);
 }

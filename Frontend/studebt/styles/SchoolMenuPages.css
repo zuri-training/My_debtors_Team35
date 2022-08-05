@@ -25,6 +25,8 @@
     
     /* Debt Status Color */
 
+    --appeal-bg: #FBFAFF;
+
     --new-debt-bg: #B0E6FF;
     --new-debt-color: #0068E2;
     --denied-debt-bg: #FFAEAE;
@@ -235,7 +237,63 @@
 
 
 
+
+
+
+/* Appeals Menu Page  */
+
+
+.school-menu-appeal-main {
+    grid-area: m;
+    margin-right: 80px;
+}
+
 /* School Dashboard Menu pages responsive */
+.appeal-main-top-sorts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.appeal-main-top-sort {
+    margin-right: 10px;
+    max-width: 100px;
+    width: 100%;
+}
+
+.appeal-main-top-appeals {
+    margin-top: 25px;
+}
+
+.appeal-main-top-appeal {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) 88px;
+    align-items: center;
+    justify-items: start;
+    grid-gap: 10px;
+    padding: 15px 40px;
+    margin: 10px 0px;
+    background-color: var(--appeal-bg);
+    box-shadow: 0px 0px 2px 1px var(--grey5);
+    border-radius: 10px;
+}
+
+.appeal-main-top-appeal-debt-status {
+    text-align: center;
+    border-radius: 50px;
+    width: 100%;
+}
+
+.appeal-main-top-appeal-profile-img img {
+    height: 100%;
+}
+
+.appeal-main-top-appeal-comment {
+    font-weight: 700;
+}
+
+
+
 
 @media (max-width: 1450px) {
 
@@ -243,6 +301,13 @@
     .school-menu-students-topbar {
         padding: 0 40px;
         align-items: center;
+    }
+
+
+    /* Appeal Page */
+
+    .school-menu-appeal-main {
+        margin: 0px 40px;
     }
 }
 
@@ -307,4 +372,49 @@
     .school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-edit img {
         width: 17px;
     }
+
+
+    /* Appeal Page */
+
+    /* Appeal Page Main top*/
+    
+    
+    .appeal-main-top-sort {
+        font-size: 12px;
+    }
+
+    .appeal-main-top-sort .nt-bold{
+        display: none;
+    }
+
+    .school-menu-appeal-main {
+        margin: 0px 20px ;
+    }
+    
+    .appeal-main-top-appeal {
+        grid-template-columns: 1fr 1.5fr 50px;
+    }
+
+
+
+    .appeal-main-top-appeal-unique-id,
+    .appeal-main-top-appeal-debt-type,
+    .appeal-main-top-appeal-debt-status,
+    .appeal-main-top-appeal-debt-amount {
+        display: none;
+    }
+
+    .appeal-main-top-appeal-name {
+        font-size: 12px;
+    }
+
+    .appeal-main-top-appeal-profile-img {
+        width: 30px ;
+    }
+
+    .appeal-main-top-appeal-comment {
+        font-size: 10px;
+    }
+
+
 }
