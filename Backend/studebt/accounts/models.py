@@ -5,6 +5,7 @@ from .managers import CustomUserManager
 
 # Create your models here.
 class CustomUser(AbstractUser):
+    username = None
     email = models.EmailField(unique=True)
 
     is_active = models.BooleanField(default=True)
