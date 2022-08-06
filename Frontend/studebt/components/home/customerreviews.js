@@ -47,7 +47,7 @@ function CustomerReviews(props) {
         );
 
         return (
-            <div className="col-12 my-4 md:col-3 px-4">
+            <div key ={review.id} className="col-12 my-4 md:col-3 px-4">
                 <Card className="border-round-md" title={review.name} footer={footer} header={header}>
                     <p className="m-0" style={{ lineHeight: '1.5' }}>{review.review}</p>
                 </Card>
