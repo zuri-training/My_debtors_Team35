@@ -25,16 +25,6 @@ nav .p-avatar-icon {
     color: white;
 }
 
-<<<<<<< HEAD
-#home-reviews .p-card-body {
-    background: var(--primary-color);
-    color: #ffffff;
-    border-radius: 25px;
-
-    /* border radius top
-     */
-
-=======
 nav .p-inputtext::placeholder {
     width: 81px;
     height: 33px;
@@ -44,7 +34,6 @@ nav .p-inputtext::placeholder {
     /* font-size: 24px; */
     line-height: 33px;
     color: #C6B0FF;
->>>>>>> a3d2343fc533c88ed49d22b77031933a50320136
 }
 
 nav .p-input-icon-left>i:first-of-type {
