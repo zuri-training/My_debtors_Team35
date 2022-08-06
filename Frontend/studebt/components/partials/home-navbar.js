@@ -23,7 +23,7 @@ function HomeNavbar(props) {
         },
         // login button
         {
-           label: <Button label="Log In" className="p-button-raised" />,
+           label: <Button label="Log In" className="p-button-primary p-button-raised" />,
            url: '/login'
             
         },

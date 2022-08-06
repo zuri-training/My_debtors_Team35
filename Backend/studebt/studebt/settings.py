@@ -130,7 +130,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'studebt_db',
         'USER': 'postgres',
-        'PASSWORD': 'Rebecca@1@1',
+        'PASSWORD': '180697',
         'HOST': 'localhost',
         'PORT': '5432',
     #     The above are my local credentials (NAME, USER and PASSWORD )
@@ -180,3 +180,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

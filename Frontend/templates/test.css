@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+:root {
+  /* colors */
+
+  /* state colors */
+
+  --info: #2f80ed;
+  --success: #27ae60;
+  --warning: #e2b93b;
+  --error: #eb5757;
+
+  /* Button color */
+
+  --primary-btn: #44c2fd;
+  --secondary-btn: #c6b0ff;
+  --btn-hover: #22617f;
+  --btn-active: #a1e0fe;
+  --btn-disable: #e0e0e0;
+
+  /* black colors */
+  --black1: #000000;
+  --black2: #1d1d1d;
+  --black3: #282828;
+  --white: #ffffff;
+
+  /* Grey colors */
+  --Gray1: #333333;
+  --grey2: #4f4f4f;
+  --grey3: #828282;
+  --grey4: #bdbdbd;
+  --grey5: #e0e0e0;
+}
+
+/* Typography */
+
+/* Heading Typography */
+/*h1 {
+  font-size: 56px;
+  line-height: 61.6px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 52.8px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 44px;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 35.2px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 26.4px;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+/* Body Typography */
+
+/*.lt-bold {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+.lt-regular {
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 400;
+}
+
+.mt-bold {
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 700;
+}
+.mt-regular {
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 400;
+}
+
+.nt-bold {
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 700;
+}
+.nt-regular {
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 400;
+}
+
+.st-bold {
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 700;
+}
+.st-regular {
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 400;
+}
+
+/* Textfields */
+
+/* Input fields */
+
+/*input {
+  height: 55px;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border: 1px solid var(--grey4);
+  border-radius: 4px;
+}
+select {
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border: 1px solid var(--grey4);
+  border-radius: 4px;
+}
+
+input::placeholder {
+  font-size: 1em;
+  text-transform: capitalize;
+  color: var(--black2);
+  font-weight: 400;
+}
+
+input.success {
+  border: 1px solid var(--success);
+}
+
+input.warning {
+  border: 1px solid var(--warning);
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+
+/* Buttons */
+
+/*.btn {
+  display: inline-block;
+  padding: 1em 5em;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 700;
+  border: none;
+  /* line-height: 22px; */
+/*}
+
+.btn-pri {
+  background-color: var(--primary-btn);
+}
+
+.btn-sec {
+  background-color: var(--secondary-btn);
+}
+
+/* Button Defaults */
+
+/*.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn:active {
+  background-color: var(--btn-hover);
+}
+
+.btn:disabled {
+  background-color: var(--btn-disable);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Card */
+
+.card {
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+}
+.header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 80px;
+  padding-right: 150px;
+}
+.header h5 {
+  font-size: 24px;
+  line-height: 26.4px;
+  color: #44c2fd;
+}
+.header a {
+  font-size: 24px;
+  line-height: 26.4px;
+  color: #8db3df;
+  text-decoration: none;
+}
+form {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "a c"
+    "b c"
+    "b d";
+  gap: 10px;
+}
+.content1 {
+  grid-area: a;
+  margin-left: 96px;
+  margin-bottom: 28px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 10px;
+}
+.inner-content1,
+.inner-content2 {
+  display: flex;
+}
+.content2 {
+  grid-area: b;
+  margin-left: 96px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 10px;
+}
+input {
+  height: 55px;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border: 1px solid var(--grey4);
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 500px;
+}
+.content3 {
+  grid-area: c;
+  padding-left: 100px;
+}
+.content4 {
+  grid-area: d;
+  padding-left: 100px;
+}
+h1 {
+  font-size: 56px;
+  line-height: 61.6px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #44c2fd;
+}
+h3 {
+  font-size: 40px;
+  line-height: 44px;
+  color: #6aaefd;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.shift {
+  padding-left: 50px;
+}
+#success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 500px;
+  height: 500px;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+  margin-top: 50px;
+}
+#flexbox{
+    display: flex;
+    flex-direction: column;
+}
