@@ -6,10 +6,11 @@ import SchoolMenuStudentsTopBar from '../../components/SchoolMenuStudentsTopBar'
 
 
 export default function Dashboard ( props ) {
+    const [toggle, setToggle] = useState(false)
     return (
         <div className='school-dashboard-layout'>
-            <Sidebar />
-            <SchoolMenuStudentsTopBar />
+            <Sidebar toggle={toggle} setToggle={setToggle}/>
+            <SchoolMenuStudentsTopBar setToggle={setToggle}/>
             <SchoolMenuAppealsMain />
         </div>
     );
