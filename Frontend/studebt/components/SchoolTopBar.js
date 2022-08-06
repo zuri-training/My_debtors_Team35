@@ -6,7 +6,9 @@ const SchoolTopBar = ({ setToggle }) => {
     }
     return (
         <div className='school-topbar'>
-            <img src="/images/Menu-icon.svg" alt="" id='menu-open' onClick={toggleHam}/>
+            <div className="school-menu-side-menu-hamburger" onClick={toggleHam}>
+                <img src="/images/Menu-icon.svg" alt="" id='menu-open' />
+            </div>
             <div className="topbar-left">
                 <h5>👋 Welcome to StuDebt</h5>
             </div>

@@ -105,9 +105,18 @@
     margin-bottom: 40px;
 }
 
+/* ################################################################# */
+/* ################################################################# */
+/* ################################################################# */
+
 /* School Top bar */
 
+
 #menu-open {
+    width: 100%;
+}
+
+.school-menu-side-menu-hamburger {
     display: none;
 }
 
@@ -123,6 +132,7 @@
     top: 0;
     background-color: white;
     z-index: 10;
+    background-color: #FDFDFF;
 }
 
 .school-topbar .topbar-right {
@@ -131,11 +141,26 @@
     align-items: center;
     width: 100%;
     max-width: 360px;
+    font-weight: 300;
+}
+
+.topbar-right h5 {
+    font-weight: 300;;
+}
+
+.topbar-right img {
+    width: 100%;
+}
+
+.topbar-right .notification {
+    width: 37px;
+}
+
+.topbar-right .profile-image {
+    width: 60px;
 }
 
 .topbar-left {
-    border-radius: 10px;
-    background-color: var(--secondary-variant20);
     height: 80px;
     display: flex;
     justify-content: flex-start;
@@ -144,7 +169,12 @@
     padding: 0px 50px;
     align-items: center;
     font-size: 24px;
+    font-weight: 600;
 }
+
+/* ################################################################# */
+/* ################################################################# */
+/* ################################################################# */
 
 /* School Main */
 
@@ -471,6 +501,11 @@
     ;
 }
 
+
+/* ####################################### Media Query ############################# */
+/* ####################################### Media Query ############################# */
+/* ####################################### Media Query ############################# */
+
 @media (max-width: 1450px) {
 
     /* Toggle ham */
@@ -484,7 +519,7 @@
     }
 
     .school-topbar {
-        padding: 0px 20px;
+        padding: 20px;
         align-items: center;
     }
 
@@ -505,11 +540,28 @@
         ;
     }
 
+
+    /* ################################################ */
+    /* ################################################ */
+    /* ################################################ */
+
     /* Top bar  */
 
-    #menu-open {
+    .school-menu-side-menu-hamburger {
         display: block;
+    }
+
+    #menu-open {
+        width: 100%;
+    }
+
+
+    .topbar-right .notification {
         width: 30px;
+    }
+    
+    .topbar-right .profile-image {
+        width: 50px;
     }
 
     /* Side bar */
@@ -601,6 +653,8 @@
         display: none;
     }
 
+    /* School Dashboard Layout */
+
     .school-dashboard-layout {
         display: block;
     }
@@ -620,11 +674,12 @@
         right: 0;
         margin: 0;
         height: 55px;
-        padding: 0 20px;
+        padding: 20px;
+        height: auto;
     }
 
-    .notification img, .profile-image img {
-        width: 23px;
+    .notification , .profile-image {
+        width: 40px;
         margin-left: 15px;
     }
 
