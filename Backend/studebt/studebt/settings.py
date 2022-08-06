@@ -128,7 +128,7 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'studebt_db',
+        'NAME': 'studebt_db1',
         'USER': 'postgres',
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': 'localhost',
