@@ -10,6 +10,9 @@ export default function Dashboard () {
     const [toggle, setToggle] = useState(false)
     return (
         <div className='school-dashboard-layout'>
+            <div className="background-overlay">
+                
+            </div>
             <Sidebar toggle={toggle} setToggle={setToggle} />
             <SchoolTopBar setToggle={setToggle}/>
             <SchoolMain />

@@ -8,7 +8,7 @@ const SchoolTopBar = ({ setToggle }) => {
         <div className='school-topbar'>
             <img src="/images/Menu-icon.svg" alt="" id='menu-open' onClick={toggleHam}/>
             <div className="topbar-left">
-                <h4>Overview</h4>
+                <h5>👋 Welcome to StuDebt</h5>
             </div>
             <div className="topbar-right">
                 <h5>Name of School</h5>

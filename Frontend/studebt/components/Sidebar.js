@@ -1,10 +1,10 @@
 import Link from "next/link"
-import { useState } from "react"
 
 const Sidebar = ( {toggle, setToggle} ) => {
     
     return (
         <div className= {toggle ? 'side-bar-container toggle-ham' : 'side-bar-container'}>
+            
             <div className="side-bar top">
                 <Link href='' >
                     <a className="side-bar-menu-item first-item sidebar-menu" onClick={()=> setToggle(!setToggle)}>

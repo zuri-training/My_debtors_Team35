@@ -17,6 +17,7 @@
     --btn-active: #A1E0FE;
     --btn-disable: #E0E0E0;
     --debtor-bg: #e8dfff71;
+    --secondary-variant20: #D9CAFF;
 
     /* Debt Status Color */
 
@@ -55,8 +56,8 @@
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 260px;
-    padding: 70px 20px;
+    max-width: 325px;
+    padding: 45px 40px 70px 65px;
 }
 
 .side-bar {
@@ -71,18 +72,19 @@
 
 .side-bar-menu-item img {
     margin-right: 20px;
+    width: 35px;
 }
 
 .side-bar-menu-item {
     height: 65px;
-    padding: 0px 40px;
+    padding: 0px 25px;
     width: 100%;
     color: var(--black2);
     border-radius: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .side-bar-menu-item:hover {
@@ -129,6 +131,19 @@
     align-items: center;
     width: 100%;
     max-width: 360px;
+}
+
+.topbar-left {
+    border-radius: 10px;
+    background-color: var(--secondary-variant20);
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-right: 20px;
+    padding: 0px 50px;
+    align-items: center;
+    font-size: 24px;
 }
 
 /* School Main */
@@ -448,7 +463,7 @@
     height: 100vh;
     display: grid;
     grid-gap: 40px;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 325px 1fr;
     grid-template-rows: 120px 1fr;
     grid-template-areas: 
         's t t t t t'
@@ -464,8 +479,13 @@
         left: 0;
     }
 
+    .topbar-left {
+        margin-left: 20px;
+    }
+
     .school-topbar {
         padding: 0px 20px;
+        align-items: center;
     }
 
     .school-main-rights-debtors-edit-add-debt,
@@ -496,14 +516,14 @@
 
     .side-bar-container {
         background-color: white;
-        left: -300px;
+        left: -500px;
         transition: .5s;
         z-index: 100;
-        padding: 24px 20px;
-        width: 170px;
+        /* padding: 24px 20px;
+        width: 175px; */
     }
 
-    .side-bar-menu-item {
+    /* .side-bar-menu-item {
         height: 40px;
         font-size: 14px;
         margin: 0px 0px 15px 0px;
@@ -519,10 +539,55 @@
     .side-bar-menu-item img {
         width: 20px;
         margin-right: 8px;
-    }
+    } */
 }
 
 @media (max-width: 1140px) {
+
+
+    /* Side Bar */
+
+    .side-bar-container {
+        background-color: white;
+        left: -300px;
+        transition: .5s;
+        z-index: 100;
+        padding: 15px 20px 24px 25px;
+        width: 175px;
+    }
+
+    .side-bar-menu-item {
+        height: 40px;
+        font-size: 14px;
+        margin: 0px 0px 15px 0px;
+        width: 125px;
+        padding: 0 16px;
+    }
+
+    .top .side-bar-menu-item, 
+    .bottom .side-bar-menu-item  {
+        margin-bottom: 15px;
+    }
+
+    .side-bar-menu-item img {
+        width: 18px;
+        margin-right: 8px;
+    }
+
+
+    /* Side bar Ending */
+
+    /* background overlay */
+    .school-dashboard-layout {
+        position: relative;
+    }
+
+    #__next > div > div.background-overlay {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        background-color: black;
+    }
 
 
     /* Toggle ham */
@@ -530,6 +595,10 @@
     .side-bar-container.toggle-ham {
         left: 0;
 
+    }
+
+    .topbar-left {
+        display: none;
     }
 
     .school-dashboard-layout {
