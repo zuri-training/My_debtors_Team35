@@ -1,0 +1,87 @@
+.edit{
+    position: absolute;
+    width: 398.68px;
+    height: 840.79px;
+    left:0px;
+    top:20px;
+    background-color: #ffff;
+    overflow: hidden;
+}
+
+.img{
+    position: absolute;
+    width: 122.67px;
+    left: 138px;
+    top: 147px;
+}
+
+.sec{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 12.26px 24.53px ;
+gap: 10.22px;
+
+position: absolute;
+width: 150px;
+height: 60px;
+left: 130px;
+top: 70.54px;
+
+background-color: #b395ff;
+border-radius: 42px;
+}
+p{
+    display: none;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+ margin-top: 300px;
+ align-items: center;
+}
+
+.dee{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+    padding:17px  16px ;
+    gap: 10px;
+
+  
+    width:366px ;
+    height: 80px;
+   
+    
+    background-color: #E8dfff;
+    box-shadow: 0px 4px 8px rgba(232, 223, 255, 0.25);
+    border-radius: 10px;
+}
+h1{
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+
+    color: #4f4f4f;
+    
+}
+a{
+    text-decoration: none;
+}
+.save{
+    display: none;
+}
+.saves{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    top: 800px;
+    left:100px;
+    height: 10px;
+    width: 200px;
+    background-color: black;
+    
+}
