@@ -341,10 +341,10 @@ a {
   right: 245px;
 }
 /* Mobile Design */
-@media only screen and (max-width: 428px) {
-  body {
+@media only screen and (max-width: 478px) {
+  /* body {
     background-color: #f3d1d1;
-  }
+  } */
   main {
     min-width: 160px;
     flex-direction: column;
@@ -356,7 +356,7 @@ a {
   .logodiv {
     width: 100%;
     height: 319px;
-    margin-top: 47px;
+    /* margin-top: 47px; */
     border-radius: 0 0 16px 16px;
   }
   .logodiv p {
@@ -459,7 +459,7 @@ a {
     height: 29.68px;
     border-radius: 2.2px;
     border: 0.54px solid var(--grey3);
-    background-color: #f3d1d1;
+    /* background-color: #f3d1d1; */
   }
   .btn-lag {
     height: 37.58px;
@@ -503,10 +503,4 @@ a {
     line-height: 15px;
     letter-spacing: 0em;
   }
-  /* .mobstatusb {
-    max-width: 428px;
-    width: 100%;
-    height: 47px;
-    background-image: url(images/iPhone\ 14.png);
-  } */
 }
