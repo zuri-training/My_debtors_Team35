@@ -38,7 +38,7 @@ function HomeNavbar(props) {
 
     const logo = <Link href="/">
         <a className="navbar-brand" >
-            <Image src="/studept-logo.png" alt="stuDept" width={200} />
+            <Image src="/studebt-logo.png" alt="stuDept" width={200} />
         </a>
     </Link>;
 
