@@ -31,6 +31,10 @@ footer .pi{
 #home-reviews .p-rating .p-rating-icon {
     color: #ADACAB;
 }
+
+.page-hero{
+    background: var(--primary-color);
+}
 /*  */
 .container {
     position: relative;

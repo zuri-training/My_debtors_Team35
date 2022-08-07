@@ -26,8 +26,8 @@ function HomeFooter(props) {
 
     const itemsTwo = [
         {
-            label: 'General Info',
-            url: '/info'
+            label: 'About Us',
+            url: '/about-us'
         },
         {
             label: 'Privacy Policy',
@@ -42,7 +42,7 @@ function HomeFooter(props) {
     const itemsThree = [
         {
             // talk to us text
-            label: 'Talk to Us',
+            label: <div><p>support@ercom.com</p> <br/><p>+234 80 651 88774</p><br/> <p>Contact: <br/>Facebook Linkedin Twitter</p></div>,
         }
 
     ];
