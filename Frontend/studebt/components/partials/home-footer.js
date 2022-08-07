@@ -16,7 +16,7 @@ function HomeFooter(props) {
         },
         {
             label: 'FAQ\'s',
-            url: '/circular'
+            url: '/frequently-asked-questions'
         },
         {
             label: 'Contact Us',
@@ -31,11 +31,11 @@ function HomeFooter(props) {
         },
         {
             label: 'Privacy Policy',
-            url: '/privacy'
+            url: '/privacy-privacy'
         },
         {
             label: 'Terms of Service',
-            url: '/terms'
+            url: '/terms-of-service'
         }
     ];
 
@@ -89,7 +89,7 @@ function HomeFooter(props) {
                     </section>
                 </div>
             </section>
-            <hr className='my-6' />
+            <hr className='my-6 text-white' />
             <section className="grid grid-nogutter" id="footer-links">
                 <div className="col-12 md:col-4">
                     <Link href="/">
