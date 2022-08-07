@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SchoolMenuStudentsTopBar = ( { setToggle } ) => {
+const SchoolMenuStudentsTopBar = ( { setToggle, page } ) => {
     function toggleHam() {
         setToggle(prevToggle => !prevToggle)
     }
@@ -10,7 +10,7 @@ const SchoolMenuStudentsTopBar = ( { setToggle } ) => {
                 <img src="/images/Menu-icon.svg" alt="" />
             </div>
             <div className="menu-students-topbar-left">
-                <h4>Students</h4>
+                <h4>{page}</h4>
             </div>
             <div className="menu-students-topbar-right">
                 <div className="menu-students-topbar-search-container">

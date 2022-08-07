@@ -14,7 +14,7 @@ export default function Dashboard ( props ) {
                 
             </div>
             <Sidebar toggle={toggle} setToggle={setToggle}/>
-            <SchoolMenuStudentsTopBar setToggle={setToggle}/>
+            <SchoolMenuStudentsTopBar setToggle={setToggle} page="Appeals"/>
             <SchoolMenuAppealsMain />
         </div>
     );
