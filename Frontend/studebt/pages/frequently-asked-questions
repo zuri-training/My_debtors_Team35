@@ -9,7 +9,7 @@ import TeamSection from '../components/about-us/teamsection'
 
 
 
-export default function AboutUs(props) {
+export default function Faq(props) {
     return (
         <>
             <Hero
@@ -25,9 +25,9 @@ export default function AboutUs(props) {
     )
 }
 
-AboutUs.getLayout = function getLayout(page) {
+Faq.getLayout = function getLayout(page) {
     return (
-        <Layout title="About studebt">
+        <Layout title="Faq">
             <HomeLayout>{page}</HomeLayout>
         </Layout>
     )
