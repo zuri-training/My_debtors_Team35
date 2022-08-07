@@ -27,6 +27,14 @@ const SchoolMenuAppealMain = () => {
                         <div className="nt-regular " >Denied</div>
                     </div>
                 </div>
+                <div className="appeal-main-top-icons">
+                    <div className="appeal-main-top-icon">
+                        <img src="/images/sort.svg" alt="" />
+                    </div>
+                    <div className="appeal-main-top-icon">
+                        <img src="/images/option.svg" alt="" />
+                    </div>
+                </div>
             </div>
             <div className="appeal-main-top-appeals">
                 <div className="appeal-main-top-appeal">

@@ -135,6 +135,28 @@
 
 /* Main top pagination Sort */
 
+
+.appeal-main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appeal-main-top-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 60px;
+}
+
+.appeal-main-top-icon {
+    margin-left: 5px;
+}
+
+.appeal-main-top-icon img {
+    width: 100%;
+}
+
 .school-menu-students-main-top {
     display: flex;
     justify-content: space-between;

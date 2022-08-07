@@ -4,28 +4,7 @@ const SchoolMenuStudentsMain = () => {
     return (
         <div className='school-menu-students-main'>
             <div className="school-menu-students-main-top">
-                <div className="school-menu-students-main-top-left">
-                    {/* <div className="outstanding-debt-container">
-                        <div className="outstanding-debt">
-                            <h6 className='lt-regular'>Outstanding Debt</h6>
-                            <h4>N 150 000</h4>
-                        </div>
-                        <div className="outstanding-percent">
-                            <span className='success'>+30%</span>
-                        </div>
-                    </div> */}
-                </div>
-                <div className="school-menu-students-main-top-right">
-                    <div className="school-menu-students-main-top-filter">
-                        <img src="/images/sort.svg" alt="" />
-                    </div>
-                    <div className="school-menu-students-main-top-pagination">
-                        <div className="school-menu-students-main-top-pagination-left">
-                        </div>
-                        <div className="school-menu-students-main-top-pagination-right">
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div className="school-menu-students-main-top-students-table">
                 <div className="school-menu-students-main-top-students-table-heading">

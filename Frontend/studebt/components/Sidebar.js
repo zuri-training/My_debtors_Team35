@@ -24,12 +24,6 @@ const Sidebar = ( {toggle, setToggle} ) => {
                         Students
                     </a>
                 </Link>
-                <Link href=''>
-                    <a className="side-bar-menu-item">
-                        <img src="/images/account.svg" />
-                        Account
-                    </a>
-                </Link>
                 <Link href='/school/appeals'>
                     <a className="side-bar-menu-item">
                         <img src="/images/appeal.svg" />
