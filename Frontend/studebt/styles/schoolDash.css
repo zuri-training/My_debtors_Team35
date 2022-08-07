@@ -224,8 +224,10 @@
     color: var(--grey3);
 }
 
-.main-center-top .search-container .search {
-    margin-right: 40px;
+
+
+.main-center-top .search-container .add-debtor {
+    display: none ;
 }
 
 .main-center-top .search-container {
@@ -246,7 +248,6 @@
     height: 50px;
     width: 50px;
     border-radius: 50px;
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--secondary-btn);
@@ -492,7 +493,7 @@
 .school-dashboard-layout {
     height: 100vh;
     display: grid;
-    grid-gap: 40px;
+    grid-row-gap: 40px;
     grid-template-columns: 325px 1fr;
     grid-template-rows: 120px 1fr;
     grid-template-areas: 
@@ -507,6 +508,20 @@
 /* ####################################### Media Query ############################# */
 
 @media (max-width: 1450px) {
+
+    /* Background overlay */
+
+    .background-overlay {
+        z-index: 99;
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    .none {
+        display: none;
+    }
 
     /* Toggle ham */
 
@@ -534,6 +549,7 @@
         margin: 0px 20px;
     }
     .school-dashboard-layout {
+        position: relative;
         grid-template-areas:
         't t t t t t'
         'm m m m m m'
@@ -597,6 +613,20 @@
 @media (max-width: 1140px) {
 
 
+    /* Overlay */
+
+    .background-overlay {
+        z-index: 99;
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    .none {
+        display: none;
+    }
+
     /* Side Bar */
 
     .side-bar-container {
@@ -630,16 +660,6 @@
     /* Side bar Ending */
 
     /* background overlay */
-    .school-dashboard-layout {
-        position: relative;
-    }
-
-    #__next > div > div.background-overlay {
-        height: 50px;
-        width: 50px;
-        position: absolute;
-        background-color: black;
-    }
 
 
     /* Toggle ham */
@@ -704,6 +724,10 @@
 
     .main-center-top h4 {
         font-size: 18px;
+    }
+
+    .main-center-top .search-container .add-debtor {
+        display: flex;
     }
 
     span.success {

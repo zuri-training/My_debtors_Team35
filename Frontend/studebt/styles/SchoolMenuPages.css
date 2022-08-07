@@ -65,12 +65,13 @@
     grid-area: t;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding-right: 80px;
+    align-items: center;
+    padding-right: 40px;
+    padding-top: 45px;
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 99;
+    z-index: 98;
 }
 
 .menu-students-topbar-right {
@@ -134,7 +135,20 @@
 /* School Dashboard Students Main */
 
 /* Main top pagination Sort */
+.school-menu-students-main .main-center-top {
+    display: none;
+}
 
+.school-main-students-main-right {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.school-menu-students-main-top .school-main-right-debtors-edit {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 0px;
+}
 
 .appeal-main-top {
     display: flex;
@@ -161,6 +175,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .school-menu-students-main-top-right {
@@ -194,7 +209,8 @@
 
 .school-menu-students-main {
     grid-area: m;
-    padding: 60px 40px;
+    padding: 60px 20px;
+    margin-right: 20px;
 }
 
 .table-heading {
@@ -270,6 +286,10 @@
     margin-right: 80px;
 }
 
+.school-menu-appeal-main .lt-bold {
+    display: none;
+}
+
 /* School Dashboard Menu pages responsive */
 .appeal-main-top-sorts {
     display: flex;
@@ -321,8 +341,19 @@
 
     /* Top Bar */
     .school-menu-students-topbar {
-        padding: 0 40px;
+        padding: 0 20px;
         align-items: center;
+    }
+
+    /* student */
+    .school-menu-students-main .main-center-top {
+        display: none;
+    }
+
+    
+
+    .school-menu-students-main {
+        margin: 0px;
     }
 
 
@@ -334,6 +365,22 @@
 }
 
 @media (max-width: 1140px) {
+
+    /* Students */
+
+    /* Main top */
+
+    .school-menu-students-main .main-center-top {
+        display: flex;
+    }
+
+    .school-meny-students-main .main-center-top .search-container .search {
+        margin-right: 40px;
+    }
+
+    .school-menu-students-main-top {
+        display: none;
+    }
     
     /* Top bar */
 
@@ -403,6 +450,20 @@
     
     .appeal-main-top-sort {
         font-size: 12px;
+    }
+
+    .school-menu-appeal-main .lt-bold {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .appeal-main-top-icons {
+        display: none;
+    }
+
+    .appeal-main-top-sorts {
+        justify-content: space-between;
+        width: 100%;
     }
 
     .appeal-main-top-sort .nt-bold{

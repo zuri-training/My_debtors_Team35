@@ -4,6 +4,7 @@ import Link from 'next/link'
 const SchoolMenuAppealMain = () => {
     return (
         <div className='school-menu-appeal-main'>
+            <div className="lt-bold">Appeal</div>
             <div className="appeal-main-top">
                 <div className="appeal-main-top-sorts">
                     <div className="appeal-main-top-sort">

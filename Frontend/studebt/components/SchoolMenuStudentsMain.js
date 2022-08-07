@@ -3,8 +3,40 @@ import React from 'react'
 const SchoolMenuStudentsMain = () => {
     return (
         <div className='school-menu-students-main'>
+            <div className="main-center-top">
+                <div className="outstanding-debt-container">
+                    <div className="outstanding-debt">
+                        <h6 className='lt-regular'>Outstanding Debt</h6>
+                        <h4>N 150 000</h4>
+                    </div>
+                    <div className="outstanding-percent">
+                        <span className='success'>+30%</span>
+                    </div>
+                </div>
+                <div className="search-container">
+                    <div className="search">
+                        <input type="text" placeholder='Search' />
+                        <img src="/images/search.svg" alt="" id='search-icon' />
+                    </div>
+                    <div className="add-debtor">
+                        <img src="/images/Plus.png" alt="" />
+                    </div>
+                </div>
+            </div>
             <div className="school-menu-students-main-top">
-                
+                <div className="school-main-students-main-right">
+                    Students
+                </div>
+                <div className="school-main-right-debtors-edit" >
+                    <div className="school-main-rights-debtors-edit-update-debt">
+                        <img src="/images/Plus.png" alt="" />
+                        <div className="">Update Debt</div>
+                    </div>
+                    <div className="school-main-rights-debtors-edit-add-debt">
+                        <img src="/images/Plus.png" alt="" />
+                        <div className="">Add Debt</div>
+                    </div>
+                </div>
             </div>
             <div className="school-menu-students-main-top-students-table">
                 <div className="school-menu-students-main-top-students-table-heading">

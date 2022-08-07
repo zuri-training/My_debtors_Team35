@@ -7,10 +7,10 @@ import { useState } from 'react';
 
 
 export default function Dashboard () {
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(false);
     return (
         <div className='school-dashboard-layout'>
-            <div className="background-overlay">
+            <div className={toggle ? "background-overlay" : "none"} onClick={() => setToggle(!toggle)}>
                 
             </div>
             <Sidebar toggle={toggle} setToggle={setToggle} />
