@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { Menu } from 'primereact/menu'
 
@@ -15,7 +16,7 @@ function HomeFooter(props) {
         },
         {
             label: 'FAQ\'s',
-            url: '/circular'
+            url: '/frequently-asked-questions'
         },
         {
             label: 'Contact Us',
@@ -25,29 +26,29 @@ function HomeFooter(props) {
 
     const itemsTwo = [
         {
-            label: 'General Info',
-            url: '/info'
+            label: 'About Us',
+            url: '/about-us'
         },
         {
             label: 'Privacy Policy',
-            url: '/privacy'
+            url: '/privacy-policy'
         },
         {
             label: 'Terms of Service',
-            url: '/terms'
+            url: '/terms-of-service'
         }
     ];
 
     const itemsThree = [
         {
             // talk to us text
-            label: 'Talk to Us',
+            label: <div><p>support@ercom.com</p> <br/><p>+234 80 651 88774</p><br/> <p>Contact: <br/>Facebook Linkedin Twitter</p></div>,
         }
 
     ];
     return (
         <footer className="bg-primary text-800 px-8 py-7">
-            <section className ="grid grid-nogutter" id="navigation">
+            <section className="grid grid-nogutter" id="navigation">
                 <div className="col-12 md:col-4">
                     <section>
                         {/* heading */}
@@ -88,20 +89,24 @@ function HomeFooter(props) {
                     </section>
                 </div>
             </section>
-            <hr className='my-6' />
+            <hr className='my-6 text-white' />
             <section className="grid grid-nogutter" id="footer-links">
                 <div className="col-12 md:col-4">
-                    <h5 className='text-white text-900'>StuDebt</h5>
+                    <Link href="/">
+                        <a className="navbar-brand" >
+                            <Image src="/studebt-footer-logo.png" alt="stuDept" width={150}  height={33}/>
+                        </a>
+                    </Link>
                 </div>
                 <div className="col-12 md:col-4">
                     {/* copyright */}
                     <p className="text-white text-center">
                         <span className="text-white text-900">&copy; {new Date().getFullYear()} StuDebt Ltd.
-                        All rights reserved</span>
+                            All rights reserved</span>
                     </p>
                 </div>
                 <div className="col-12 md:col-4">
-                        {/* icons facebook, linkedin, twitter*/}
+                    {/* icons facebook, linkedin, twitter*/}
                     <div className="text-center">
                         <a className="p-2" href="https://www.facebook.com/studebt" target="_blank" rel="noopener noreferrer">
                             < i className="pi pi-facebook text-white" />
@@ -113,7 +118,7 @@ function HomeFooter(props) {
                             < i className="pi pi-twitter text-white" />
                         </a>
 
-                        </div>
+                    </div>
                 </div>
             </section>
 

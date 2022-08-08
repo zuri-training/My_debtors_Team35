@@ -1,3 +1,56 @@
+
+/*  */
+img{
+    max-width: 100%;
+}
+
+footer .p-menuitem-text{
+    color: #fff !important
+}
+
+footer .p-menu {
+    background-color: inherit !important;
+}
+
+footer .pi{
+    font-size: 1.5em !important;
+}
+
+.p-button-primary {
+    background: var(--primary-color);
+}
+
+#home-reviews .p-card-body {
+    background: #BDBDBD;
+    color: #000000;
+}
+
+#home-reviews .p-rating .p-rating-icon.pi-star-fill{
+    color: #FFAC33;
+}
+
+#home-reviews .p-rating .p-rating-icon {
+    color: #ADACAB;
+}
+
+.page-hero{
+    background: var(--primary-color);
+}
+/*  */
+/* FAQ */
+#page-faq-hero{
+    background: #D1C9C9;
+    background-image: url(/assets/images/faq-hero.png);
+}
+
+.p-accordion .p-accordion-tab .p-accordion-toggle-icon{
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+}
+
+
+/* END FAQ */
 .container {
     position: relative;
     max-width: 1728px;
