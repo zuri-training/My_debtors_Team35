@@ -5,4 +5,3 @@ An inventory for school debtors
 * ### Frontend: Next.js
 * ### Database: PostgreSQL
 
-
