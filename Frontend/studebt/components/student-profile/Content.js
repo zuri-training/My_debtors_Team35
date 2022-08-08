@@ -112,84 +112,84 @@ export default function Content(props) {
   return (
     <div className="main-content col-12 p-4">
       <h5 className="subheading md:text-xl text-lg">Outstanding Debts</h5>
-      <div class="grid align-items-center sm:py-5 py-1">
-        <div class="col-1 gray md:text-center text-left xl:text-base lg:text-sm text-xs">
+      <div className="grid align-items-center sm:py-5 py-1">
+        <div className="col-1 gray md:text-center text-left xl:text-base lg:text-sm text-xs">
           S/N
         </div>
-        <div class="col gray xl:text-base lg:text-sm text-xs">Reason</div>
-        <div class="col-2 gray text-center xl:text-base lg:text-sm text-xs">
+        <div className="col gray xl:text-base lg:text-sm text-xs">Reason</div>
+        <div className="col-2 gray text-center xl:text-base lg:text-sm text-xs">
           Amount (N)
         </div>
-        <div class="col-2 gray text-center xl:text-base lg:text-sm text-xs">
+        <div className="col-2 gray text-center xl:text-base lg:text-sm text-xs">
           Class
         </div>
-        <div class="md:col col-2 gray text-center xl:text-base lg:text-sm text-xs">
+        <div className="md:col col-2 gray text-center xl:text-base lg:text-sm text-xs">
           Action
         </div>
       </div>
       <hr className="mb-2"></hr>
       <div>
-        <div class="grid align-items-center py-2">
-          <div class="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
+        <div className="grid align-items-center py-2">
+          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
             1
           </div>
-          <div class="col xl:text-base lg:text-sm text-xs">
+          <div className="col xl:text-base lg:text-sm text-xs">
             School fees 2018/2019 at Ezekiel College
           </div>
-          <div class="col-2 text-center xl:text-base lg:text-sm text-xs">
+          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
             20,000
           </div>
-          <div class="col-2 text-center gray xl:text-base lg:text-sm text-xs">
+          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
             SS3
           </div>
-          <div class="md:col col-2 text-center">
+          <div className="md:col col-2 text-center">
             <DialogDemo />
           </div>
         </div>
-        <div class="grid align-items-center py-2">
-          <div class="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
+        <div className="grid align-items-center py-2">
+          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
             2
           </div>
-          <div class="col xl:text-base lg:text-sm text-xs">
+          <div className="col xl:text-base lg:text-sm text-xs">
             Feeding allowance{" "}
           </div>
-          <div class="col-2 text-center xl:text-base lg:text-sm text-xs">
+          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
             5,000
           </div>
-          <div class="col-2 text-center gray xl:text-base lg:text-sm text-xs">
+          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
             JSS1
           </div>
-          <div class="md:col col-2 text-center">
+          <div className="md:col col-2 text-center">
             <DialogDemo />
           </div>
         </div>
-        <div class="grid align-items-center py-2">
-          <div class="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
+        <div className="grid align-items-center py-2">
+          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
             3
           </div>
-          <div class="col xl:text-base lg:text-sm text-xs">School bus</div>
-          <div class="col-2 text-center xl:text-base lg:text-sm text-xs">
+          <div className="col xl:text-base lg:text-sm text-xs">School bus</div>
+          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
             10,000
           </div>
-          <div class="col-2 text-center gray xl:text-base lg:text-sm text-xs">
+          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
             PRY1
           </div>
-          <div class="md:col col-2 text-center">
+          <div className="md:col col-2 text-center">
             <DialogDemo />
           </div>
         </div>
-        <div class="grid align-items-center py-2">
-          <div class="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
+        <div className="grid align-items-center py-2">
+          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
             4
           </div>
-          <div class="col xl:text-base lg:text-sm text-xs">PTA Fees</div>
-          <div class="col-2 text-center xl:text-base lg:text-sm text-xs">
+          <div className="col xl:text-base lg:text-sm text-xs">PTA Fees</div>
+          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
             1,000
           </div>
-          <div class="col-2 text-center gray xl:text-base lg:text-sm text-xs">
+          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
             PRY6
           </div>
-          <div class="md:col col-2 text-center">
+          <div className="md:col col-2 text-center">
             <DialogDemo />
           </div>
         </div>
