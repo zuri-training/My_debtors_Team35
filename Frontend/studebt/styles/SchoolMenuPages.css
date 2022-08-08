@@ -1,0 +1,622 @@
+:root {
+
+    /* colors */
+
+    /* state colors */
+
+    --info: #2F80ED;
+    --success: #27AE60;
+    --warning: #E2B93B;
+    --error: #EB5757;
+
+    /* Button color */
+
+    --primary-btn: #44C2FD;
+    --secondary-btn: #7650D4;
+    --btn-hover: #22617F;
+    --btn-active: #A1E0FE;
+    --btn-disable: #E0E0E0;
+    --debtor-bg: #e8dfff71;
+
+    /* Secondary Button color variant */
+
+    --secondary-variant-10: #E8DFFF;
+
+    
+    /* Debt Status Color */
+
+    --appeal-bg: #FBFAFF;
+
+    --new-debt-bg: #B0E6FF;
+    --new-debt-color: #0068E2;
+    --denied-debt-bg: #FFAEAE;
+    --denied-debt-color:#E21F1F;
+    --cleared-debt-color: #00C042;
+    --cleared-debt-bg: #CBFFDD;
+
+
+    /* black colors */
+
+    --black1: #000000;
+    --black2: #1D1D1D;
+    --black3: #282828;
+    --white: #FFFFFF;
+
+    /* Grey colors */
+
+    --Gray1: #333333;
+    --grey2: #4F4F4F;
+    --grey3: #828282;
+    --grey4: #BDBDBD;
+    --grey5: #E0E0E0;
+}
+
+/* Top Bar */
+
+.school-menu-students-topbar-menuham {
+    display: none;
+}
+
+.school-menu-students-topbar-menuham img {
+    width: 100%;
+}
+
+.school-menu-students-topbar {
+    grid-area: t;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+    padding-top: 45px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 98;
+}
+
+.menu-students-topbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-students-topbar-right input[type='text'] {
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 1px 2px 5px 1px var(--grey4);
+    outline: none;
+    border: none;
+    padding: 0 60px;
+}
+
+.menu-students-topbar-right .menu-students-topbar-search-container {
+    position: relative;
+    margin-right: 40px;
+}
+
+.menu-students-topbar-right .menu-students-topbar-search-container img {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 27px;
+}
+
+.menu-students-topbar-right input[type='text']::placeholder {
+    font-size: 24px;
+    color: var(--grey4);
+    font-weight: 440;
+}
+
+/* Top bar add debtor */
+
+.menu-students-topbar-add-debtors {
+    height: 50px;
+    width: 50px;
+    background-color: var(--secondary-btn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 1px 2px 5px 1px var(--grey4);
+    margin-right: 40px;
+}
+
+.menu-students-topbar-notification {
+    margin-right: 30px;
+}
+
+.menu-students-topbar-profile-img img {
+    width: 100%;
+}
+
+.menu-students-topbar-notification img {
+    width: 100%;
+}
+/* School Dashboard Students Main */
+
+/* Main top pagination Sort */
+.school-menu-students-main .main-center-top {
+    display: none;
+}
+
+.school-main-students-main-right {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.school-menu-students-main-top .school-main-right-debtors-edit {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 0px;
+}
+
+.appeal-main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appeal-main-top-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 60px;
+}
+
+.appeal-main-top-icon {
+    margin-left: 5px;
+}
+
+.appeal-main-top-icon img {
+    width: 100%;
+}
+
+.school-menu-students-main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.school-menu-students-main-top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 195px;
+    width: 100%;
+}
+
+.school-menu-students-main-top-pagination {
+    max-width: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.school-menu-students-main-top-pagination-right {
+    margin-left: 10px;
+}
+
+.school-menu-students-main-top-pagination-right,
+.school-menu-students-main-top-pagination-left {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background-color: var(--secondary-variant-10);
+}
+
+.school-menu-students-main {
+    grid-area: m;
+    padding: 60px 20px;
+    margin-right: 20px;
+}
+
+.table-heading {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--secondary-btn);
+}
+
+.school-menu-students-main-top-students-table-students-data,
+.school-menu-students-main-top-students-table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--grey4);
+    padding: 20px 0;
+}
+
+.school-menu-students-main-top-students-table-heading-SN {
+    max-width: 116px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-ID {
+    max-width: 240px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-name {
+    max-width: 400px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-amount {
+    max-width: 280px;
+    width: 100%;
+}
+.school-menu-students-main-top-students-table-heading-class {
+    max-width: 170px;
+    width: 100%;
+}
+
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-SN {
+    color: var(--grey3);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-ID {
+    color: var(--grey2);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-name {
+    color: var(--black2);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-amount {
+    color: var(--grey1);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-class {
+    color: var(--grey3);
+    font-weight: 700;
+}
+.school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-edit img {
+    width: 22px;
+}
+
+
+
+
+
+
+/* Appeals Menu Page  */
+
+
+.school-menu-appeal-main {
+    grid-area: m;
+    margin-right: 80px;
+}
+
+.school-menu-appeal-main .lt-bold {
+    display: none;
+}
+
+/* School Dashboard Menu pages responsive */
+.appeal-main-top-sorts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.appeal-main-top-sort {
+    margin-right: 10px;
+    max-width: 100px;
+    width: 100%;
+}
+
+.appeal-main-top-appeals {
+    margin-top: 25px;
+}
+
+.appeal-main-top-appeal {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) 88px;
+    align-items: center;
+    justify-items: start;
+    grid-gap: 10px;
+    padding: 15px 40px;
+    margin: 10px 0px;
+    background-color: var(--appeal-bg);
+    box-shadow: 0px 0px 2px 1px var(--grey5);
+    border-radius: 10px;
+}
+
+.appeal-main-top-appeal-debt-status {
+    text-align: center;
+    border-radius: 50px;
+    width: 100%;
+}
+
+.appeal-main-top-appeal-profile-img img {
+    height: 100%;
+}
+
+.appeal-main-top-appeal-comment {
+    font-weight: 700;
+}
+
+
+/* #################### Students School Dashboard TopBar ########## */
+/* #################### Students School Dashboard TopBar ########## */
+/* #################### Students School Dashboard TopBar ########## */
+
+.students-page-topbar {
+    grid-area: t;
+    max-height: 120px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 40px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #FDFDFF;
+}
+
+.students-page-topbar-right-icon.profile-image {
+    width: 60px;
+    margin-left: 10px;
+}
+
+.students-page-topbar-right-icon.notification {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.students-page-topbar-right-icon img {
+    width: 100%;
+}
+
+.students-page-topbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 365px;
+    width: 100%;
+}
+
+.students-page-topbar-left {
+    max-width: 650px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.students-page-topbar-left input {
+    width: 100%;
+    height: 60px;
+    padding: 16px 60px;
+    border-radius: 60px;
+    box-shadow: 1px 1px 1px 2px var(--grey5);
+    border: none;
+    outline: none;
+}
+
+.students-page-topbar-left input::placeholder {
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--grey4);
+}
+
+.students-page-topbar-left img {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+
+
+@media (max-width: 1450px) {
+
+    /* Top Bar */
+    .school-menu-students-topbar {
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    /* student */
+    .school-menu-students-main .main-center-top {
+        display: none;
+    }
+
+    /* Students PageTopBar */
+
+    .students-page-topbar {
+        padding: 0px 20px;
+        align-items: center;
+    }
+
+    .school-menu-students-topbar-menuham {
+        display: block;
+        margin-right: 20px;
+    }
+
+    
+
+    .school-menu-students-main {
+        margin: 0px;
+    }
+
+
+    /* Appeal Page */
+
+    .school-menu-appeal-main {
+        margin: 0px 40px;
+    }
+}
+
+@media (max-width: 1140px) {
+
+    /* Students */
+
+    /* Top Bar */
+
+    .students-page-topbar {
+        height: auto;
+        padding: 20px;
+    }
+
+    .students-page-topbar-left {
+        display: none;
+    }
+
+    .students-page-topbar-left {
+        display: none;
+    }
+
+
+    .students-page-topbar-right-icon.profile-image {
+        width: 30px;
+        margin-left: 15px;
+    
+    }
+    
+    .students-page-topbar-right-icon.notification {
+        margin-left: 15px;
+        width: 20px;
+    }
+
+    .students-page-topbar-right {
+        justify-content: flex-end;
+    }
+
+    .students-page-topbar-right h5 {
+        display: none;
+    }
+
+    /* Main top */
+
+    .school-menu-students-main .main-center-top {
+        display: flex;
+    }
+
+    .school-meny-students-main .main-center-top .search-container .search {
+        margin-right: 40px;
+    }
+
+    .school-menu-students-main-top {
+        display: none;
+    }
+    
+    /* Top bar */
+
+    .school-menu-students-topbar {
+        padding: 25px 20px;
+    }
+
+    .menu-students-topbar-notification {
+        width: 25px;
+    }
+
+    .menu-students-topbar-profile-img {
+        width: 40px;
+    }
+
+    .school-menu-students-topbar-menuham {
+        display: block;
+        width: 30px;
+    }
+
+    .menu-students-topbar-left {
+        display: none;
+    }
+
+    .menu-students-topbar-right input[type='text'] {
+        display: none;
+    }
+
+    .menu-students-topbar-right .menu-students-topbar-search-container img {
+        position: static;
+    }
+
+    .menu-students-topbar-add-debtors,
+    .menu-students-topbar-right .menu-students-topbar-search-container {
+        display: none;
+    }
+
+    /* Schooll Main Students Page */
+
+    .school-menu-students-main {
+        padding: 30px 20px;
+    }
+
+    /* Students Data Table */
+
+    .school-menu-students-main-top-students-table-heading-amount,
+    .school-menu-students-main-top-students-table-heading-ID,
+    .school-menu-students-main-top-students-table-heading-class {
+        display: none;
+    }
+
+    .school-menu-students-main-top-students-table-heading-ID,
+    .school-menu-students-main-top-students-table-heading-name {
+        padding-right: 20px;
+        font-size: 12px;
+    }
+
+    .school-menu-students-main-top-students-table-students-data .school-menu-students-main-top-students-table-heading-edit img {
+        width: 17px;
+    }
+
+
+    /* Appeal Page */
+
+    /* Appeal Page Main top*/
+    
+    
+    .appeal-main-top-sort {
+        font-size: 12px;
+    }
+
+    .school-menu-appeal-main .lt-bold {
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .appeal-main-top-icons {
+        display: none;
+    }
+
+    .appeal-main-top-sorts {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .appeal-main-top-sort .nt-bold{
+        display: none;
+    }
+
+    .school-menu-appeal-main {
+        margin: 0px 20px ;
+    }
+    
+    .appeal-main-top-appeal {
+        grid-template-columns: 1fr 1.5fr 50px;
+    }
+
+
+
+    .appeal-main-top-appeal-unique-id,
+    .appeal-main-top-appeal-debt-type,
+    .appeal-main-top-appeal-debt-status,
+    .appeal-main-top-appeal-debt-amount {
+        display: none;
+    }
+
+    .appeal-main-top-appeal-name {
+        font-size: 12px;
+    }
+
+    .appeal-main-top-appeal-profile-img {
+        width: 30px ;
+    }
+
+    .appeal-main-top-appeal-comment {
+        font-size: 10px;
+    }
+
+
+}
