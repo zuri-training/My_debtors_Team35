@@ -1,6 +1,7 @@
 import { Menubar } from 'primereact/menubar'
 import Link from 'next/link'
 import { Button } from 'primereact/button'
+import { Image } from 'primereact/image'
 
 function HomeNavbar(props) {
     const items = [
@@ -15,7 +16,7 @@ function HomeNavbar(props) {
         },
         {
             label: 'FAQ\'s',
-            url: '/circular'
+            url: '/frequently-asked-questions'
         },
         {
             label: 'Contact Us',
@@ -23,9 +24,9 @@ function HomeNavbar(props) {
         },
         // login button
         {
-           label: <Button label="Log In" className="p-button-raised" />,
-           url: '/login'
-            
+            label: <Button label="Log In" className="p-button-primary p-button-raised" />,
+            url: '/login'
+
         },
         // register button
         {
@@ -35,8 +36,10 @@ function HomeNavbar(props) {
 
     ];
 
-    const logo = <Link href='/'><a className='no-underline'>
-        <div><h1 className='text-900'>StuDebt</h1></div></a>
+    const logo = <Link href="/">
+        <a className="navbar-brand" >
+            <Image src="/studebt-logo.png" alt="stuDept" width={200} />
+        </a>
     </Link>;
 
     return (

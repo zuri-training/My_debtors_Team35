@@ -1,0 +1,35 @@
+{
+    "data": [
+
+        {
+            "id": "1",
+            "name": "Theresa Emenike",
+            "image": "/assets/images/theresa.jpg",
+            "review": "Running a school has never been this easy, because dragging debt from parents can be quite embarassing. Thank you Studebt for making my life easier.",
+            "rating": "5"
+           
+        },
+        {
+            "id": "2",
+            "name": "Kadijat Lawal",
+            "image": "/assets/images/kadijat.jpg",
+            "review": "I don’t even have to bother anymore about parents running away with my money because the possibility of students getting admitted into other schools has been reduced by 99%.",
+            "rating": "4"
+        },
+        {
+            "id": "3",
+            "name": "Bassey Akpan",
+            "image": "/assets/images/bassey.jpg",
+            "review": "Through this platform, I’ve been able to retrieve 80% of debts owed by runaway parents. I 10/10 recommend this platform for every school owner.",
+            "rating": "4"
+        },
+        {
+            "id": "4",
+            "name": "Adekuhle Ayodeji",
+            "image": "/assets/images/adekuhle.jpg",
+            "review": "Joining this platform has saved me from admitting debtors into my school. This platform has made school business a lot beter for me and my teachers.",
+            "rating": "5"
+        }
+        
+    ]
+}
