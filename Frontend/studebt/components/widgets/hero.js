@@ -4,7 +4,7 @@ function Hero(props) {
     const title2 = props.title2;
     const subtitle = props.subtitle;
     return (
-        <div className="page-hero">
+        <div className="page-hero mx-4 md:mx-8" >
             <div className="grid grid-nogutter text-white px-4 md:px-8 py-8">
                 <div className="col-12 text-center">
                     <section>

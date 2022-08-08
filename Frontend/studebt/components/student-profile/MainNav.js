@@ -13,10 +13,10 @@ const SearchBar = () => {
 
   return (
     <div>
-      <span className="p-input-icon-left lg:inline-block hidden">
+      <span className="p-input-icon-left md:mx-4 sm:mx-2">
         <i className="pi pi-search" />
         <InputText
-          className="nav-search border-none mr-4 lg:w-30rem w-20rem"
+          className="nav-search border-none lg:w-30rem md:w-20rem w-11rem"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Search"
@@ -30,17 +30,27 @@ export default function MainNav(props) {
   const menu = (
     <div className="flex align-items-center gap-2 p-2">
       <Image src={menuIcon} alt="Menu Icon" />
-      <span className="nav-menu sm:text-2xl text-lg">Menu</span>
+      <span className="nav-menu sm:text-2xl text-lg md:inline-block hidden">
+        Menu
+      </span>
     </div>
   );
 
   const menuNav = (
-    <div className="flex align-items-center gap-4">
-      <SearchBar />
+    <div className="flex justify-content-end align-items-center md:gap-4 gap-2">
+      <div className="flex justify-content-center align-items-center">
+        <SearchBar />
+      </div>
       {/* <Avatar icon="pi pi-plus" className="nav-plus" /> */}
-      <Image src={plus} width={50} height={50} />
-      <Image src={bell} />
-      <Image src={profilePics} width={50} height={50} alt="Profile" />
+      <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-1">
+        <Image src={plus} alt="Plus Icon" />
+      </div>
+      <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-1">
+        <Image src={bell} alt="Bell Icon" />
+      </div>
+      <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-1">
+        <Image src={profilePics} alt="Profile" />
+      </div>
     </div>
   );
 

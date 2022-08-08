@@ -2,7 +2,7 @@ import { Button } from "primereact/button";
 
 export default function SideBar(props) {
   return (
-    <div className="main-sidebar lg:col-2 col-12 flex lg:flex-column justify-content-between align-items-start lg:py-8 py-5 lg:px-0 px-5">
+    <div className="main-sidebar md:col-2 col-1 flex flex-column justify-content-between md:align-items-start align-items-center py-8 md:mx-auto mx-2">
       <div className="flex flex-column">
         <Button
           label="Profile"
