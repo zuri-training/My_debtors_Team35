@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+from decouple import config
 from datetime import timedelta
 from pathlib import Path
 
@@ -128,9 +128,9 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'studebt_db',
+        'NAME': 'studebt_db1',
         'USER': 'postgres',
-        'PASSWORD': '180697',
+        'PASSWORD': config('DB_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     #     The above are my local credentials (NAME, USER and PASSWORD )

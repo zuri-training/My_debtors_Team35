@@ -6,6 +6,7 @@ import FeatureSection from '../components/home/featuresection'
 import  DashboardOneSection  from '../components/home/dashboardonesection'
 import  DashboardTwoSection  from '../components/home/dashboardtwosection'
 import CustomerReviews from '../components/home/customerreviews'
+import Newslettter from '../components/home/newsletter'
 
 export default function Home( props ) {
   return (
@@ -16,6 +17,7 @@ export default function Home( props ) {
       <DashboardOneSection />
       <DashboardTwoSection />
       <CustomerReviews />
+      <Newslettter />
     </>
   )
 }
