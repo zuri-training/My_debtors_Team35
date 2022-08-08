@@ -16,7 +16,7 @@ function HomeNavbar(props) {
         },
         {
             label: 'FAQ\'s',
-            url: '/circular'
+            url: '/frequently-asked-questions'
         },
         {
             label: 'Contact Us',
