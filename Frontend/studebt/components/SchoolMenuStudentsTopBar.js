@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 const SchoolMenuStudentsTopBar = ( { setToggle, page } ) => {
@@ -17,9 +18,11 @@ const SchoolMenuStudentsTopBar = ( { setToggle, page } ) => {
                     <input type="text" placeholder='Search' />
                     <img src="/images/search.svg" alt="" />
                 </div>
-                <div className="menu-students-topbar-add-debtors">
-                    <img src="/images/Plus.png" alt="" />
-                </div>
+                <Link href='/school/students'>
+                    <div className="menu-students-topbar-add-debtors">
+                        <img src="/images/Plus.png" alt="" />
+                    </div>
+                </Link>
                 <div className="menu-students-topbar-notification">
                     <img src="/images/notification.png" alt="" />
                 </div>

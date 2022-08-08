@@ -417,6 +417,7 @@
     align-items: center;
     border-radius: 50px;
     padding: 15px 30px;
+    cursor: pointer;
 }
 
 .school-main-right-inventory-box {

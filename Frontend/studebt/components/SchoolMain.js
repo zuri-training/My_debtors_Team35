@@ -166,10 +166,12 @@ const SchoolMain = () => {
             </div>
             <div className="school-main-right">
                 <div className="school-main-right-debtors-edit" >
-                    <div className="school-main-rights-debtors-edit-update-debt">
-                        <img src="/images/Plus.png" alt="" />
-                        <div className="">Update Debt</div>
-                    </div>
+                    <Link href='/school/students'>
+                        <div className="school-main-rights-debtors-edit-update-debt">
+                            <img src="/images/Plus.png" alt="" />
+                            <div className="">Update Debt</div>
+                        </div>
+                    </Link>
                     <div className="school-main-rights-debtors-edit-add-debt">
                         <img src="/images/Plus.png" alt="" />
                         <div className="">Add Debt</div>
