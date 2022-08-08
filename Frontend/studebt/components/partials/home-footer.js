@@ -31,7 +31,7 @@ function HomeFooter(props) {
         },
         {
             label: 'Privacy Policy',
-            url: '/privacy-privacy'
+            url: '/privacy-policy'
         },
         {
             label: 'Terms of Service',
