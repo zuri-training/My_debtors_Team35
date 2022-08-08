@@ -40,10 +40,6 @@ body {
   --grey4: #bdbdbd;
   --grey5: #e0e0e0;
 }
-#name,
-header {
-  display: none;
-}
 /*styling for add debtor form*/
 header h4 {
   font-size: 32px;
@@ -52,37 +48,21 @@ header h4 {
   margin: 5px;
   margin-left: -5px;
 }
-.header {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 35px;
-  display: none;
-}
 .header a {
   font-size: 20px;
   line-height: 22px;
   color: #b395ff;
   text-decoration: none;
+  margin-left: 12px;
 }
 h2 {
   font-weight: 700;
   font-size: 32.7123px;
   line-height: 36px;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   color: #8d60ff;
-}
-#flexbox {
-  display: flex;
-  flex-direction: column;
-}
-.content1,
-.content2 {
-  margin-left: 12px;
-  margin-bottom: 10px;
 }
 #upload {
   color: #7650d4;
@@ -97,7 +77,8 @@ h5 {
   line-height: 22px;
   color: #8d60ff;
   padding-top: 7px;
-  padding-bottom: 7px;
+  padding-bottom: 15px;
+  margin-left: 12px;
 }
 input,
 select {
@@ -107,10 +88,10 @@ select {
   border: 1px solid var(--grey4);
   border-radius: 4px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   width: 365.97px;
 }
-.content4{
+.content4 {
   padding-left: 300px;
   padding-bottom: 20px;
 }
@@ -127,18 +108,11 @@ select {
   line-height: 23px;
   font-size: 14.3116px;
 }
-.btn a {
-  text-decoration: none;
-  color: #ffffff;
-}
 label {
   color: var(--grey2);
   font-weight: 700;
   font-size: 16.3561px;
   line-height: 23px;
-}
-#innerflex2 button {
-  margin-top: 25px;
 }
 #photo {
   border-radius: 10px;
@@ -152,7 +126,24 @@ label {
   align-items: center;
   text-align: center;
 }
+#text{
+  margin-left: 12px;
+}
 
+/*Debt details page*/
+#name {
+  display: none;
+}
+#detail,
+#submit {
+  text-align: center;
+  margin-top: 20px;
+}
+#debt-details {
+  margin-top: 70px;
+  margin-left: 12px;
+  margin-bottom: 100px;
+}
 /*styling for success page*/
 #success {
   display: flex;
@@ -263,6 +254,6 @@ span {
   border: none;
   font-size: 18px;
 }
-#error-msg{
+#error-msg {
   max-height: 590px;
 }
