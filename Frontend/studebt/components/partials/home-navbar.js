@@ -1,54 +1,52 @@
-import Image from 'next/image'
+import { Menubar } from 'primereact/menubar'
 import Link from 'next/link'
+import { Button } from 'primereact/button'
+import { Image } from 'primereact/image'
 
-export default function HomeNavbar( props ) {
+function HomeNavbar(props) {
+    const items = [
+        {
+            label: 'Home',
+            url: '/'
+
+        },
+        {
+            label: 'Circular',
+            url: '/circular'
+        },
+        {
+            label: 'FAQ\'s',
+            url: '/frequently-asked-questions'
+        },
+        {
+            label: 'Contact Us',
+            url: '/contact-us'
+        },
+        // login button
+        {
+            label: <Button label="Log In" className="p-button-primary p-button-raised" />,
+            url: '/login'
+
+        },
+        // register button
+        {
+            label: <Button label="Sign up" className="p-button-outlined" />,
+            url: '/register'
+        }
+
+    ];
+
+    const logo = <Link href="/">
+        <a className="navbar-brand" >
+            <Image src="/studebt-logo.png" alt="stuDept" width={200} />
+        </a>
+    </Link>;
+
     return (
         <nav>
-            <Link href="/">
-            <a className="navbar-brand" >
-                <Image src="/studept-logo.jpg" alt="stuDept" width={200} height={200} />
-            </a>
-            </Link>
-            <div>
-                <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        <Link href="/">
-                        <a className="nav-link">Home</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/school/dashboard">
-                        <a className="nav-link" >Circular</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/school/students">
-                        <a className="nav-link">FAQs</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/student/dashboard">
-                        <a className="nav-link">Contact Us</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/student/dashboard">
-                        <a className="nav-link">
-                            <button className="btn btn-primary">Login</button>
-                        </a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/student/dashboard">
-                        <a className="nav-link">
-                            <button className="btn btn-primary">Sign Up</button>
-                        </a>
-                        </Link>
-                    </li>
-              
-                </ul>
-           </div>
+            <Menubar className="px-7 flex justify-content-between border-none" model={items} start={logo} />
         </nav>
     );
 }
 
+export default HomeNavbar;
