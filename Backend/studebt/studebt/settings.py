@@ -9,12 +9,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-<<<<<<< HEAD
-
-=======
 from decouple import config
 from datetime import timedelta
->>>>>>> 42a2b551629c40fdd72a0192c87a6954c51e783d
 from pathlib import Path
 from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
