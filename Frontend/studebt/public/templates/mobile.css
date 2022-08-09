@@ -41,6 +41,9 @@ body {
   --grey5: #e0e0e0;
 }
 /*styling for add debtor form*/
+header {
+  display: none;
+}
 header h4 {
   font-size: 32px;
   line-height: 35.2px;
@@ -126,7 +129,7 @@ label {
   align-items: center;
   text-align: center;
 }
-#text{
+#text {
   margin-left: 12px;
 }
 
@@ -155,6 +158,9 @@ label {
 #success p {
   margin-left: 15px;
   text-align: center;
+  font-weight: 540;
+  font-size: 16px;
+  line-height: 25px;
 }
 #success-pic,
 #error-pic {
@@ -165,6 +171,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 200px;
 }
 #success img,
 #error-pic img {
@@ -172,7 +179,14 @@ label {
 }
 #success button,
 #error-msg button {
-  margin-top: 400px;
+  margin-top: 100px;
+}
+#success-btn a {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 /*styling for pop up page on click of submit*/
@@ -225,7 +239,6 @@ p {
   align-items: center;
   flex-direction: column-reverse;
   text-align: center;
-  padding-top: 50px;
 }
 #error-msg h1 {
   font-weight: 700;
@@ -233,6 +246,7 @@ p {
   line-height: 62px;
   color: #44c2fd;
   margin-bottom: 10px;
+  margin-top: 30px;
 }
 span {
   color: #8d60ff;
@@ -253,7 +267,4 @@ span {
   font-weight: 700;
   border: none;
   font-size: 18px;
-}
-#error-msg {
-  max-height: 590px;
 }
