@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class CustomUserCreationForm(UserCreationForm):
-
+    
     class Meta(UserCreationForm.Meta):
         """
         Meta class to override the default UserCreationForm
@@ -16,8 +16,11 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ('email',)
 
+
 class CustomUserChangeForm(UserChangeForm):
 
-    class Meta:
+    class Meta(UserChangeForm.Meta):
         model = User
         fields = ('email',)
+
+
