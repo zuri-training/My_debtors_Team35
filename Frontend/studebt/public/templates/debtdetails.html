@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      text="text/css"
+      media="screen and (min-width:701px)"
+      href="destop.css"
+    />
+    <link
+      rel="stylesheet"
+      text="text/css"
+      media="screen and (max-width:700px)"
+      href="mobile.css"
+    />
+    <title>stuDEBT</title>
+  </head>
+  <body>
+    <div class="header">
+      <div id="back">
+        <a href="Adddebtors.html"><img src="back.jpg" alt="back" /></a>
+      </div>
+
+      <h6 id="name">Name of School</h6>
+    </div>
+    <!--Second card for the debt details-->
+    <h5 id="detail">Debt Details</h5>
+    <form action="" method="post">
+      <div id="debt-details">
+        <div>
+          <label for="Address">Purpose of Debts</label><br />
+          <input type="text" /><br />
+
+          <label for="Address">Amount</label><br />
+          <input type="text" /><br />
+
+          <!--Right side of the debt details card-->
+
+          <label for="Address">Session/Term Owing</label><br />
+          <input type="text" />
+        </div>
+      </div>
+      <div id="submit">
+        <button id="button" class="btn btn-pri">Submit</button>
+      </div>
+
+      <div id="modal">
+        <div class="modal-content">
+          <h3>Add Debtor</h3>
+          <p>Do you want to add John Brown as a debtor ?</p>
+          <button>Submit</button>
+          <button id="cancel">Cancel</button>
+        </div>
+      </div>
+    </form>
+    <script>
+      //Script to bring pop up page when submit button is clicked
+      document.getElementById("button").addEventListener("click", function () {
+        event.preventDefault();
+        document.querySelector("#modal").style.display = "flex";
+      });
+
+      //script to close the page with cancel button
+      document.querySelector("#cancel").addEventListener("click", function () {
+        event.preventDefault();
+        document.querySelector("#modal").style.display = "none";
+      });
+    </script>
+  </body>
+</html>
