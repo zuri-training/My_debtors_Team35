@@ -1,9 +1,8 @@
-from rest_framework import serializers
-from rest_framework.serializers import ModelSerializer
-from accounts.models import Student, School
-
+from accounts.models import School, Student
 from django.contrib.auth import get_user_model
 from django.db import transaction
+from rest_framework import serializers
+from rest_framework.serializers import ModelSerializer
 
 User = get_user_model()
 

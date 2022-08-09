@@ -1,16 +1,17 @@
 from multiprocessing import AuthenticationError
-from django.shortcuts import render
+
 from django.contrib.auth import get_user_model
-
+from django.shortcuts import render
+from rest_framework import generics, permissions, status
+from rest_framework.authentication import (SessionAuthentication,
+                                           TokenAuthentication)
 from rest_framework.authtoken.models import Token
-from rest_framework import status, permissions, generics
-from rest_framework.views import APIView
-from rest_framework.response import Response 
-from rest_framework.authentication import TokenAuthentication, SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-
-from .serializers import SchoolSignUpSerializer, UserSerializer, StudentSignUpSerializer
+from .serializers import (SchoolSignUpSerializer, StudentSignUpSerializer,
+                          UserSerializer)
 
 # Create your views here.
 User = get_user_model()
