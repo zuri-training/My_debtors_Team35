@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+edit{
+    position: absolute;
+    width: 398.68px;
+    height: 1000px;
+   
+    left:-30px;
+    top:20px;
+    background-color: white;
+    overflow: hidden;
+    align-items: center;
+}
+
+
+.header{
+    display: none;
+}
+.arrows{
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    margin-left: -10px;
+    top: 80px;
+}
+
+.arrow{
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    margin-left: -360px;
+    top: 80px;
+}
+
+.img{
+    position: absolute;
+    width: 122.67px;
+    left: 138px;
+    top: 147px;
+}
+
+.sec{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12.26px 20px ;
+gap: 30px;
+
+position: absolute;
+height: 60px;
+left: 120px;
+top: 70.54px;
+
+background-color: #b395ff;
+border-radius: 42px;
+}
+
+.seccs{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12.26px 20px ;
+        gap: 30px;
+        
+        position: absolute;
+        height: 60px;
+        left: 50px;
+        top: 70.54px;
+        
+        background-color: #b395ff;
+        border-radius: 42px;
+        
+        
+}
+
+
+.helpsupp{
+    width: 270px;
+}
+
+
+
+p{
+    display: none;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+ margin-top: 300px;
+ align-items: center;
+ height: 900px;
+}
+
+.dee{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding:17px  16px ;
+    gap: 10px;
+
+  
+    width:366px ;
+    height: 100px;
+   
+    
+    background-color: #E8dfff;
+    box-shadow: 0px 4px 8px rgba(232, 223, 255, 0.25);
+    border-radius: 10px;
+}
+h1{
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+
+    color: #4f4f4f;
+    
+}
+a{
+    text-decoration: none;
+}
+
+
+.save{
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    color: white;
+    background-color: #8d60ff;
+    border-radius: 8px;
+    left: 206px;
+    top: 500px;
+    border: none;
+}
+
+.saves{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    top: 850px;
+    left:100px;
+    height: 10px;
+    width: 200px;
+    background-color: black;
+    
+}
+
+
+.upload{
+    position: absolute;
+    
+    top: 190px;
+    left: 140px;
+}
+
+     /* uploaded image for profile */
+    
+     .profile-pic-div{
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid grey;
+        cursor: pointer;
+      }
+      #photo{
+        height: 100%;
+        width: 100%;
+      }
+      #file{
+        display:none ;
+      }
+      #uploadBtn{
+        height: 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 70%;
+        transform: translateX(-50%);
+        text-align: center;
+    
+        color: white;
+        line-height: 30px;
+        cursor: pointer;
+        display: none;
+      }
+      /* end of uploaded*/
+
+   .infos{
+       position: absolute;
+
+       left: 50px;
+       top: 300px;
+   }   
+   
+input[type=text], input[type=tel],input[type=email], input[type=number]{
+    width: 100%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+.sos,.opt, .hr ,.fas{
+    display: none;
+}
+
+a:link{
+    text-decoration: none;
+}
