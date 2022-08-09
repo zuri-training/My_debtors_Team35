@@ -1,6 +1,7 @@
 import Link from "next/link"
+import { useState } from "react"
 
-const Sidebar = ( {toggle, setToggle} ) => {
+const Sidebar = ( {toggle, setToggle, appeals, student, overview} ) => {
     
     return (
         <div className= {toggle ? 'side-bar-container toggle-ham' : 'side-bar-container'}>
@@ -12,20 +13,20 @@ const Sidebar = ( {toggle, setToggle} ) => {
                         Menu
                     </a>
                 </Link>
-                <Link href='/school/dashboard'>
-                    <a className="side-bar-menu-item">
+                <Link href='/school/dashboard' >
+                    <a className={overview ? "side-bar-menu-item selected-menu" : "side-bar-menu-item"}>
                         <img src="/images/Over-view.svg" />
                         Overview
                     </a>
                 </Link>
                 <Link href='/school/students'>
-                    <a className="side-bar-menu-item">
+                    <a className={student ? "side-bar-menu-item selected-menu" : "side-bar-menu-item"}>
                         <img src="/images/Profile.svg" />
                         Students
                     </a>
                 </Link>
                 <Link href='/school/appeals'>
-                    <a className="side-bar-menu-item">
+                    <a className={appeals ? "side-bar-menu-item selected-menu" : 'side-bar-menu-item'}>
                         <img src="/images/appeal.svg" />
                         Appeals
                     </a>

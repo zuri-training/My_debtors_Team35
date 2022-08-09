@@ -92,6 +92,11 @@
     color: var(--white);
 }
 
+.selected-menu {
+    background-color: var(--secondary-btn);
+    color: white;
+}
+
 .side-bar-menu-item:active {
     background-color: var(--secondary-btn);
     color: var(--white);
