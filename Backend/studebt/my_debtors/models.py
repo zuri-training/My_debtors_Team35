@@ -25,7 +25,7 @@ class Dispute(models.Model):
     # debtor_id = models.IntegerField() 
     # # This will be irrelevant since the disputer is the current user not necessarily the debtor
     dispute_author = models.ForeignKey(User, related_name="disputes")
-    dispute_content. = models.TextField()
+    dispute_content = models.TextField()
     date_created = models.DateField(auto_now_add=True)
     
 
