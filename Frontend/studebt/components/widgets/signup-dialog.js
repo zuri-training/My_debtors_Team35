@@ -13,7 +13,7 @@ function SignupDialog(props) {
                     <Card className="grid justify-content-center align-items-center"title="As a school" >
                     <img className="border-circle shadow-4 mb-4" src="/assets/images/school-popup-image.png" alt="stuDept" 
                         style={ { width: '200px' } } />
-                        <Link className="col-12" href="/school/signup">
+                        <Link className="col-12" href="/signup/school">
                             <Button label="Sign up" className="p-button-raised w-full py-4" />
                         </Link>
                     </Card>
@@ -23,7 +23,7 @@ function SignupDialog(props) {
                 <Card className="grid justify-content-center align-items-center"title="As a student" >
                     <img className="border-circle shadow-4 mb-4" src="/assets/images/student-popup-image.png" alt="stuDept" 
                         style={ { width: '200px' } } />
-                        <Link className="col-12" href="/student/signup">
+                        <Link className="col-12" href="/signup/student">
                             <Button label="Sign up" className="p-button-raised w-full py-4" />
                         </Link>
                     </Card>

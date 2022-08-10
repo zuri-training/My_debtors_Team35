@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  max-width: 1728px;
+  width: 100%;
+}
+
+:root {
+  /* colors */
+
+  /* state colors */
+
+  --info: #2f80ed;
+  --success: #27ae60;
+  --warning: #e2b93b;
+  --error: #eb5757;
+
+  /* Button color */
+
+  --primary-btn: #44c2fd;
+  --secondary-btn: #c6b0ff;
+  --btn-hover: #22617f;
+  --btn-active: #a1e0fe;
+  --btn-disable: #e0e0e0;
+
+  /* black colors */
+
+  --black1: #000000;
+  --black2: #1d1d1d;
+  --black3: #282828;
+  --white: #ffffff;
+
+  /* Grey colors */
+
+  --Gray1: #333333;
+  --grey2: #4f4f4f;
+  --grey3: #828282;
+  --grey4: #bdbdbd;
+  --grey5: #e0e0e0;
+}
+
+/* Typography */
+
+/* Heading Typography */
+
+h1 {
+  font-size: 56px;
+  line-height: 61.6px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 52.8px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 44px;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 35.2px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 26.4px;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+/* Body Typography */
+
+.lt-bold {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+.lt-regular {
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 400;
+}
+
+.mt-bold {
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 700;
+}
+.mt-regular {
+  font-size: 18px;
+  line-height: 25.2px;
+  font-weight: 400;
+}
+
+.nt-bold {
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 700;
+}
+.nt-regular {
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 400;
+}
+
+.st-bold {
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 700;
+}
+.st-regular {
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 400;
+}
+
+/* Textfields */
+
+/* Input fields */
+
+input {
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border: 1px solid var(--grey4);
+  border-radius: 4px;
+}
+
+input::placeholder {
+  font-size: 1em;
+  text-transform: capitalize;
+  color: var(--black2);
+  font-weight: 400;
+}
+
+input.success {
+  border: 1px solid var(--success);
+}
+
+input.warning {
+  border: 1px solid var(--warning);
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+/* Input field incomplete */
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 1em 5em;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 700;
+  border: none;
+  /* line-height: 22px; */
+}
+
+.btn-pri {
+  background-color: var(--primary-btn);
+}
+
+.btn-sec {
+  background-color: var(--secondary-btn);
+}
+
+/* Button Defaults */
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn:active {
+  background-color: var(--btn-hover);
+}
+
+.btn:disabled {
+  background-color: var(--btn-disable);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Card */
+
+.card {
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+}
+main {
+  display: flex;
+  position: absolute;
+  /* max-height: 100vh; */
+}
+.logodiv {
+  max-width: 603px;
+  width: 100%;
+  height: 1117px;
+  background-color: #b395ff;
+}
+.logodiv p {
+  margin: 0 70px auto 120px;
+}
+.logo-sec {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 64px 172px 32px 120px;
+  padding: 0px;
+  gap: 16px;
+  width: 311px;
+  height: 74px;
+}
+.logo-sec img {
+  width: 65px;
+  height: 74px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.whitecol {
+  color: var(--white);
+}
+form {
+  margin: 0px 245px 0px 145px;
+}
+.btn-lag {
+  width: 734px;
+  height: 68px;
+  background-color: #8d60ff;
+  margin-bottom: auto;
+}
+/* .btn-lag a {
+  text-decoration: none;
+  color: var(--white);
+} */
+.form {
+  max-width: 1125px;
+  width: 100%;
+  height: 1117px;
+}
+form div {
+  max-width: 733px;
+  width: 100%;
+  height: 95px;
+  margin-bottom: 40px;
+}
+form label {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 22.4px;
+  color: var(--black3);
+}
+form input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 0px;
+}
+.horule {
+  /* position: relative; */
+  margin: 0px auto 0px 145px;
+}
+hr {
+  display: inline-flex;
+  max-width: 232px;
+  width: 100%;
+  height: 5px;
+  background-color: var(--grey3);
+  border-radius: 3px;
+}
+.msg001 {
+  width: 93%;
+  height: 44px;
+  text-align: right;
+  margin-top: 88px;
+  margin-bottom: 27px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  color: var(--black3);
+}
+a {
+  cursor: pointer;
+}
+.form a {
+  text-decoration: none;
+  color: #473080;
+}
+.btn-lag a {
+  color: var(--white);
+}
+.head0 {
+  width: auto;
+  height: 66px;
+  font-style: normal;
+  font-weight: 700;
+  margin: 72px auto 40px 145px;
+}
+.one {
+  border: 5px;
+  background-color: #8d60ff;
+}
+.two {
+  margin: 0px 40px;
+}
+.welcomep {
+  margin: 32px auto 40px 145px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+}
+.fgtpswd {
+  float: right;
+  position: absolute;
+  top: 55%;
+  right: 245px;
+}
+/* Mobile Design */
+@media only screen and (max-width: 478px) {
+  /* body {
+    background-color: #f3d1d1;
+  } */
+  main {
+    min-width: 160px;
+    flex-direction: column;
+    width: 100%;
+    height: 926px;
+    /* border-left: 15px solid var(--white);
+    border-right: 15px solid var(--white); */
+  }
+  .logodiv {
+    width: 100%;
+    height: 319px;
+    /* margin-top: 47px; */
+    border-radius: 0 0 16px 16px;
+  }
+  .logodiv p {
+    max-width: 223px;
+    width: 100%;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    margin: auto 24.1% 119px 23.8%;
+  }
+  .logo-sec {
+    gap: 8.42px;
+    max-width: 166.6px;
+    width: 70%;
+    max-height: 38.92px;
+    height: 70%;
+    margin: 118px 20% 17px 30.4%;
+  }
+  .logo-sec img {
+    width: 34.19px;
+    height: 38.92px;
+    border-radius: 0px;
+  }
+  .whitecol,
+  .blackcol {
+    height: 33px;
+    max-width: 124px;
+    width: 100%;
+    border-radius: nullpx;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .form {
+    max-width: 396px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    position: relative;
+  }
+  .horule {
+    height: 0px;
+    width: 95%;
+    border-radius: 0px;
+    margin: 24px auto 24px 29px;
+  }
+  hr {
+    width: 26.8%;
+    /* width: 100%; */
+    border-radius: nullpx;
+    border: 3.51px var(--grey5);
+    /* margin: 0px 10px; */
+  }
+  .two {
+    margin: 0px 10px;
+  }
+  .msg001 {
+    text-align: center;
+    position: absolute;
+    top: 345px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+  }
+  .msg002 {
+    top: 300px;
+  }
+  .msg003 {
+    top: 450px;
+  }
+  .head0 {
+    width: 100%;
+    height: 26px;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0em;
+    margin: 24px 15px 24px 15px;
+    padding: 24px 0px;
+  }
+  form {
+    margin: 0px auto 32px 15px;
+    position: relative;
+  }
+  form div {
+    max-width: 396px;
+    width: 100%;
+    height: 51.25px;
+    margin-bottom: 16px;
+  }
+  /* input:active {
+    border-color: var(--info);
+  } */
+  form input {
+    width: 100%;
+    margin-bottom: 0px;
+    height: 29.68px;
+    border-radius: 2.2px;
+    border: 0.54px solid var(--grey3);
+    /* background-color: #f3d1d1; */
+  }
+  .btn-lag {
+    height: 37.58px;
+    max-width: 396px;
+    width: 100%;
+    border-radius: 4.32px;
+    margin-top: 24px;
+  }
+  form label {
+    height: 13px;
+    width: auto;
+    border-radius: nullpx;
+    /* font-family: Manrope; */
+    font-size: 13px;
+    /* font-weight: 700; */
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--grey2);
+  }
+  .welcomep {
+    height: 20px;
+    width: auto;
+    margin: 16px auto 24px 15px;
+    /* padding: 16px 0 24px 0; */
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .ltwht {
+    color: var(--white);
+  }
+  .fgtpswd {
+    height: 15px;
+    width: auto;
+    right: 0px;
+    top: 126px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+  }
+}

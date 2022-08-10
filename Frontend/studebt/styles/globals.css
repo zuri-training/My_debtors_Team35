@@ -51,6 +51,10 @@ footer .pi{
 
 
 /* END FAQ */
+
+.auth-sidebar{
+    background: #b395ff
+}
 .container {
     position: relative;
     max-width: 1728px;
