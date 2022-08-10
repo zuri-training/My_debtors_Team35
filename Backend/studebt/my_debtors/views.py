@@ -17,8 +17,8 @@ class CommentListAPI(GenericAPIView):
     serializer_class = CommentSerializer
 
     def get(self, *args, **kwargs):
-        data = Comment.objects.all().values()
-        return Response(data)
+        data = Comment.objects.filter(dispute_id=kwargs.get("dispute_id")).values()
+        return Response(data)#, status=status.HTTP_201_CREATED)
     
     
 class CommentCreateAPI(CreateModelMixin, GenericAPIView):
