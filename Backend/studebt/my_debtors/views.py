@@ -1,8 +1,7 @@
-from django.core import serializers
 from my_debtors.models import Comment, Dispute
-from my_debtors.serializers import (CommentCreateSerializer, CommentSerializer,
-                                    DisputeCreateSerializer, DisputeSerializer)
-from rest_framework.generics import CreateAPIView, GenericAPIView, ListAPIView
+from my_debtors.serializers import CommentSerializer, DisputeSerializer
+from rest_framework.generics import GenericAPIView
+from rest_framework.mixins import CreateModelMixin
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -19,16 +18,17 @@ class CommentListAPI(GenericAPIView):
 
     def get(self, *args, **kwargs):
         data = Comment.objects.all().values()
-        return Response(data)#, status=status.HTTP_201_CREATED)
+        return Response(data)
     
     
-class CommentCreateAPI(GenericAPIView):
+class CommentCreateAPI(CreateModelMixin, GenericAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = CommentSerializer
     # queryset = Comment.objects.all()
     
-    def post(self, *args, **kwargs):
-        pass
+    def post(self, request, *args, **kwargs):
+        return self.create(request, args, kwargs)
+
 
 
 class DisputeListAPI(GenericAPIView):
@@ -41,10 +41,9 @@ class DisputeListAPI(GenericAPIView):
         return Response(data)
     
 
-class DisputeCreateAPI(GenericAPIView):
+class DisputeCreateAPI(CreateModelMixin, GenericAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = DisputeSerializer
-    # queryset = Dispute.objects.all()
     
-    def post(self, request, **kwargs):
-        pass
+    def post(self, request, *args, **kwargs):
+        return self.create(request, args, kwargs)
