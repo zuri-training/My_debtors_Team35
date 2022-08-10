@@ -18,7 +18,7 @@ function School(props) {
         });
         result = await result.Json();
         localStorage.setItem("user-info", JSON.stringify(result))
-        history.pushState('school/dashboard');
+        history.pushState('/school/dashboard');
     }
     return (
         <main className="gencont">
