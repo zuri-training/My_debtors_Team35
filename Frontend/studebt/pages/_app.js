@@ -7,9 +7,9 @@ import "../styles/theme.css"; //theme css
 import "../styles/globals.css";
 import "../styles/utilities.css";
 import "../styles/DialogDemo.css";
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+// import { config } from '@fortawesome/fontawesome-svg-core'
+// import '@fortawesome/fontawesome-svg-core/styles.css'
+// config.autoAddCss = false
 
 import ErrorBoundary from "../components/errorboundary";
 
