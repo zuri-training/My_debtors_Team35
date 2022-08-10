@@ -24,15 +24,15 @@ class DebtorsPosting(models.Model):
 class Dispute(models.Model):
     # debtor_id = models.IntegerField() 
     # # This will be irrelevant since the disputer is the current user not necessarily the debtor
-    dispute_author = models.ForeignKey(User, related_name="disputes")
+    dispute_author = models.ForeignKey(User, on_delete=models.CASCADE)
     dispute_content = models.TextField()
     date_created = models.DateField(auto_now_add=True)
     
 
 class Comment(models.Model):
     # dispute_id = models.IntegerField()  
-    comment_author = models.ForeignKey(User, related_name="comments")
-    dispute = models.ForeignKey(Dispute, related_name="comments")   
+    comment_author = models.ForeignKey(User, on_delete=models.CASCADE)
+    dispute = models.ForeignKey(Dispute, on_delete=models.CASCADE, related_name="comments")   
     # # So that comments can only be made under disputes, not as stand-alone posts.
     comment_content = models.TextField()
     date_created = models.DateField(auto_now_add=True)
