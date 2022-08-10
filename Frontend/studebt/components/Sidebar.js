@@ -8,26 +8,26 @@ const Sidebar = ( {toggle, setToggle, appeals, student, overview} ) => {
             
             <div className="side-bar top">
                 <Link href='' >
-                    <a className="side-bar-menu-item first-item sidebar-menu" onClick={()=> setToggle(!setToggle)}>
+                    <a className="side-bar-menu-item first-item sidebar-menu" onClick={()=> setToggle(!setToggle)} onMouseOver={(e)=>{e.target.style.backgroundColor = 'transparent'; e.target.style.color = "var(--secondary-btn)"}}>
                     <img src="/images/Menu-icon.svg" alt=""  />
                         Menu
                     </a>
                 </Link>
                 <Link href='/school/dashboard' >
                     <a className={overview ? "side-bar-menu-item selected-menu" : "side-bar-menu-item"}>
-                        <img src="/images/Over-view.svg" />
+                        <img src={overview ? "/images/Over-view.svg" : "/images/overview-dark.svg"} />
                         Overview
                     </a>
                 </Link>
                 <Link href='/school/students'>
                     <a className={student ? "side-bar-menu-item selected-menu" : "side-bar-menu-item"}>
-                        <img src="/images/Profile.svg" />
+                        <img src={student ? "/images/student-light.svg" : "/images/Profile.svg" }/>
                         Students
                     </a>
                 </Link>
                 <Link href='/school/appeals'>
                     <a className={appeals ? "side-bar-menu-item selected-menu" : 'side-bar-menu-item'}>
-                        <img src="/images/appeal.svg" />
+                        <img src={appeals ? "/images/appeals-light.svg" : "/images/appeal.svg"} />
                         Appeals
                     </a>
                 </Link>
