@@ -1,5 +1,38 @@
+import { useState, useEffect } from 'react';
+import { register } from './../../services/authService';
 
 function School(props) {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [password2, setPassword2] = useState('')
+    const [propietor, setPropietor] = useState('')
+    const [phone, setPhone] = useState('')
+    const [cac, setCac] = useState('')
+    const [is_school, setIsSchool] = useState(true)
+    const [is_student , setIsStudent] = useState(false)
+    const [profile, setProfile] = useState({})
+    
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const data = {
+            name,
+            email,
+            password,
+            password2,
+            propietor,
+            phone,
+            cac,
+            profile,
+            is_school: true,
+            is_student: false
+        }
+        await register(data)
+        props.history.push('/login')
+    }
+
     return (
         <main className="gencont">
             <div className="logodiv">
@@ -21,21 +54,57 @@ function School(props) {
                     <hr className="Three" />
                 </div>
                 <h2 className="head0">Sign up as a partner</h2>
-                <form action="#">
+                <form 
+                    onSubmit={handleSubmit}
+                >
+                    {/* hiidden is_school */}
+                    <input type="hidden" name="is_school" value="1" />
                     <div>
                         <label htmlFor="nschool">Name of School</label><br />
-                        <input type="text" id="nschool" name="nschool" required />
+                        <input
+                            onChange={(e) => setName(e.target.value)}
+                            type="text" id="nschool" name="nschool" required />
                     </div>
                     <div>
                         <label htmlFor="semail">School Email Adress</label><br />
-                        <input type="email" id="nschool" name="nschool" required />
+                        <input
+                        onChange={(e) => setEmail(e.target.value)}
+                         type="email" id="nschool" name="nschool" required />
                     </div>
                     <div>
                         <label htmlFor="npropietor">Name of Propietor</label><br />
-                        <input type="text" id="npropietor" name="npropietor" required />
+                        <input
+                        onChange={(e) => setPropietor(e.target.value)}
+                         type="text" id="npropietor" name="npropietor" required />
                     </div>
-                    <button className="btn btn-sec btn-lag">
-                        <a href="school_sign_up_2.html">Next</a>
+                    <div>
+                        <label for="phonen">Phone Number</label><br />
+                        <input 
+                        onChange={(e) => setPhone(e.target.value)}
+                        type="number" id="phonen" name="phonen" required />
+                    </div>
+                    <div>
+                        <label for="paswd">Password</label><br />
+                        <input 
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password" id="paswd" name="paswd" required />
+                    </div>
+
+                    <div>
+                        <label for="paswd2">Confirm Password</label><br />
+                        <input
+                        onChange={(e) => setPassword2(e.target.value)}
+                        type="password" id="paswd2" name="paswd2" required />
+                    </div>
+
+                    <div>
+                        <label for="cac">School C.A.C Number</label><br />
+                        <input 
+                        onChange={(e) => setCac(e.target.value)}
+                        type="number" id="cac" name="cac" required />
+                    </div>
+                    <button type="submit" className="btn btn-sec btn-lag">
+                        Register
                     </button>
                 </form>
             </div>

@@ -1,4 +1,4 @@
-import fetch from '../lib/fetch';
+// import fetch from '../lib/fetch';
 
 export const login = (username, password) => {
     return fetch('/api/auth/login', {
@@ -25,16 +25,23 @@ export const login = (username, password) => {
 
 }
 
-export const register = (email, password, c_password) => {
-    return fetch('/api/auth/register', {
+export const register = (name, email,
+    password,
+    password2,
+    profile,
+    propietor,
+    phone,
+    cac,
+    is_school
+    ) => {
+    return fetch('https://studebt.herokuapp.com/api/auth/users/register/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({
-            email,
-            password,
-            c_password
+            name, email, password, password2, profile, propietor, phone, cac, is_school
         })
     }).then(response => {
         document.cookie = `token=${response.data.token}`;
