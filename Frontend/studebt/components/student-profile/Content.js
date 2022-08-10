@@ -1,8 +1,37 @@
 import { Button } from "primereact/button";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
+import { FileUpload } from "primereact/fileupload";
+import { Toast } from "primereact/toast";
+
+export const Upload = () => {
+  const toast = useRef(null);
+  const onBasicUploadAuto = () => {
+    toast.current.show({
+      severity: "info",
+      summary: "Success",
+      detail: "File Uploaded with Auto Mode",
+    });
+  };
+
+  return (
+    <div>
+      <Toast ref={toast}></Toast>
+      <FileUpload
+        mode="basic"
+        name="demo[]"
+        url="https://primefaces.org/primereact/showcase/upload.php"
+        accept="image/*"
+        maxFileSize={1000000}
+        onUpload={onBasicUploadAuto}
+        auto
+        chooseLabel="Browse"
+      />
+    </div>
+  );
+};
 
 const CommentInput = () => {
   const [value, setValue] = useState("");
@@ -58,7 +87,7 @@ const DialogDemo = () => {
         />
         <Button
           label="Submit"
-          className="submit-btn p-button-info"
+          className="pri-btn"
           onClick={() => onHide(name)}
           autoFocus
         />
@@ -70,7 +99,7 @@ const DialogDemo = () => {
     <div className="dialog-demo">
       <Button
         label="Contend"
-        className="p-button-lg p-button-info"
+        className="p-button-lg pri-btn"
         onClick={() => onClick("displayResponsive")}
       />
       <Dialog
@@ -90,11 +119,12 @@ const DialogDemo = () => {
             <div className="flex justify-content-between m-auto border-solid border-400">
               <p className="my-auto ml-2">Choose file</p>
               <div className="surface-300 w-auto">
-                <Button
+                {/* <Button
                   label="Browse"
                   icon="pi pi-plus"
                   className="p-button-text"
-                />
+                /> */}
+                <Upload />
               </div>
             </div>
           </div>

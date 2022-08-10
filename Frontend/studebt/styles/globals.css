@@ -16,15 +16,12 @@
     color: #7C7C7C;
 }
 
+.dark-gray {
+    color: #4F4F4F;
+    ;
+}
+
 /* =================NAVBAR */
-nav .p-avatar {
-    border-radius: 50%;
-}
-
-nav .p-avatar-icon {
-    color: white;
-}
-
 nav .p-inputtext::placeholder {
     font-family: 'Manrope';
     font-style: normal;
@@ -49,9 +46,15 @@ nav .p-input-icon-left>i:first-of-type {
     color: #C6B0FF;
 }
 
-nav .pi-bars {
+nav .pi-bars,
+nav .p-button .p-button-label {
     color: #7650D4;
-    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    nav .p-button .p-button-label {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 960px) {
@@ -224,6 +227,7 @@ nav .pi-bars {
 
 .main-hero .subheading,
 .main-content .subheading,
+.subheading,
 .main-hero .heading {
     color: #8D60FF;
 }
@@ -241,10 +245,6 @@ nav .pi-bars {
 }
 
 /* CONTENT */
-.p-button.submit-btn {
-    background: #44C2FD;
-}
-
 .p-button-text .p-button-label {
     color: rgba(19, 15, 38, 0.7);
 }
@@ -286,22 +286,37 @@ nav .pi-bars {
     text-align: center;
 }
 
+.p-dialog .p-button.p-fileupload-choose {
+    border-radius: 0;
+}
+
+.p-dialog .p-button.p-fileupload-choose,
+.p-dialog .p-button.pri-btn {
+    background: #A07AFF;
+}
+
+.p-dialog .p-button.p-fileupload-choose:hover,
+.p-dialog .p-button.pri-btn:hover {
+    background: #ac8ef8;
+}
+
 .main-content hr {
     border: 1px solid #E0E0E0;
     height: 0;
 }
 
 .main-content .p-button.p-button-lg {
-    background: #44C2FD;
     padding: 10px 20px;
     border-radius: 10px;
 }
 
-.main-content .p-button.cc-btn {
+.main-content .p-button.cc-btn,
+.pri-btn {
     background: #A07AFF;
 }
 
-.main-content .p-button.cc-btn:hover {
+.main-content .p-button.cc-btn:hover,
+.p-button.pri-btn:hover {
     background: #ac8ef8;
 }
 
@@ -357,4 +372,9 @@ nav .pi-bars {
     font-size: 12px;
     line-height: 33px;
     text-transform: unset;
+}
+
+/* NOTIFICATION PAGE */
+.bg-lpurple {
+    background: #FBFAFF;
 }
