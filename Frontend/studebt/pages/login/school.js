@@ -5,10 +5,11 @@ function School(props) {
     const [password, setPassword] = useState("");
 
 
-    const login = async () => {
+    async function login() {
+        e.preventDefault()
         console.log(schoolId, password)
         let item = {schoolId, password}
-        let result = await fetch("https://",{
+        let result = await fetch("https://studebt.herokuapp.com/api/users/login/",{
             method: "POST",
             headers:{
                 "Content-Type": "application/json",
@@ -18,7 +19,7 @@ function School(props) {
         });
         result = await result.Json();
         localStorage.setItem("user-info", JSON.stringify(result))
-        history.pushState('/school/dashboard');
+        history.pushState('http://localhost:3000/school/dashboard');
     }
     return (
         <main className="gencont">
@@ -38,7 +39,7 @@ function School(props) {
                 </p>
                 <h2 className="head0">Log in to stuDebt</h2>
                 <p className="welcomep">Welcome back!</p>
-                <form action="#">
+                <form onSubmit={login}>
                     <div>
                         <label htmlFor="sid">School ID</label><br />
                         <input 
@@ -64,7 +65,7 @@ function School(props) {
                         >
                     </div>
                     <button type="submit" className="btn btn-sec btn-lag" value="log in" 
-                        onClick={login}
+                        
                         >
                         Log in
                     </button>
