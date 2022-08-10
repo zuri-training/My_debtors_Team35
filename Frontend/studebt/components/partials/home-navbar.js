@@ -4,11 +4,12 @@ import { Button } from 'primereact/button'
 import { Image } from 'primereact/image'
 
 function HomeNavbar(props) {
+    const { loginDialogVisible, signupDialogVisible, setLoginDialogVisible, setSignupDialogVisible } = props    
+
     const items = [
         {
             label: 'Home',
             url: '/'
-
         },
         {
             label: 'Circular',
@@ -24,13 +25,24 @@ function HomeNavbar(props) {
         },
         // login button
         {
-            label: <Button label="Log In" className="p-button-primary p-button-raised" />,
+            label: <Button 
+            onClick={(e) => {
+                e.preventDefault()
+                setLoginDialogVisible(!loginDialogVisible)
+            } }     
+            label="Log In" className="p-button-primary p-button-raised" />,
             url: '/login'
 
         },
         // register button
         {
-            label: <Button label="Sign up" className="p-button-outlined" />,
+            label: <Button 
+            onClick={(e) => {
+                e.preventDefault()
+                setSignupDialogVisible(!signupDialogVisible)
+            } }
+            
+            label="Sign up" className="p-button-outlined" />,
             url: '/register'
         }
 

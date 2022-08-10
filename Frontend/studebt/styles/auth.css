@@ -10,7 +10,7 @@
 
 body {
   font-family: "Manrope", sans-serif;
-  max-width: 1728px;
+  /* max-width: 1728px; */
   width: 100%;
 }
 
@@ -27,7 +27,7 @@ body {
   /* Button color */
 
   --primary-btn: #44c2fd;
-  --secondary-btn: #c6b0ff;
+  --secondary-btn: #7650D4;
   --btn-hover: #22617f;
   --btn-active: #a1e0fe;
   --btn-disable: #e0e0e0;

@@ -12,8 +12,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 
+<<<<<<< HEAD
 from decouple import config
 
+=======
+>>>>>>> 17dbaf706554c17cf16037400de64b721874d09d
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'accounts',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
+
+    'accounts',
+    'my_debtors',
     
 ]
 SIMPLE_JWT = {
