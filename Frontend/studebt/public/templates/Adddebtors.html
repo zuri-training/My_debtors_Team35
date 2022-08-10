@@ -25,140 +25,111 @@
       <h6 id="name">Name of School</h6>
     </div>
 
+    <h2>ADD DEBTORS</h2>
+
     <!--Form starts Hear-->
-    <div class="main-form">
-      <h2>ADD DEBTORS</h2>
+    <div id="entire-form">
+      <h5>Student's Information</h5>
+      <form id="input-section">
+        <div id="text">
+          <div>
+            <label for="first name">First Name</label><br />
+            <input type="text" required /><br />
 
-      <!--Form to add debtors to the database-->
-      <form action="" method="post">
-        <!--flex box containing form-->
-        <div id="flexbox">
-          <!--First form card for student information-->
-          <div class="content1">
-            <h5>Student's Information</h5>
+            <label for="last name">Last Name</label><br />
+            <input type="text" required /><br />
 
-            <div class="inner-content1">
-              <div>
-                <label for="first name">First Name</label><br />
-                <input type="text" /><br />
+            <label for="Email">Email</label><br />
+            <input type="email" required /><br />
 
-                <label for="last name">Last Name</label><br />
-                <input type="text" /><br />
-
-                <label for="Email">Email</label><br />
-                <input type="email" /><br />
-
-                <label for="Address">Address</label><br />
-                <input type="text" />
-              </div>
-
-              <!--Right side of the student infromation card-->
-              <div class="shift">
-                <label for="first name">Enter BCN Number</label><br />
-                <input type="number" /><br />
-
-                <label for="last name">Enter NIN Number</label><br />
-                <input type="number" /><br />
-
-                <label for="Email">Class</label><br />
-                <input type="text" /><br />
-
-                <!--Drop Down for the list  of states-->
-                <label for="Address">State</label><br />
-                <select name="states" id="states">
-                  <option value="Abia">Abia</option>
-                  <option value="Adamawa">Adamawa</option>
-                  <option value="Akwa-Ibom">Akwa-Ibom</option>
-                  <option value="Anambra">Anambra</option>
-                  <option value="Bauchi">Bauchi</option>
-                  <option value="Bayelsa">Bayelsa</option>
-                  <option value="Benue">Benue</option>
-                  <option value="Borno">Borno</option>
-                  <option value="Cross River">Cross River</option>
-                  <option value="Delta">Delta</option>
-                  <option value="Ebonyi">Ebonyi</option>
-                  <option value="Edo">Edo</option>
-                  <option value="Ekiti">Ekiti</option>
-                  <option value="Enugu">Enugu</option>
-                  <option value="FCT">Federal Capital Territory</option>
-                  <option value="Gombe">Gombe</option>
-                  <option value="Imo">Imo</option>
-                  <option value="Jigawa">Jigawa</option>
-                  <option value="Kaduna">Kaduna</option>
-                  <option value="Kebbi">Kebbi</option>
-                  <option value="Kogi">Kogi</option>
-                  <option value="Kwara">Kwara</option>
-                  <option value="Lagos">Lagos</option>
-                  <option value="Nasarawa">Nasarawa</option>
-                  <option value="Niger">Niger</option>
-                  <option value="Ogun">Ogun</option>
-                  <option value="Ondo">Ondo</option>
-                  <option value="Osun">Osun</option>
-                  <option value="Oyo">Oyo</option>
-                  <option value="Plateau">Plateau</option>
-                  <option value="Rivers">Rivers</option>
-                  <option value="Sokoto">Sokoto</option>
-                  <option value="Taraba">Taraba</option>
-                  <option value="Yobe">Yobe</option>
-                  <option value="Zamfara">Zamfara</option>
-                </select>
-              </div>
-            </div>
+            <label for="Address">Address</label><br />
+            <input type="text" required />
           </div>
+          <div class="shift">
+            <label for="first name">Enter BCN Number</label><br />
+            <input type="text" required /><br />
 
-          <!--Second card for the debt details-->
-          <div class="content2">
-            <h5>Debt Details</h5>
+            <label for="last name">Enter NIN Number</label><br />
+            <input type="text" required /><br />
 
-            <div class="inner-content2">
-              <div>
-                <label for="Address">Purpose of Debts</label><br />
-                <input type="text" /><br />
+            <label for="Email">Class</label><br />
+            <input type="text" required /><br />
 
-                <label for="Address">Amount</label><br />
-                <input type="text" /><br />
-              </div>
-
-              <!--Right side of the debt details card-->
-              <div class="shift">
-                <label for="Address">Session/Term Owing</label><br />
-                <input type="text" />
-              </div>
-            </div>
+            <!--Drop Down for the list  of states-->
+            <label for="Address">State</label><br />
+            <select name="states" id="states" required>
+              <option value="Abia">Abia</option>
+              <option value="Adamawa">Adamawa</option>
+              <option value="Akwa-Ibom">Akwa-Ibom</option>
+              <option value="Anambra">Anambra</option>
+              <option value="Bauchi">Bauchi</option>
+              <option value="Bayelsa">Bayelsa</option>
+              <option value="Benue">Benue</option>
+              <option value="Borno">Borno</option>
+              <option value="Cross River">Cross River</option>
+              <option value="Delta">Delta</option>
+              <option value="Ebonyi">Ebonyi</option>
+              <option value="Edo">Edo</option>
+              <option value="Ekiti">Ekiti</option>
+              <option value="Enugu">Enugu</option>
+              <option value="FCT">Federal Capital Territory</option>
+              <option value="Gombe">Gombe</option>
+              <option value="Imo">Imo</option>
+              <option value="Jigawa">Jigawa</option>
+              <option value="Kaduna">Kaduna</option>
+              <option value="Kebbi">Kebbi</option>
+              <option value="Kogi">Kogi</option>
+              <option value="Kwara">Kwara</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Nasarawa">Nasarawa</option>
+              <option value="Niger">Niger</option>
+              <option value="Ogun">Ogun</option>
+              <option value="Ondo">Ondo</option>
+              <option value="Osun">Osun</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Rivers">Rivers</option>
+              <option value="Sokoto">Sokoto</option>
+              <option value="Taraba">Taraba</option>
+              <option value="Yobe">Yobe</option>
+              <option value="Zamfara">Zamfara</option>
+            </select>
           </div>
         </div>
 
-        <div id="flexbox2">
-          <div id="innerflex2">
-            <!--Image uploader-->
-            <div class="content3">
-              <input type="file" id="file" style="display: none" /><br />
-              <label for="file" id="upload">
-                <img src="profile.jpg" id="photo" alt="profile" /><br />
-                Upload Debtors Passport</label
-              >
-            </div>
+        <div id="image-section">
+          <div class="content3">
+            <input type="file" id="file" style="display: none" /><br />
+            <label for="file" id="upload">
+              <img src="profile.jpg" id="photo" alt="profile" /><br />
+              Upload Debtors Passport</label
+            >
+          </div>
 
-            <!--Submit button-->
-            <div class="content4">
-              <button id="button" class="btn btn-pri">
-                <a href="#">Submit</a>
-              </button>
-            </div>
+          <!--button to go to next page-->
+          <div class="content4">
+            <a href="debtdetails.html"><img src="" alt="next page" /></a>
           </div>
         </div>
       </form>
     </div>
-    <div id="modal">
-      <div class="modal-content">
-        <h3>Add Debtor</h3>
-        <p>Do you want to add John Brown as a debtor ?</p>
-        <button>Submit</button>
-        <button id="cancel">Cancel</button>
-      </div>
-    </div>
-    
-    <script src="script.js"></script>
-    
+    <script>
+      //script to upload image for the submit form
+      const img = document.querySelector("#photo");
+      const file = document.querySelector("#file");
+      file.addEventListener("change", function () {
+        const choosedFile = this.files[0];
+
+        if (choosedFile) {
+          const reader = new FileReader();
+
+          reader.addEventListener("load", function () {
+            img.setAttribute("src", reader.result);
+          });
+
+          reader.readAsDataURL(choosedFile);
+        }
+      });
+    </script>    
   </body>
 </html>
