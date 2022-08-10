@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { register } from './../../services/authService';
+import { useRouter } from 'next/router'
+import  NProgress from 'nprogress'
 
 function School(props) {
 
@@ -14,9 +16,11 @@ function School(props) {
     const [is_student , setIsStudent] = useState(false)
     const [profile, setProfile] = useState({})
     
+    const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        NProgress.start();
         const data = {
             name,
             email,
@@ -29,8 +33,14 @@ function School(props) {
             is_school: true,
             is_student: false
         }
-        await register(data)
-        props.history.push('/login')
+       await register(data).then(response => {
+            console.log(response)
+        }).catch(error => {
+                alert(error)
+        }).finally(() => {
+            router.push('/login/school')
+            NProgress.done();
+        } )
     }
 
     return (

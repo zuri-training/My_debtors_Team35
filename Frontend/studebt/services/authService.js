@@ -1,21 +1,18 @@
 // import fetch from '../lib/fetch';
 
-export const login = (username, password) => {
-    return fetch('/api/auth/login', {
+export const login = (data) => {
+    return fetch('https://studebt.herokuapp.com/api/token', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            email,
-            password
-        })
+        body: JSON.stringify(data)
     }).then(response => {
-        document.cookie = `token=${response.data.token}`;
-        return response.data;
+        document.cookie = `token=${response.token}`;
+        return response;
     }).catch(error => {
         if (error.response) {
-            console.log(error.response.data);
+            console.log(error);
         } else if (error.request) {
             console.log(error.request);
         } else {
@@ -25,30 +22,20 @@ export const login = (username, password) => {
 
 }
 
-export const register = (name, email,
-    password,
-    password2,
-    profile,
-    propietor,
-    phone,
-    cac,
-    is_school
-    ) => {
-    return fetch('https://studebt.herokuapp.com/api/auth/users/register/', {
+export const register = (data) => {
+    return fetch('https://studebt.herokuapp.com/api/auth/users/register-school/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         credentials: 'include',
-        body: JSON.stringify({
-            name, email, password, password2, profile, propietor, phone, cac, is_school
-        })
+        body: JSON.stringify(data)
     }).then(response => {
-        document.cookie = `token=${response.data.token}`;
-        return response.data;
+        document.cookie = `token=${response.token}`;
+        return response;
     }).catch(error => {
         if (error.response) {
-            console.log(error.response.data);
+            console.log(error.response);
         } else if (error.request) {
             console.log(error.request);
         } else {
