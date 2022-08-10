@@ -37,7 +37,7 @@ function School(props) {
                     <h1 className="whitecol">stuDEBT</h1>
                 </div>
                 <p className="lt-regular ltwht">
-                    Login using your school ID to update your debtor's record and also
+                    Login using your school ID to update your debtor&#39;s record and also
                     search for debtors
                 </p>
             </div>

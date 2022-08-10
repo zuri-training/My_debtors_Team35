@@ -51,7 +51,7 @@ function School(props) {
                     <h1 className="whitecol">stuDEBT</h1>
                 </div>
                 <p className="lt-regular">
-                    Sign up with the registered school's name and propietor's name
+                    Sign up with the registered school&#39;s name and propietor&#39;s name
                 </p>
             </div>
             <div className="form">
@@ -88,27 +88,27 @@ function School(props) {
                          type="text" id="npropietor" name="npropietor" required />
                     </div>
                     <div>
-                        <label for="phonen">Phone Number</label><br />
+                        <label  htmlFor="phonen">Phone Number</label><br />
                         <input 
                         onChange={(e) => setPhone(e.target.value)}
                         type="number" id="phonen" name="phonen" required />
                     </div>
                     <div>
-                        <label for="paswd">Password</label><br />
+                        <label  htmlFor="paswd">Password</label><br />
                         <input 
                         onChange={(e) => setPassword(e.target.value)}
                         type="password" id="paswd" name="paswd" required />
                     </div>
 
                     <div>
-                        <label for="paswd2">Confirm Password</label><br />
+                        <label  htmlFor="paswd2">Confirm Password</label><br />
                         <input
                         onChange={(e) => setPassword2(e.target.value)}
                         type="password" id="paswd2" name="paswd2" required />
                     </div>
 
                     <div>
-                        <label for="cac">School C.A.C Number</label><br />
+                        <label  htmlFor="cac">School C.A.C Number</label><br />
                         <input 
                         onChange={(e) => setCac(e.target.value)}
                         type="number" id="cac" name="cac" required />
