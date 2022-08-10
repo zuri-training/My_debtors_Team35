@@ -1,21 +1,18 @@
-import fetch from '../lib/fetch';
+// import fetch from '../lib/fetch';
 
-export const login = (username, password) => {
-    return fetch('/api/auth/login', {
+export const login = (data) => {
+    return fetch('https://studebt.herokuapp.com/api/token', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            email,
-            password
-        })
+        body: JSON.stringify(data)
     }).then(response => {
-        document.cookie = `token=${response.data.token}`;
-        return response.data;
+        document.cookie = `token=${response.token}`;
+        return response;
     }).catch(error => {
         if (error.response) {
-            console.log(error.response.data);
+            console.log(error);
         } else if (error.request) {
             console.log(error.request);
         } else {
@@ -25,23 +22,20 @@ export const login = (username, password) => {
 
 }
 
-export const register = (email, password, c_password) => {
-    return fetch('/api/auth/register', {
+export const register = (data) => {
+    return fetch('https://studebt.herokuapp.com/api/auth/users/register-school/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            email,
-            password,
-            c_password
-        })
+        credentials: 'include',
+        body: JSON.stringify(data)
     }).then(response => {
-        document.cookie = `token=${response.data.token}`;
-        return response.data;
+        document.cookie = `token=${response.token}`;
+        return response;
     }).catch(error => {
         if (error.response) {
-            console.log(error.response.data);
+            console.log(error.response);
         } else if (error.request) {
             console.log(error.request);
         } else {
