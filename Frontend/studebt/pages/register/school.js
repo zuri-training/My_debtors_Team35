@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { register } from './../../services/authService';
 import { useRouter } from 'next/router'
 import  NProgress from 'nprogress'
+import Link from 'next/link'
 
 function School(props) {
 
@@ -56,7 +57,7 @@ function School(props) {
             </div>
             <div className="form">
                 <p className="msg001">
-                    Already a partner? <a href="school_login.html"> Log in</a>
+                    Already a partner? <Link href="/login/school"><a> Log in</a></Link>
                 </p>
                 <div className="horule">
                     <hr className="one" />
@@ -123,3 +124,36 @@ function School(props) {
 }
 
 export default School;
+
+export const getServerSideProps = ({ req, res }) => {
+    const cookies = req.headers.cookie;
+    let is_authenticated = false;
+
+    if (cookies) {
+        const parsedCookies = cookies.split(';').map(cookie => cookie.split('='));
+        const parsedCookiesObj = {};
+        parsedCookies.forEach(cookie => {
+            parsedCookiesObj[cookie[0].trim()] = cookie[1];
+        }
+        );
+        if (parsedCookiesObj.token) {
+            is_authenticated = true;
+        }
+    }
+
+    if (is_authenticated) {
+        return {
+          redirect: {
+            destination: '/school/dashboard',
+            permanent: false,
+          },
+        }
+      }
+
+    return {
+        props: {
+            is_authenticated
+        }
+    }
+
+}

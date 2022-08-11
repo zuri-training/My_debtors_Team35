@@ -20,3 +20,29 @@ export default function Dashboard ( props ) {
         </div>
     );
 }
+
+export const getServerSideProps = ({ req, res }) => {
+    let is_authenticated = false;
+    // get token from local storage
+
+    const token = localStorage.getItem('token');
+    if (token) {
+        is_authenticated = true;
+    }
+
+    if (!is_authenticated) {
+        return {
+          redirect: {
+            destination: '/login/school',
+            permanent: false,
+          },
+        }
+      }
+
+    return {
+        props: {
+            is_authenticated
+        }
+    }
+
+}

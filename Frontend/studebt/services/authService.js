@@ -1,4 +1,3 @@
-// import fetch from '../lib/fetch';
 
 export const login = (data) => {
     return fetch('https://studebt.herokuapp.com/api/token', {
@@ -8,8 +7,7 @@ export const login = (data) => {
         },
         body: JSON.stringify(data)
     }).then(response => {
-        document.cookie = `token=${response.token}`;
-        return response;
+        return response.json();
     }).catch(error => {
         if (error.response) {
             console.log(error);
@@ -23,7 +21,13 @@ export const login = (data) => {
 }
 
 export const register = (data) => {
-    return fetch('https://studebt.herokuapp.com/api/auth/users/register-school/', {
+    let url = "";
+    if (data.is_school) {
+        url = "https://studebt.herokuapp.com/api/auth/users/register-school/";
+    } else if (data.is_student) {
+        url = "https://studebt.herokuapp.com/api/auth/users/register-student/";
+    }
+    return fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -31,7 +35,8 @@ export const register = (data) => {
         credentials: 'include',
         body: JSON.stringify(data)
     }).then(response => {
-        document.cookie = `token=${response.token}`;
+        response = response.json();
+        document.cookie = `token=${response.access}`;
         return response;
     }).catch(error => {
         if (error.response) {
@@ -46,16 +51,35 @@ export const register = (data) => {
 
 
 export const logout = () => {
-    return fetch('/api/auth/logout', {
+    const cookies = document.cookie;
+    const token = "";
+
+    if (cookies) {
+        const parsedCookies = cookies.split(';').map(cookie => cookie.split('='));
+        const parsedCookiesObj = {};
+        parsedCookies.forEach(cookie => {
+            parsedCookiesObj[cookie[0].trim()] = cookie[1];
+        });
+
+        if (parsedCookiesObj.token) {
+            token = parsedCookiesObj.token;
+        }
+      
+    }
+
+    return fetch('https://studebt.herokuapp.com/api/auth/users/logout/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
-        }
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+            refresh_token: token
+        })
+
     }).then(response => {
-        document.cookie = `token=`;
-        document.cookie = `user=`;
-        document.cookie = `authenticated=false`;
-        return response.data;
+        return response.json();
     }).catch(error => {
         if (error.response) {
             console.log(error.response.data);

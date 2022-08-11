@@ -1,4 +1,48 @@
+import { useState, useEffect } from 'react';
+import { register } from './../../services/authService';
+import { useRouter } from 'next/router'
+import  NProgress from 'nprogress'
+import Link from 'next/link';
+
 function Student(props) {
+
+    const [first_name, setFirstName] = useState('');
+    const [last_name, setLastName] = useState('');
+    const [nin, setNin] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [password2, setPassword2] = useState('')
+    const [phone, setPhone] = useState('')
+    const [profile, setProfile] = useState({})
+
+    const router = useRouter()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        NProgress.start();
+        const data = {
+            first_name,
+            last_name,
+            nin,
+            email,
+            password,
+            password2,
+            profile,
+            phone,
+            is_school: false,
+            is_student: true
+        }
+        await register(data).then(response => {
+            console.log(response)
+        }).catch(error => {
+                alert(error)
+        }).finally(() => {
+            router.push('/login/student')
+            NProgress.done();
+        } )
+    }
+        
+
     return (
         <main className="gencont">
             <div className="logodiv">
@@ -13,31 +57,55 @@ function Student(props) {
             </div>
             <div className="form">
                 <p className="msg001 msg003">
-                    Already a student? <a href="student_login.html"> Log in</a>
+                    Already a student? <Link href="/login/student"><a> Log in</a></Link>
                 </p>
                 <h2 className="head0">Sign up as a student</h2>
-                <form action="#">
+                <form 
+                onSubmit={ handleSubmit }
+                action="#">
                     <div>
                         <label htmlFor="nstdnt">Name of Student</label><br />
-                        <input type="text" id="nstdnt" name="nstdnt" required />
+                        <input 
+                        onChange={(e) => setFirstName(e.target.value)}
+                        type="text" id="nstdnt" name="nstdnt" required />
+                    </div>
+                    <div>
+                        <label htmlFor="lstdnt">Last Name</label><br />
+                        <input
+                        onChange={(e) => setLastName(e.target.value)}
+                        type="text" id="lstdnt" name="lstdnt" required />
                     </div>
                     <div>
                         <label htmlFor="stdnin">NIN</label><br />
-                        <input type="number" id="stdnin" name="stdnin" required />
+                        <input 
+                        onChange={(e) => setNin(e.target.value)}
+                        type="number" id="stdnin" name="stdnin" required />
                     </div>
                     <div>
                         <label htmlFor="stdemail">Email Adress</label><br />
-                        <input type="email" id="stdemail" name="stdemail" required />
+                        <input 
+                        onChange={(e) => setEmail(e.target.value)}
+                        type="email" id="stdemail" name="stdemail" required />
                     </div>
                     <div>
                         <label htmlFor="stnphon">Phone Number</label><br />
-                        <input type="number" id="stnphon" name="stnphon" />
+                        <input 
+                        onChange={(e) => setPhone(e.target.value)}
+                        type="number" id="stnphon" name="stnphon" />
                     </div>
                     <div>
                         <label htmlFor="sstdpaswd">Password</label><br />
-                        <input type="password" id="sstdpaswd" name="sstdpaswd" required />
+                        <input 
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password" id="sstdpaswd" name="sstdpaswd" required />
                     </div>
-                    <button className="btn btn-sec btn-lag">Sign Up</button>
+                    <div>
+                        <label htmlFor="sstdpaswd2">Confirm Password</label><br />
+                        <input
+                        onChange={(e) => setPassword2(e.target.value)}
+                        type="password" id="sstdpaswd2" name="sstdpaswd2" required />
+                    </div>
+                    <button type="submit" className="btn btn-sec btn-lag">Sign Up</button>
                 </form>
             </div>
         </main>
@@ -45,3 +113,36 @@ function Student(props) {
 }
 
 export default Student;
+
+export const getServerSideProps = ({ req, res }) => {
+    const cookies = req.headers.cookie;
+    let is_authenticated = false;
+
+    if (cookies) {
+        const parsedCookies = cookies.split(';').map(cookie => cookie.split('='));
+        const parsedCookiesObj = {};
+        parsedCookies.forEach(cookie => {
+            parsedCookiesObj[cookie[0].trim()] = cookie[1];
+        }
+        );
+        if (parsedCookiesObj.token) {
+            is_authenticated = true;
+        }
+    }
+
+    if (is_authenticated) {
+        return {
+          redirect: {
+            destination: '/student',
+            permanent: false,
+          },
+        }
+      }
+
+    return {
+        props: {
+            is_authenticated
+        }
+    }
+
+}
