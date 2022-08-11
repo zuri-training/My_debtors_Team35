@@ -3,13 +3,26 @@ import PageLayout from '../../components/page-layout'
 import Sidebar from '../../components/Sidebar';
 import SchoolTopBar from '../../components/SchoolTopBar';
 import SchoolMain from '../../components/SchoolMain';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import { addDebtor } from './../../services/debtorsService';
+import { getDebtors } from './../../services/debtorsService';
 
 
 export default function Dashboard ( props ) {
     const [toggle, setToggle] = useState(false);
     const overview = true
+
+    const [debtors, setDebtors] = useState([]);
+
+    useEffect(() => {
+        getDebtors().then(data => {
+            setDebtors(data);
+            console.log(data)
+        }).catch(error => {
+            console.log(error)
+        });
+    } , []);
 
     return (
         <div className='school-dashboard-layout'>
