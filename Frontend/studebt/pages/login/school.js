@@ -3,6 +3,7 @@ import { login } from './../../services/authService';
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import Link from 'next/link'
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 function School(props) {
     const [email, setEmail] = useState("");
@@ -20,8 +21,7 @@ function School(props) {
         }
         await login(data).then(response => {
             if (response.access) {
-                // store token local storage
-                localStorage.setItem('token', response.access);
+                setCookie('token', response.access, { path: '/' });
                 router.push('/school/dashboard')
             }
         }).catch(error => {
@@ -59,6 +59,7 @@ function School(props) {
                             type="text"
                             id="sid"
                             name="sid"
+                            value={email}
                             required
                             onChange={(e) => { setEmail(e.target.value) }} />
                     </div>
@@ -68,6 +69,7 @@ function School(props) {
                             type="password"
                             id="password"
                             name="password"
+                            value={password}
                             required
                             onChange={(e) => { setPassword(e.target.value) }}
                         />
@@ -90,33 +92,27 @@ export default School;
 
 
 export const getServerSideProps = ({ req, res }) => {
-    const cookies = req.headers.cookie;
-    let is_authenticated = false;
 
-    if (cookies) {
-        const parsedCookies = cookies.split(';').map(cookie => cookie.split('='));
-        const parsedCookiesObj = {};
-        parsedCookies.forEach(cookie => {
-            parsedCookiesObj[cookie[0].trim()] = cookie[1];
-        });
-        if (parsedCookiesObj.token) {
-            is_authenticated = true;
-        }
-    }
+let is_authenticated = false;
+let token = getCookie('token', { req, res });
 
-    if (is_authenticated) {
-        return {
-            redirect: {
-                destination: '/school/dashboard',
-                permanent: false,
-            },
-        }
-    }
+if (token) {
+    is_authenticated = true;
+}
 
+if (is_authenticated) {
     return {
-        props: {
-            is_authenticated
-        }
+        redirect: {
+            destination: '/school/dashboard',
+            permanent: false,
+        },
     }
+}
+
+return {
+    props: {
+        is_authenticated
+    }
+}
 
 }

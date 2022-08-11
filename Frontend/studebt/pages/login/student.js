@@ -3,6 +3,7 @@ import { login } from './../../services/authService';
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import Link from 'next/link';
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 function Student(props) {
 
@@ -22,8 +23,8 @@ function Student(props) {
         }
         await login(data).then(response => {
             if (response.access) {
-                localStorage.setItem('token', response.access);
-                router.push('/student');
+                setCookie('token', response.access, { path: '/' });
+                router.push('/student/dashboard');
             }
         }).catch(error => {
             alert(error)
@@ -87,34 +88,28 @@ function Student(props) {
 export default Student;
 
 export const getServerSideProps = ({ req, res }) => {
-    const cookies = req.headers.cookie;
-    let is_authenticated = false;
 
-    if (cookies) {
-        const parsedCookies = cookies.split(';').map(cookie => cookie.split('='));
-        const parsedCookiesObj = {};
-        parsedCookies.forEach(cookie => {
-            parsedCookiesObj[cookie[0].trim()] = cookie[1];
-        });
-        if (parsedCookiesObj.token) {
-            is_authenticated = true;
-        }
-    }
+let is_authenticated = false;
+let token = getCookie('token', { req, res });
 
-    if (is_authenticated) {
-        return {
-          redirect: {
-            destination: '/student',
-            permanent: false,
-          },
-        }
-      }
+if (token) {
+    is_authenticated = true;
+}
 
+if (is_authenticated) {
     return {
-        props: {
-            is_authenticated
-        }
+        redirect: {
+            destination: '/student/dashboard',
+            permanent: false,
+        },
     }
+}
+
+return {
+    props: {
+        is_authenticated
+    }
+}
 
 }
 

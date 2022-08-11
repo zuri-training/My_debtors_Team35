@@ -3,6 +3,7 @@ import { useState } from "react"
 import { logout } from "../services/authService"
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
+import { deleteCookie } from 'cookies-next';
 
 
 const Sidebar = ({ toggle, setToggle, appeals, student, overview }) => {
@@ -18,7 +19,9 @@ const Sidebar = ({ toggle, setToggle, appeals, student, overview }) => {
             alert(error)
 
         }).finally(() => {
-            router.push('/school/dashboard')
+            // delete cookie
+            deleteCookie('token');
+            router.push('/');
             NProgress.done();
 
         })
@@ -75,3 +78,4 @@ const Sidebar = ({ toggle, setToggle, appeals, student, overview }) => {
 }
 
 export default Sidebar
+

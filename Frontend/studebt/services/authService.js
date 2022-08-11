@@ -1,4 +1,5 @@
 
+
 export const login = (data) => {
     return fetch('https://studebt.herokuapp.com/api/token', {
         method: 'POST',
@@ -64,7 +65,7 @@ export const logout = () => {
         if (parsedCookiesObj.token) {
             token = parsedCookiesObj.token;
         }
-      
+
     }
 
     return fetch('https://studebt.herokuapp.com/api/auth/users/logout/', {
@@ -79,6 +80,7 @@ export const logout = () => {
         })
 
     }).then(response => {
+        deleteCookie('token');
         return response.json();
     }).catch(error => {
         if (error.response) {
