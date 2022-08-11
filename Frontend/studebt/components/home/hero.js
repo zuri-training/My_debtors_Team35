@@ -3,6 +3,9 @@ import { Button } from 'primereact/button'
 
 
 function Hero(props) {
+
+    const { loginDialogVisible, signupDialogVisible, setLoginDialogVisible, setSignupDialogVisible } = props 
+
     return (
 
         <div className="grid grid-nogutter surface-0 text-800 px-4 md:px-8 py-4">
@@ -13,9 +16,9 @@ function Hero(props) {
                         Payments.</div>
                     <p className="mt-0 mb-4 text-700 line-height-3">Get notified when you
                         have a pending student that needs to be cleared.</p>
-                    <Link href="/sign-up">
-                        <Button label="Sign up" type="button" className="p-button-raised p-button-primary mb-6" />
-                    </Link>
+                        <Button
+                        onClick={() => setSignupDialogVisible(!signupDialogVisible)}
+                         label="Sign up" type="button" className="p-button-raised p-button-primary mb-6" />
                 </section>
             </div>
             <div className="col-12 md:col-6 p-image">

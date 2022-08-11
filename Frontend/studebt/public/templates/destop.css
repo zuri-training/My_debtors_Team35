@@ -42,13 +42,6 @@ body {
 }
 
 /*styling for add debtor form*/
-/*header h4 {
-  font-size: 32px;
-  line-height: 35.2px;
-  font-weight: 700;
-  margin: 5px;
-  margin-left: -5px;
-}*/
 .header {
   margin-top: 10px;
   display: flex;
@@ -68,37 +61,22 @@ body {
   text-decoration: none;
 }
 h2 {
-  font-size: 48px;
-  line-height: 52.8px;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 62px;
   text-align: center;
   padding-top: 7px;
-  padding-bottom: 7px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   color: #8d60ff;
 }
-#flexbox {
-  display: flex;
-  flex-direction: column;
-  width: 1000px;
-}
-.content1 {
-  margin-left: 30px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding-left: 20px;
-  padding-bottom: 7px;
-}
-.inner-content1,
-.inner-content2,
-form {
-  display: flex;
-}
-.content2 {
-  margin-left: 30px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding-left: 20px;
-  padding-bottom: 7px;
+h5 {
+  font-weight: 700;
+  font-size: 40px;
+  padding-bottom: 40px;
+  line-height: 44px;
+  color: #8d60ff;
+  margin-left: 40px;
 }
 #upload {
   color: #7650d4;
@@ -106,51 +84,6 @@ form {
   font-size: 18px;
   line-height: 25px;
   cursor: pointer;
-}
-h5 {
-  font-size: 24px;
-  line-height: 26.4px;
-  color: #8d60ff;
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
-.shift {
-  padding-left: 50px;
-}
-input {
-  height: 45px;
-  padding: 1rem 2rem;
-  font-size: 1em;
-  border: 1px solid var(--grey4);
-  border-radius: 4px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 440px;
-}
-#flexbox2 {
-  margin-left: 50px;
-}
-.btn-pri {
-  background-color: #8d60ff;
-}
-.btn {
-  display: inline-block;
-  padding: 1em 5em;
-  border-radius: 10px;
-  color: var(--white);
-  font-weight: 700;
-  border: none;
-  line-height: 22px;
-}
-.btn a {
-  text-decoration: none;
-  color: #ffffff;
-}
-label {
-  color: var(--grey2);
-  font-size: 16px;
-  line-height: 22.4px;
-  font-weight: 700;
 }
 select {
   height: 45px;
@@ -162,21 +95,124 @@ select {
   margin-bottom: 5px;
   width: 440px;
 }
-#innerflex2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#innerflex2 button {
-  margin-top: 300px;
-}
 #photo {
   border-radius: 10px;
   max-width: 200px;
   border: 1px solid #8d60ff;
 }
+#input-section {
+  display: flex;
+}
+#text {
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 20px;
+  padding-bottom: 7px;
+}
+#image-section {
+  margin-left: 50px;
+}
+.shift {
+  padding-left: 50px;
+  padding-right: 20px;
+}
+input {
+  height: 45px;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border: 1px solid var(--grey4);
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  width: 440px;
+}
+label {
+  color: var(--grey2);
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 700;
+}
+/*Styles for debt details page*/
+#debt-details {
+  width: 950px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+#detail {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+h5 {
+  font-weight: 700;
+  font-size: 40px;
+  padding-bottom: 40px;
+  line-height: 44px;
+  color: #8d60ff;
+  margin-left: 40px;
+}
+.header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 35px;
+}
+.header h6 {
+  font-size: 20px;
+  line-height: 22px;
+  color: #8d60ff;
+}
+input {
+  height: 45px;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border: 1px solid var(--grey4);
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  width: 440px;
+}
+label {
+  color: var(--grey2);
+  font-size: 16px;
+  line-height: 22.4px;
+  font-weight: 700;
+}
+.btn {
+  display: inline-block;
+  padding: 1em 5em;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 700;
+  border: none;
+}
+.btn-pri {
+  background-color: #8d60ff;
+}
+#submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
 
 /*styling for success page*/
+header h4 {
+  font-size: 32px;
+  line-height: 35.2px;
+  font-weight: 700;
+  margin: 5px;
+  margin-left: -5px;
+}
 header {
   display: flex;
   padding-left: 50px;
@@ -202,9 +238,10 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#success img{
+#success img {
   width: 200px;
 }
+
 /*styling for pop up page on click of submit*/
 #modal {
   width: 100%;

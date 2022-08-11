@@ -315,9 +315,15 @@
     grid-gap: 10px;
     padding: 15px 40px;
     margin: 10px 0px;
+    cursor: pointer;
     background-color: var(--appeal-bg);
     box-shadow: 0px 0px 2px 1px var(--grey5);
     border-radius: 10px;
+    transition: 0.2s;
+}
+
+.appeal-main-top-appeal:hover {
+    transform: scale(1.01);
 }
 
 .appeal-main-top-appeal-debt-status {

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const SchoolMenuStudentsMain = () => {
@@ -28,14 +29,22 @@ const SchoolMenuStudentsMain = () => {
                     Students
                 </div>
                 <div className="school-main-right-debtors-edit" >
-                    <div className="school-main-rights-debtors-edit-update-debt">
-                        <img src="/images/Plus.png" alt="" />
-                        <div className="">Update Debt</div>
-                    </div>
-                    <div className="school-main-rights-debtors-edit-add-debt">
-                        <img src="/images/Plus.png" alt="" />
-                        <div className="">Add Debt</div>
-                    </div>
+                    <Link href='/public/templates/Adddebtors.html'>
+                        <a>
+                            <div className="school-main-rights-debtors-edit-update-debt">
+                                <img src="/images/Plus.png" alt="" />
+                                <div className="">Update Debt</div>
+                            </div>
+                        </a>
+                    </Link>
+                    <Link href='/public/templates/Adddebtors.html'>
+                        <a>
+                            <div className="school-main-rights-debtors-edit-add-debt">
+                                <img src="/images/Plus.png" alt="" />
+                                <div className="">Add Debt</div>
+                            </div>
+                        </a>
+                    </Link>
                 </div>
             </div>
             <div className="school-menu-students-main-top-students-table">
