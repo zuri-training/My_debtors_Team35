@@ -2,23 +2,25 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.authentication import TokenAuthentication
+from rest_framework.response import responses
+from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import permissions
 from rest_framework import status 
 
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import CreateModelMixin
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework import filters
 
 from .models import Comment, Dispute, DebtorsPosting, GlobalStudent
 from .serializers import CommentSerializer, DisputeSerializer, DebtorsPostingSerializer
-from accounts.permissions import IsOwnerOrReadOnly, IsStudentUser, IsSchoolUser
+from accounts.permissions import IsStudentUser, IsSchoolUser
 
 class DebtorsPostingCreateView(APIView):
     serializer_class = DebtorsPostingSerializer
-    # permission_classes = [IsAuthenticated, IsSchoolUser]
+    permission_classes = [IsAuthenticated&IsSchoolUser]
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
@@ -31,6 +33,7 @@ class DebtorsPostingCreateView(APIView):
 
 class DebtorsPostingDetailView(APIView):
     serializer_class = DebtorsPostingSerializer
+    permission_classes = [IsAuthenticated&IsSchoolUser]
     
     def get_object(self, pk):
         try:
@@ -57,13 +60,13 @@ class DebtorsPostingDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class DebtorsPostingListView(APIView):
+class DebtorsPostingListView(generics.ListAPIView):
     serializer_class = DebtorsPostingSerializer
-    
-    def get(self, request, *args, **kwargs):
-        debtors_posting = DebtorsPosting.objects.all()
-        serializer = self.serializer_class(debtors_posting, many=True) #
-        return Response(serializer.data)
+    permission_classes = [IsAuthenticated&IsSchoolUser]
+
+    search_fields = ['student_fullname', 'student_government_id', 'school_name', 'school_government_id']
+    filter_backends = [filters.SearchFilter]
+    queryset = DebtorsPosting.objects.all()   
 
 class CommentListAPI(GenericAPIView):
     permission_classes = (IsAuthenticated,)

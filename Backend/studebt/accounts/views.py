@@ -6,12 +6,11 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework import status, permissions, generics
 from rest_framework.views import APIView
-from rest_framework.response import Response 
-from rest_framework.authentication import TokenAuthentication, SessionAuthentication
+from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from .permissions import IsOwnerOrReadOnly, IsStudentUser, IsSchoolUser
-from .serializers import SchoolSignUpSerializer, UserSerializer, StudentSignUpSerializer, StudentProfileSerializer, SchoolProfileSerializer
+from .permissions import IsStudentUser, IsSchoolUser
+from .serializers import SchoolSerializer, UserSerializer, StudentSerializer, StudentProfileSerializer, SchoolProfileSerializer
 
 from django.conf import settings
 from .models import Student, School
@@ -20,7 +19,7 @@ User = get_user_model()
 
 class StudentRegisterView(generics.GenericAPIView):
     permission_classes = [permissions.AllowAny,] 
-    serializer_class = StudentSignUpSerializer
+    serializer_class = StudentSerializer
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -39,7 +38,7 @@ class StudentRegisterView(generics.GenericAPIView):
 
 class SchoolRegisterView(generics.GenericAPIView):
     permission_classes = [permissions.AllowAny,] 
-    serializer_class = SchoolSignUpSerializer
+    serializer_class = SchoolSerializer
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -82,39 +81,63 @@ class LogOutView(APIView):
 # Dashboard for the student.
 class StudentOnlyView(APIView):
     permission_classes = [permissions.IsAuthenticated&IsStudentUser]
-    serializer_class = UserSerializer
+    serializer_class = StudentSerializer
 
     def get(self, request, *args, **kwargs):
         user = request.user
-        serializer = self.serializer_class(user)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        student_profile = Student.objects.filter(user=user).first()
+
+        profile_serializer = StudentProfileSerializer(student_profile)
+        serializer = UserSerializer(user)
+        return Response({"user": serializer.data,
+                        "profile": profile_serializer.data},
+                        status=status.HTTP_200_OK)
 
     def put(self, request, *args, **kwargs):
         user = request.user
-        serializer = self.serializer_class(user, data=request.data, partial=True)
-        if serializer.is_valid():
+        student_profile = Student.objects.filter(user=user).first()
+
+        profile_serializer = StudentProfileSerializer(student_profile)
+        serializer = UserSerializer(user, data=request.data)
+
+        if serializer.is_valid() and profile_serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response({
+                "user": serializer.data,
+                "profile": profile_serializer.data}, status=status.HTTP_200_OK)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # Dashboard for the school.
 class SchoolOnlyView(APIView):
     permission_classes = [permissions.IsAuthenticated&IsSchoolUser]
-    serializer_class = UserSerializer
-    serializer_class_school = SchoolProfileSerializer
+    serializer_class = SchoolSerializer
 
     def get(self, request, *args, **kwargs):
         user = request.user
-        serializer = self.serializer_class(user)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        school_profile = School.objects.filter(user=user).first()
+
+        profile_serializer = SchoolProfileSerializer(school_profile)
+        serializer = UserSerializer(user)
+        if profile_serializer.data and serializer.data:
+            return Response({
+                "user": serializer.data,
+                "school_profile": profile_serializer.data}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, *args, **kwargs):
         user = request.user
+
+        profile_serializer = SchoolProfileSerializer(user.profile, data=request.data, partial=True)
         serializer = self.serializer_class(user, data=request.data, partial=True)
-        if serializer.is_valid():
+
+        if serializer.is_valid() and profile_serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response({
+                "user": serializer.data,
+                "profile": profile_serializer.data}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

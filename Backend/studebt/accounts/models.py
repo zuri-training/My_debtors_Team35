@@ -30,6 +30,7 @@ class CustomUser(AbstractUser):
     class Meta:
         ordering = ['email']
         verbose_name = 'user'
+        verbose_name_plural = 'users'
 
     def __str__(self):
         return self.email
@@ -44,6 +45,7 @@ class School(models.Model):
     address = models.CharField(max_length=120, blank=True, null=True) 
     government_id = models.CharField(max_length=120, unique=True, blank=True, null=True) 
     date_created = models.DateField(auto_now_add=True)
+    date_updated = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.school_name
@@ -58,6 +60,7 @@ class Student(models.Model):
     contact = models.CharField(max_length=120, blank=True, null=True) 
     address = models.CharField(max_length=120, blank=True, null=True) 
     date_created = models.DateField(auto_now_add=True)
+    date_updated = models.DateField(auto_now=True)
 
     def get_full_name(self):
         return '{} {}'.format(self.user.first_name, self.user.last_name)
