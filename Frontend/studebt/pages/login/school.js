@@ -1,25 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
+import { login } from './../../services/authService';
+import { useRouter } from 'next/router'
+import  NProgress from 'nprogress'
 
 function School(props) {
-    const [schoolId, setSchoolId] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const router = useRouter();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        NProgress.start();
+        const data = {
+            email,
+            password,
+        }
+        await login(data).then(response => {
+            console.log(response)
+        }).catch(error => {
+                alert(error)
 
-    const login = async () => {
-        console.log(schoolId, password)
-        let item = {schoolId, password}
-        let result = await fetch("https://",{
-            method: "POST",
-            headers:{
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body:JSON.stringify(item)
-        });
-        result = await result.Json();
-        localStorage.setItem("user-info", JSON.stringify(result))
-        history.pushState('school/dashboard');
+        }).finally(() => {
+
+            router.push('/school/dashboard')
+            NProgress.done();
+        } )
     }
+
+
     return (
         <main className="gencont">
             <div className="logodiv">
@@ -28,7 +36,7 @@ function School(props) {
                     <h1 className="whitecol">stuDEBT</h1>
                 </div>
                 <p className="lt-regular ltwht">
-                    Login using your school ID to update your debtor's record and also
+                    Login using your school ID to update your debtor&#39;s record and also
                     search for debtors
                 </p>
             </div>
@@ -38,15 +46,17 @@ function School(props) {
                 </p>
                 <h2 className="head0">Log in to stuDebt</h2>
                 <p className="welcomep">Welcome back!</p>
-                <form action="#">
+                <form 
+                onSubmit={handleSubmit}
+                action="#">
                     <div>
-                        <label htmlFor="sid">School ID</label><br />
+                        <label htmlFor="sid">School Email</label><br />
                         <input 
                             type="text" 
                             id="sid" 
                             name="sid" 
                             required 
-                            onChange={(e)=>{setSchoolId(e.target.value)}}/>
+                            onChange={(e)=>{setEmail(e.target.value)}}/>
                     </div>
                     <div>
                         <label htmlFor="password">Password</label><br />
@@ -63,9 +73,7 @@ function School(props) {
                         >Forgot Password?</a
                         >
                     </div>
-                    <button type="submit" className="btn btn-sec btn-lag" value="log in" 
-                        onClick={login}
-                        >
+                    <button type="submit" className="btn btn-sec btn-lag"  >
                         Log in
                     </button>
                 </form>
