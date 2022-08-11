@@ -1,0 +1,548 @@
+
+.upheader{
+    display: flex;
+    justify-content: left;
+}
+.pro{
+    display: flex;
+    justify-content: space-between;
+}
+.hh2{
+position: absolute;
+width: 119px;
+height: 41px;
+left: 381px;
+top: 48px;
+}
+.fal{
+    position: absolute;
+    top: 30px;
+    left: 1500px;
+    border: none;
+    background-color: white;
+    
+
+}
+.img{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+
+    
+    left: 1589px;
+    top: 30px;
+    background: url();
+}
+.h4{
+    position: absolute;
+    text-align: end;
+    width: 700px;
+    height: 33px;
+    left: 750px;
+    top: 47px;
+    
+}
+
+
+
+.header{
+    position: absolute;
+height: 1117px;
+width: 270px;
+left: 0px;
+top: 0px;
+background-color: #ffff;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+text-align: center;
+font-size: 28px;
+}
+
+
+
+
+.profile{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 40px;
+
+position: absolute;
+height: 122px;
+left: 59px;
+top: 181px;
+
+}
+
+span{
+    margin: 30px;
+    text-align:justify;
+}
+
+
+.bar{
+    font-family: Manrope;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 41px;
+color: #4F4F4F;
+
+}
+
+.button{
+position: absolute;
+width: 220px;
+height: 64px;
+left: 20px;
+top: 914px;
+border-radius: 50px;
+background-color: #a07aff;
+border: none;
+
+}
+.logout{
+position: absolute;
+height: 33px;
+left: 59px;
+top: 1000px;
+
+
+font-family: Manrope;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 33px;
+}
+
+
+
+
+.fa-user,.fa-edit,.student, .appeal,.logout {
+color: #5e5e5e;
+}
+
+.fa-bars,.menu{
+color: #a07aff;
+}
+
+.settings,.fa-cog{
+color:white;
+}
+
+
+.fas{
+float: right;
+font-size: 22px;
+background-color: white;
+}
+
+.bar{
+text-decoration: none;
+color: #4F4F4F;
+}
+/*end of menu box*/
+.options{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+position: absolute;
+width: 300px;
+height: 132px;
+left: 342px;
+top: 140px;
+
+
+font-size: 20px;
+font-weight: 400;
+color: #4F4F4F;
+}
+.bas{
+    font-family: Manrope;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 33px;
+color: #7650d5;
+}
+
+.details{
+    position: absolute;
+    display: flex;
+    width: 116px;
+    height: 55px;
+    left: 748px;
+    top: 138px;
+    gap: 20px;
+
+}
+.det{
+    font-family: Manrope;
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 33px;
+
+    border: 1px solid #b395ff;
+    background-color: #ffff;
+    color: #8D60ff;
+}
+.det:hover{
+    background-color: #e8dfff;
+}
+
+.nortifications{
+     position: absolute;
+    box-sizing: border-box;
+    align-items: left;
+    width: 900px;
+    height: 860px;
+    left: 748px;
+    top: 209px;
+
+    border: 1px solid #D9CAFF;
+    border-radius: 7px;
+}
+
+.schoolEdit{
+    position: absolute;
+    width: 900px;
+    height: 160px;
+    left: 748px;
+    top: 209px;
+
+    border: 1px solid #c6b0ff;
+    bottom: 7px;
+}
+.imglogo{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 20px;
+    top: 20px;
+}
+
+.schlinfo{
+    position: absolute;
+    left: 200px;
+       
+}
+.h2{
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height:26px;
+    color: #130f26;
+}
+
+.ba{
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height:22px;
+    color: #4f4f4f;
+}
+
+
+.infoedit{
+    position: absolute;
+    display: flex;
+    width: 900px;
+    height: 160px;
+    top: 70px;
+    gap: 100px;
+}
+
+.informations{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 900px;
+    height: 690px;
+    left: 748px;
+    top: 401px;
+
+    border: 1px solid #D9CAFF;
+    border-radius: 7px;
+}
+
+
+
+
+.form{
+    margin-top: 100px;
+    margin-left:50px;
+}
+
+.group{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    
+
+    height: 100px;
+
+    }
+    #group{
+        background-color: #f0eaff;
+    }
+   
+    input{
+    position: absolute;
+    width: 461px;
+    height: 60px;
+    left: 200px;
+
+    border: 1px solid #7650d5;
+    border-radius: 5px;
+    }
+
+     /* the green check-box */
+     .round {
+        position: absolute;
+        left: 670px;
+        margin-top: 20px;
+        
+
+      
+      }
+      
+      .round label {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 28px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 28px;
+      }
+      
+      .round label:after {
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        content: "";
+        height: 6px;
+        left: 7px;
+        opacity: 0;
+        position: absolute;
+        top: 8px;
+        transform: rotate(-45deg);
+        width: 12px;
+      }
+      
+      .round input[type="checkbox"] {
+        visibility: hidden;
+      }
+      
+      .round input[type="checkbox"]:checked + label {
+        background-color: #66bb6a;
+        border-color: #66bb6a;
+      }
+      
+      .round input[type="checkbox"]:checked + label:after {
+        opacity: 1;
+      }
+      
+     
+
+    
+
+    /* end of checkbox */ 
+
+    .savecancel{
+        position: absolute;
+        display: flex;
+        
+        gap: 350px;
+
+    }
+    .savbtn, .cleabtn{
+        width: 160px;
+        height: 60px;
+        border-radius: 10px;
+    }
+    .savbtn{
+        background-color: #8D60ff;
+        color: white;
+    }
+    .cleabtn{
+        border: 1px solid #eb5757;
+        color: #eb5757;
+    }
+    
+    a:link{
+        text-decoration: none;
+    }
+
+
+
+    /* nortification page */
+
+.insidebox{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 50px;
+    left: 100px;
+}
+
+
+
+/* opening and close down bar */
+
+.moile-container {
+    max-width: 480px;
+    margin: auto;
+    
+    color:black;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+    gap: 20px;
+    margin-top: 20px;
+    
+  
+    width: 800px;
+    left: -150px;
+    top: 50px;
+
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    left: 740px;
+
+  }
+
+
+
+.lis{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+margin-top: 40px;
+gap: 30px;
+
+}
+
+.spac{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 380px;
+}
+
+
+#p{
+    width: 140px;
+    height: 20px;
+    font-style: 14px;
+    line-height: 20px;
+    color: #333333;
+}
+.fas{
+    font-size: 24px;
+}
+/* end of opening and close nav bar */  
+
+/* toggle button for nortification */
+
+input[type="checkbox" ]{
+    position: relative;
+    width:48px;
+    height: 12px;
+    appearance:none ;
+    background: #e0e0e0;
+    outline: none;
+   
+    transition: .5s;
+
+
+}
+
+
+input:checked[type="checkbox"]{
+    background: #e8dfff;
+}
+
+input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 40px;
+    top:-7px;
+    left: -10px;
+    background: #828282;
+}
+
+
+input:checked[type="checkbox"]::before{
+    left: 25px;
+    background: #8d60ff;
+    transition: 0.5s;
+}
+
+/* end of toggle button */
+
+.savecancel2{
+    position: absolute;
+    display: flex;
+    
+    gap: 450px;
+    top: 700px;
+    left: 50px;
+
+}
+
+ 
+
+    
+
+/*school settings apperance*/
+
+hr{
+ display: none;
+    }
+    
+
+
+

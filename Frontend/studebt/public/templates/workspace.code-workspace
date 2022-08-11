@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\.."
+		},
+		{
+			"name": "My_debtors_Team35",
+			"path": "..\\..\\..\\.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "team35"
+	}
+}
