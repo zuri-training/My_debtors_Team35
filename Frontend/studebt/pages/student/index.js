@@ -3,6 +3,7 @@ import PageLayout from "../../components/page-layout";
 import MainNav from "../../components/student-profile/MainNav";
 import Main from "../../components/student-profile/Main";
 import Hero from "../../components/student-profile/Hero";
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 export default function Profile() {
   return (
@@ -20,3 +21,4 @@ export default function Profile() {
 //     </Layout>
 //   );
 // };
+

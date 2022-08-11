@@ -14,6 +14,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "cookies-next": "^2.1.1",
     "manrope": "^2.0.0",
     "next": "12.2.3",
     "nodemailer": "^6.7.7",

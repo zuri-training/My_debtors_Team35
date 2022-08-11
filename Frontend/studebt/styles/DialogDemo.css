@@ -3,10 +3,10 @@
     min-width: 10rem;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
     .dialog-demo .p-button {
         margin: 0;
-        min-width: 1rem;
+        min-width: max-content;
     }
 }
 

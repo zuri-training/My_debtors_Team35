@@ -20,3 +20,35 @@ export default function Dashboard ( props ) {
         </div>
     );
 }
+
+export const getServerSideProps = ({ req, res }) => {
+    const cookies = req.headers.cookie;
+    let is_authenticated = false;
+
+    if (cookies) {
+        const parsedCookies = cookies.split(';').map(cookie => cookie.split('='));
+        const parsedCookiesObj = {};
+        parsedCookies.forEach(cookie => {
+            parsedCookiesObj[cookie[0].trim()] = cookie[1];
+        });
+        if (parsedCookiesObj.token) {
+            is_authenticated = true;
+        }
+    }
+
+    if (!is_authenticated) {
+        return {
+          redirect: {
+            destination: '/login/school',
+            permanent: false,
+          },
+        }
+      }
+
+    return {
+        props: {
+            is_authenticated
+        }
+    }
+
+}
