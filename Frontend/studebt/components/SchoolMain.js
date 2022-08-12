@@ -1,7 +1,25 @@
 import Link from 'next/link'
 import React from 'react'
+import { getDebtors } from '../services/debtorsService';
+import { getSchoolProfile } from '../services/profileService';
+import { useState, useEffect } from 'react';
 
 const SchoolMain = () => {
+    const [debtors, setDebtors] = useState([]);
+    const [schoolProfile, setSchoolProfile] = useState({});
+
+    useEffect(() => {
+        getDebtors().then(data => {
+            setDebtors(data);
+        }).catch(error => {
+            console.log(error)
+        });
+        getSchoolProfile().then(data => {
+            setSchoolProfile(data);
+        }).catch(error => {
+            console.log(error)
+        });
+    } , []);
     return (
         <div className='school-main'>
             <div className="school-main-center">
@@ -45,122 +63,30 @@ const SchoolMain = () => {
                     </div>
                 </div>
                 <div className="main-center-bottom">
-                    {/* <div className="main-center-bottom-top">
-                        <h6 className=''>Appeals</h6>
-                        <div className="main-center-bottom-top-more">
-                            <Link href=""><a className='secondary-btn'>More</a></Link>
-                        </div>
-                    </div>
-                    <div className="main-center-bottom-filter">
-                        <div className="main-center-bottom-filter-left">
-                            <div className="main-center-bottom-filter-button">
-                                <p className='nt-bold'>
-                                    99
-                                </p>
-                                <p className='nt-regular'>
-                                    <Link href=''>
-                                        <a className='text-underline'>All</a>
-                                    </Link>
-                                </p>
-                            </div>
-                            <div className="main-center-bottom-filter-button">
-                                <p className='nt-bold'>
-                                    12
-                                </p>
-                                <p className='nt-regular'>
-                                    <Link href=''>
-                                        <a className=''>New</a>
-                                    </Link>
-                                </p>
-                            </div>
-                            <div className="main-center-bottom-filter-button">
-                                <p className='nt-bold'>
-                                    45
-                                </p>
-                                <p className='nt-regular'>
-                                    <Link href=''>
-                                        <a className=''>Pending</a>
-                                    </Link>
-                                </p>
-                            </div>
-                            <div className="main-center-bottom-filter-button">
-                                <p className='nt-bold'>
-                                    12
-                                </p>
-                                <p className='nt-regular'>
-                                    <Link href=''>
-                                        <a className=''>Cleared</a>
-                                    </Link>
-                                </p>
-                            </div>
-                            <div className="main-center-bottom-filter-button">
-                                <p className='nt-bold'>
-                                    30
-                                </p>
-                                <p className='nt-regular'>
-                                    <Link href=''>
-                                        <a className=''>Denied</a>
-                                    </Link>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="main-center-bottom-filter-right">
-                            <img src="/images/sort.svg" alt="" id='debtors-sort-icon' />
-                            <img src="/images/option.svg" alt="" id='debtors-option-icon' />
-                        </div>
-                    </div> */}
                     <div className="main-center-bottom-debtors">
-                        <div className="main-center-bottom-debtors-debtor">
-                            <div className="main-center-bottom-debtors-debtor-profile-img">
-                                <img src="/images/profile.png" alt="" />
-                            </div>
-                            <div className="main-center-bottom-debtors-debotor-name">
-                                Olayeni Adeyemo Samuel
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-unique-id">
-                                AGG1810690
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-debt-amount">
-                                N5,000
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-debt-status new-debt st-bold">
-                                New
-                            </div>
-                        </div>
-                        <div className="main-center-bottom-debtors-debtor">
-                            <div className="main-center-bottom-debtors-debtor-profile-img">
-                                <img src="/images/profile.png" alt="" />
-                            </div>
-                            <div className="main-center-bottom-debtors-debotor-name">
-                                Olayeni Adeyemo Samuel
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-unique-id">
-                                AGG1810690
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-debt-amount">
-                                N5,000
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-debt-status denied-debt st-bold">
-                                Denied
-                            </div>
-                        </div>
-                        <div className="main-center-bottom-debtors-debtor">
-                            <div className="main-center-bottom-debtors-debtor-profile-img">
-                                <img src="/images/profile.png" alt="" />
-                            </div>
-                            <div className="main-center-bottom-debtors-debotor-name">
-                                Olayeni Adeyemo Samuel
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-unique-id">
-                                AGG1810690
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-debt-amount">
-                                N5,000
-                            </div>
-                            <div className="main-center-bottom-debtors-debtor-debt-status cleared-debt st-bold">
-                                Cleared
-                            </div>
-                        </div>
+                        {
+                            debtors.map(debtor => {
+                                return (
+                                    <div className="main-center-bottom-debtors-debtor">
+                                        <div className="main-center-bottom-debtors-debtor-profile-img">
+                                            <img src="/images/profile.png" alt="" />
+                                        </div>
+                                        <div className="main-center-bottom-debtors-debotor-name">
+                                            Olayeni Adeyemo Samuel
+                                        </div>
+                                        <div className="main-center-bottom-debtors-debtor-unique-id">
+                                            AGG1810690
+                                        </div>
+                                        <div className="main-center-bottom-debtors-debtor-debt-amount">
+                                            N5,000
+                                        </div>
+                                        <div className="main-center-bottom-debtors-debtor-debt-status new-debt st-bold">
+                                            New
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>
