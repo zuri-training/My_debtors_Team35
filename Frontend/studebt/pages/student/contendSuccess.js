@@ -1,5 +1,6 @@
 import stuDeptLogo from "../../public/studebt-logo.png";
 import check from "../../public/assets/images/check.png";
+import Link from "next/link";
 import Image from "next/image";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
@@ -19,7 +20,13 @@ export default function commentSuccess(props) {
             <p className="dark-gray md:w-5 text-center my-4">
               Your contention has been taken, the school will respond shortly.
             </p>
-            <Button label="Back to Profile" icon="pi pi-arrow-left" className="pri-btn" />
+            <Link href="/student">
+              <Button
+                label="Back to Profile"
+                icon="pi pi-arrow-left"
+                className="pri-btn"
+              />
+            </Link>
           </div>
         </Card>
       </div>

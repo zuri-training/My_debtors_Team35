@@ -1,4 +1,5 @@
 import { Menubar } from "primereact/menubar";
+import Link from "next/link";
 import Image from "next/image";
 import profilePics from "../../public/assets/images/profile-pics.png";
 import React, { useState, useRef } from "react";
@@ -14,10 +15,12 @@ const MenuDropdown = () => {
         {
           label: "Home",
           icon: "pi pi-home",
+          url: "/",
         },
         {
           label: "About Us",
           icon: "pi pi-hashtag",
+          url: "/about-us",
         },
       ],
     },
@@ -43,17 +46,21 @@ export default function OtherNav(props) {
 
   const menuNav = (
     <div className="flex justify-content-end align-items-center md:gap-4 gap-2">
-      <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-2rem">
-        <Image src={bell} alt="Bell Icon" />
-      </div>
-      <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-2rem">
-        <Image src={profilePics} alt="Profile" />
-      </div>
+      <Link href="/student/notifications">
+        <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-2rem cursor-pointer">
+          <Image src={bell} alt="Bell Icon" />
+        </div>
+      </Link>
+      <Link href="/student">
+        <div className="flex justify-content-center align-items-center max-w-3rem md:w-auto w-2rem cursor-pointer">
+          <Image src={profilePics} alt="Profile" />
+        </div>
+      </Link>
     </div>
   );
 
   return (
-    <nav>
+    <nav className="nav">
       <Menubar className="border-none" start={menu} end={menuNav} />
     </nav>
   );

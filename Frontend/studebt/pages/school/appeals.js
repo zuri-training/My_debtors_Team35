@@ -8,13 +8,14 @@ import { useState } from 'react';
 
 export default function Dashboard ( props ) {
     const [toggle, setToggle] = useState(false)
+    const appeals = true
     return (
         <div className='school-dashboard-layout'>
-            <div className={toggle ? "background-overlay" : "none"} onClick={() => setToggle(!toggle)}>
+            <div className={toggle ? "background-overlay" : "none"} onClick={() => setToggle(!toggle)} >
                 
             </div>
-            <Sidebar toggle={toggle} setToggle={setToggle}/>
-            <SchoolMenuStudentsTopBar setToggle={setToggle} page="Appeals"/>
+            <Sidebar toggle={toggle} setToggle={setToggle} appeals={appeals}/>
+            <SchoolMenuStudentsTopBar setToggle={setToggle} />
             <SchoolMenuAppealsMain />
         </div>
     );
