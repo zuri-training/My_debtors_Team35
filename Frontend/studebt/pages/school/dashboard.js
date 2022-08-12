@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 import { addDebtor } from './../../services/debtorsService';
 import { getDebtors } from './../../services/debtorsService';
+import { getSchoolProfile } from './../../services/profileService';
 
 
 export default function Dashboard ( props ) {
@@ -14,14 +15,21 @@ export default function Dashboard ( props ) {
     const overview = true
 
     const [debtors, setDebtors] = useState([]);
+    const [schoolProfile, setSchoolProfile] = useState({});
 
     useEffect(() => {
         getDebtors().then(data => {
             setDebtors(data);
-            console.log(data)
         }).catch(error => {
             console.log(error)
         });
+
+        getSchoolProfile().then(data => {
+            setSchoolProfile(data);
+        }).catch(error => {
+            console.log(error)
+        });
+
     } , []);
 
     return (

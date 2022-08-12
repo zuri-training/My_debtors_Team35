@@ -19,7 +19,7 @@ export const addDebtor = (data) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
         },
         credentials: 'include',
         body: JSON.stringify({
@@ -61,7 +61,7 @@ export const editDebtors = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
         },
         credentials: 'include',
         body: JSON.stringify({
@@ -103,7 +103,7 @@ export const deleteDebtor = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
         },
         credentials: 'include',
         body: JSON.stringify({
@@ -141,16 +141,14 @@ export const getDebtors = () => {
 
     }
 
-    return fetch('https://studebt.herokuapp.com/api/debtorsapp/view-debtors/', {
-        method: 'POST',
+    return fetch('https://studebt.herokuapp.com/api/debtorsapp/view-all-debtors/', {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            
         },
-        credentials: 'include',
-        body: JSON.stringify({
-            refresh_token: token
-        })
+        credentials: 'include'
 
     }).then(response => {
         return response.json();
