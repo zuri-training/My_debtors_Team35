@@ -1,0 +1,21 @@
+Build Frontend home page using Next.js
+
+https://studebt.vercel.app/
+
+Build Frontend about us using Next.js
+
+https://studebt.vercel.app/about-us
+
+Build Frontend FAQ using Next.js
+
+https://studebt.vercel.app/frequently-asked-questions
+
+Build Frontend privacy-policy page using Next.js
+
+https://studebt.vercel.app/privacy-policy
+
+Build Front end home page using Next.js
+
+https://studebt.vercel.app/circular
+
+Build authentication service in frontend
