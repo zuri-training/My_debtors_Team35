@@ -157,7 +157,7 @@ export default function Content(props) {
           Action
         </div>
       </div>
-      <hr className="mb-2"></hr>
+      <hr className="mb-2 w-full"></hr>
       <div>
         <div className="grid align-items-center py-2">
           <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
