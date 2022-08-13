@@ -39,7 +39,7 @@ This project was created with ![Visual Studio Code](https://img.shields.io/badge
         ![Django REST framework](https://img.shields.io/badge/djangorestframework%20-%23000.svg?&style=for-the-badge&logo=djangorestframework&logoColor=white/)
 
 * __Database__<br/>
-        ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+        ![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?&style=for-the-badge&logo=postgresql&logoColor=white)
 
 
 * __Project Management and Version Control__<br/>
