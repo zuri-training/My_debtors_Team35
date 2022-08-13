@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { getDebtors } from '../services/debtorsService';
 import { useState, useEffect } from 'react';
+import { Sidebar } from 'primereact/sidebar';
+import { Button } from 'primereact/button';
 
 const SchoolMain = () => {
     const [debtors, setDebtors] = useState([]);
@@ -13,6 +15,20 @@ const SchoolMain = () => {
             console.log(error)
         });
     } , []);
+
+    const [visibleFullScreen, setVisibleFullScreen] = useState(false);
+
+    const customIcons = (
+        <React.Fragment>
+            <button className="p-sidebar-icon p-link mr-1">
+                <span className="pi pi-print" />
+            </button>
+            <button className="p-sidebar-icon p-link mr-1">
+                <span className="pi pi-arrow-right" />
+            </button>
+        </React.Fragment>
+    );
+
     return (
         <div className='school-main'>
             <div className="school-main-center">
@@ -92,10 +108,13 @@ const SchoolMain = () => {
                             <div className="">Update Debt</div>
                         </div>
                     </Link>
-                    <div className="school-main-rights-debtors-edit-add-debt">
+                    <div className="school-main-rights-debtors-edit-add-debt" onClick={() => setVisibleFullScreen(true)} >
                         <img src="/images/Plus.png" alt="" />
                         <div className="">Add Debt</div>
                     </div>
+                    <Sidebar visible={visibleFullScreen} fullScreen onHide={() => setVisibleFullScreen(false)}>
+                        <h3>Full Screen Sidebar</h3>
+                    </Sidebar>
                 </div>
                 <div className="school-main-right-inventory-box">
                     <div className="school-main-right-inventory-box-top">

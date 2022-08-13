@@ -9,6 +9,7 @@ import { addDebtor } from './../../services/debtorsService';
 import { getSchoolProfile } from './../../services/profileService';
 
 
+
 export default function Dashboard ( props ) {
     const [toggle, setToggle] = useState(false);
     const overview = true
