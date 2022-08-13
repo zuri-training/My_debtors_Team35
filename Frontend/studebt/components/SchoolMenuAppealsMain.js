@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 
+
 const SchoolMenuAppealMain = () => {
+   
     return (
         <div className='school-menu-appeal-main'>
             <div className="lt-bold">Appeal</div>

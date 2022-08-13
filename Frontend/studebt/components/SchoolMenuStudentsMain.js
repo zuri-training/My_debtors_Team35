@@ -1,7 +1,20 @@
 import Link from 'next/link'
 import React from 'react'
+import { getDebtors } from '../services/debtorsService';
+import { useState, useEffect } from 'react';
 
 const SchoolMenuStudentsMain = () => {
+    const [debtors, setDebtors] = useState([]);
+
+    useEffect(() => {
+        getDebtors().then(data => {
+            setDebtors(data);
+        }).catch(error => {
+            console.log(error)
+        });
+    } , []);
+    
+     
     return (
         <div className='school-menu-students-main'>
             <div className="main-center-top">
@@ -68,146 +81,35 @@ const SchoolMenuStudentsMain = () => {
                         EDIT
                     </div>
                 </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        1
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        2
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        4
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        5
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        6
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
-                <div className="school-menu-students-main-top-students-table-students-data">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                        7
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                        IKJ1800690
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                        Lawal Designer
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                        N50 000
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                        JSS3
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                        <img src="/images/Edit.svg" alt="" />
-                    </div>
-                </div>
+                
+                {
+                    debtors.map(debtor => {
+                        console.log(debtor)
+                        const {id, student_government_id, student_full_name, debt_amount, current_class} = debtor
+                        return(
+                            <div className="school-menu-students-main-top-students-table-students-data" key={id}>
+                                <div className="school-menu-students-main-top-students-table-heading-SN table-data">
+                                    {id}
+                                </div>
+                                <div className="school-menu-students-main-top-students-table-heading-ID table-data">
+                                    {student_government_id}
+                                </div>
+                                <div className="school-menu-students-main-top-students-table-heading-name table-data">
+                                    {student_full_name}
+                                </div>
+                                <div className="school-menu-students-main-top-students-table-heading-amount table-data">
+                                    {debt_amount}
+                                </div>
+                                <div className="school-menu-students-main-top-students-table-heading-class table-data ">
+                                    {current_class}
+                                </div>
+                                <div className="school-menu-students-main-top-students-table-heading-edit table-data">
+                                    <img src="/images/Edit.svg" alt="" />
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )

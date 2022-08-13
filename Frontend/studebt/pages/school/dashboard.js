@@ -6,16 +6,23 @@ import SchoolMain from '../../components/SchoolMain';
 import { useEffect, useState } from 'react';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 import { addDebtor } from './../../services/debtorsService';
-
+import { getSchoolProfile } from './../../services/profileService';
 
 
 export default function Dashboard ( props ) {
     const [toggle, setToggle] = useState(false);
     const overview = true
 
-    
+    const [schoolProfile, setSchoolProfile] = useState({});
 
-    
+    useEffect(() => {
+        getSchoolProfile().then(data => {
+            setSchoolProfile(data);
+        }).catch(error => {
+            console.log(error)
+        });
+    } , []);
+    console.log(schoolProfile)
 
     return (
         <div className='school-dashboard-layout'>
@@ -23,7 +30,7 @@ export default function Dashboard ( props ) {
                 
             </div>
             <Sidebar toggle={toggle} setToggle={setToggle} overview={overview} />
-            <SchoolTopBar setToggle={setToggle}/>
+            <SchoolTopBar setToggle={setToggle} schoolProfile={schoolProfile}/>
             <SchoolMain />
         </div>
     );

@@ -1,21 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import { getDebtors } from '../services/debtorsService';
-import { getSchoolProfile } from '../services/profileService';
 import { useState, useEffect } from 'react';
 
 const SchoolMain = () => {
     const [debtors, setDebtors] = useState([]);
-    const [schoolProfile, setSchoolProfile] = useState({});
 
     useEffect(() => {
         getDebtors().then(data => {
             setDebtors(data);
-        }).catch(error => {
-            console.log(error)
-        });
-        getSchoolProfile().then(data => {
-            setSchoolProfile(data);
         }).catch(error => {
             console.log(error)
         });
@@ -66,22 +59,23 @@ const SchoolMain = () => {
                     <div className="main-center-bottom-debtors">
                         {
                             debtors.map(debtor => {
+                                const {student_full_name, student_government_id, debt_amount, debt_status, id} = debtor
                                 return (
-                                    <div className="main-center-bottom-debtors-debtor">
+                                    <div className="main-center-bottom-debtors-debtor" key={id}>
                                         <div className="main-center-bottom-debtors-debtor-profile-img">
                                             <img src="/images/profile.png" alt="" />
                                         </div>
                                         <div className="main-center-bottom-debtors-debotor-name">
-                                            Olayeni Adeyemo Samuel
+                                            {student_full_name}
                                         </div>
                                         <div className="main-center-bottom-debtors-debtor-unique-id">
-                                            AGG1810690
+                                            {student_government_id}
                                         </div>
                                         <div className="main-center-bottom-debtors-debtor-debt-amount">
-                                            N5,000
+                                            {debt_amount}
                                         </div>
                                         <div className="main-center-bottom-debtors-debtor-debt-status new-debt st-bold">
-                                            New
+                                            {debt_status}
                                         </div>
                                     </div>
                                 )

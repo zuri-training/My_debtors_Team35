@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 
-const SchoolTopBar = ({ setToggle }) => {
+const SchoolTopBar = ({ setToggle }, schoolProfile) => {
     function toggleHam() {
         setToggle(prevToggle => !prevToggle)
     }
+    const {school_name} = schoolProfile
     return (
         <div className='school-topbar'>
             <div className="school-menu-side-menu-hamburger" onClick={toggleHam}>
@@ -13,7 +14,7 @@ const SchoolTopBar = ({ setToggle }) => {
                 <h5>👋 Welcome to StuDebt</h5>
             </div>
             <div className="topbar-right">
-                <h5>Name of School</h5>
+                <h5>{school_name}</h5>
                 <div className="notification">
                     <img src="/images/notification.png" alt="" />
                 </div>
