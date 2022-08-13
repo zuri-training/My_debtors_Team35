@@ -77,3 +77,16 @@ __Authenticated Users__ - A user that has been registered on our platform either
 * Mobile Phones
 * Tablets
 * Laptops
+
+## Usage 👍
+ * Visit the website
+ * Surf through basic infromation
+ * Sign up
+ * Fill registration details
+ * Verify email address
+ * Proceed to KYC verification
+ * Submit required verification documents
+ * Get verified
+ * Log in
+ * Edit profile
+ * Full CRUD priviledge
