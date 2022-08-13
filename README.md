@@ -12,6 +12,7 @@ The rate at which debt is killing the school business is quite alarming, and mos
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Collaboration](#collaboration)
+* [Roadmap](#roadmap)
 * [Contributors](#contributors)
 * [Documentation](#documentation)
 * [Acknowledgements](#acknowledgements)
@@ -151,4 +152,10 @@ Create a .env file inside the Backend directory and store `SECRET_KEY=''` and yo
    ```
    py manage.py runserver
    ```
+  
+## Roadmap 🚧
+See the [open issues](https://github.com/zuri-training/My_debtors_Team35/issues) for a list of proposed features (and known issues).
+
+
+
  
