@@ -20,12 +20,10 @@ export const addDebtor = (data) => {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
+            
         },
         credentials: 'include',
-        body: JSON.stringify({
-            refresh_token: token,
-            data
-        })
+        body: JSON.stringify(data)
 
     }).then(response => {
         return response.json();
