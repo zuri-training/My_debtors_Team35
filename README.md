@@ -90,3 +90,6 @@ __Authenticated Users__ - A user that has been registered on our platform either
  * Log in
  * Edit profile
  * Full CRUD priviledge
+ 
+ ## Project Status 🚀
+Project is : *in progress*
