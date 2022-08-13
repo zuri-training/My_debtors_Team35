@@ -12,9 +12,9 @@ function HistorySection(props) {
                     </div>
                     <span 
                     style={{
-                        "border-bottom" : "3px solid #ffffff",
-                        "border-width" : "3px",
-                        "padding-bottom" : "6px"
+                        borderBottom : "3px solid #ffffff",
+                        borderWidth : "3px",
+                        paddingBottom : "6px"
                     }}
                     className="text-white">Founded</span>
                 </div>
@@ -28,8 +28,8 @@ function HistorySection(props) {
                     </div>
                     <span 
                     style={{
-                        "border-bottom" : "3px solid #ffffff",
-                        "padding-bottom" : "6px"
+                        borderBottom : "3px solid #ffffff",
+                        paddingBottom: "6px"
                     }}
                     className="text-white">Partners</span>
                 </div>
@@ -43,8 +43,8 @@ function HistorySection(props) {
                     </div>
                     <span 
                     style={{
-                        "border-bottom" : "3px solid #ffffff",
-                        "padding-bottom" : "6px"
+                        borderBottom : "3px solid #ffffff",
+                        paddingBottom: "6px"
                     }}
                     className="text-white">Registered students</span>
                 </div>

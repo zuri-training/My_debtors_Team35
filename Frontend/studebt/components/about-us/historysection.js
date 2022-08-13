@@ -10,13 +10,13 @@ function HistorySection(props) {
                             <div className="text-white font-bold text-xl">2022</div>
                         </div>
                     </div>
-                    <span 
-                    style={{
-                        "border-bottom" : "3px solid #ffffff",
-                        "border-width" : "3px",
-                        "padding-bottom" : "6px"
-                    }}
-                    className="text-white">Founded</span>
+                    <span
+                        style={{
+                            borderBottom: "3px solid #ffffff",
+                            borderWidth: "3px",
+                            paddingBottom: "6px"
+                        }}
+                        className="text-white">Founded</span>
                 </div>
             </div>
             <div className="col-12 md:col-3">
@@ -26,12 +26,12 @@ function HistorySection(props) {
                             <div className="text-white font-bold text-xl">2K +</div>
                         </div>
                     </div>
-                    <span 
-                    style={{
-                        "border-bottom" : "3px solid #ffffff",
-                        "padding-bottom" : "6px"
-                    }}
-                    className="text-white">Partners</span>
+                    <span
+                        style={{
+                            borderbottom: "3px solid #ffffff",
+                            padding-bottom: "6px"
+                        }}
+                        className="text-white">Partners</span>
                 </div>
             </div>
             <div className="col-12 md:col-3">
@@ -41,12 +41,12 @@ function HistorySection(props) {
                             <div className="text-white font-bold text-xl">20K +</div>
                         </div>
                     </div>
-                    <span 
-                    style={{
-                        "border-bottom" : "3px solid #ffffff",
-                        "padding-bottom" : "6px"
-                    }}
-                    className="text-white">Registered students</span>
+                    <span
+                        style={{
+                            borderBottom: "3px solid #ffffff",
+                            paddingBottom: "6px"
+                        }}
+                        className="text-white">Registered students</span>
                 </div>
             </div>
         </div>

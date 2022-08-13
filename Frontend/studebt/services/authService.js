@@ -1,4 +1,5 @@
 
+import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 
 export const login = (data) => {
     return fetch('https://studebt.herokuapp.com/api/token', {

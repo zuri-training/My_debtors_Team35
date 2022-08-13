@@ -53,7 +53,7 @@ function HomeFooter(props) {
                     <section>
                         {/* heading */}
                         <h6
-                            style={{ "padding-left": "16px" }}
+                            style={{ paddingLeft: "16px" }}
                             className="text-900 text-white font-bold mb-3">NAVIGATION
                         </h6>
                         <Menu model={itemsOne} style={{
@@ -66,7 +66,7 @@ function HomeFooter(props) {
                     <section>
                         {/* heading */}
                         <h6
-                            style={{ "padding-left": "16px" }}
+                            style={{ paddingLeft: "16px" }}
                             className="text-900 text-white font-bold mb-3">LEGAL
                         </h6>
                         <Menu model={itemsTwo} style={{
@@ -79,7 +79,7 @@ function HomeFooter(props) {
                     <section>
                         {/* heading */}
                         <h6
-                            style={{ "padding-left": "16px" }}
+                            style={{ paddingLeft: "16px" }}
                             className="text-900 text-white font-bold mb-3">TALK TO US
                         </h6>
                         <Menu model={itemsThree} style={{
