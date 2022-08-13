@@ -32,7 +32,7 @@ export default function Dashboard ( props ) {
             </div>
             <Sidebar toggle={toggle} setToggle={setToggle} overview={overview} />
             <SchoolTopBar setToggle={setToggle} schoolProfile={schoolProfile}/>
-            <SchoolMain />
+            <SchoolMain schoolProfile={schoolProfile}/>
         </div>
     );
 }
