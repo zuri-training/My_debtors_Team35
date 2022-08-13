@@ -13,13 +13,17 @@ function Student(props) {
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
     const [phone, setPhone] = useState('')
-    const [profile, setProfile] = useState({})
 
     const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         NProgress.start();
+        const profile ={
+            student_government_id: nin, 
+            contact: phone
+        }
+        
         const data = {
             first_name,
             last_name,

@@ -1,10 +1,34 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
+import { getSchoolProfile } from '../services/profileService'
+import NProgress from 'nprogress'
 
 const SchoolTopBar = ({ setToggle }, schoolProfile) => {
+
+    const [schoolProf, setSchoolProfile] = useState({})
+    const [user, setUser] = useState({})
+
+    useEffect(() => {
+        NProgress.start();
+        getSchoolProfile().then(data => {
+            setSchoolProfile(data.school_profile);
+            setUser(data.user);
+        }).catch(error => {
+            if (error.response) {
+                console.log(error.response.data);
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log('Error', error.message);
+            }
+        }).finally(() => {
+            NProgress.done();
+          } )
+    }, []);
+
     function toggleHam() {
         setToggle(prevToggle => !prevToggle)
     }
-    const {school_name} = schoolProfile
+
     return (
         <div className='school-topbar'>
             <div className="school-menu-side-menu-hamburger" onClick={toggleHam}>
@@ -14,7 +38,7 @@ const SchoolTopBar = ({ setToggle }, schoolProfile) => {
                 <h5>👋 Welcome to StuDebt</h5>
             </div>
             <div className="topbar-right">
-                <h5>{school_name}</h5>
+                <h5>{schoolProf.school_name}</h5>
                 <div className="notification">
                     <img src="/images/notification.png" alt="" />
                 </div>

@@ -6,18 +6,17 @@ import Link from 'next/link'
 
 function School(props) {
 
-    const [name, setName] = useState('')
+    const [school_name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
-    const [propietor, setPropietor] = useState('')
+    const [name_of_propietor, setPropietor] = useState('')
     const [lga, setLga] = useState('')
     const [state, setState] = useState('')
     const [address, setAddress] = useState('')
-    const [phone, setPhone] = useState('')
-    const [cac, setCac] = useState('')
-    const [is_school, setIsSchool] = useState(true)
-    const [is_student , setIsStudent] = useState(false)
+    const [contact, setPhone] = useState('')
+    const [government_id, setCac] = useState('')
+
     
     const router = useRouter()
 
@@ -25,13 +24,13 @@ function School(props) {
         e.preventDefault()
         NProgress.start();
         const profile = {
-            name,
-            propietor,
+            school_name,
+            name_of_propietor,
             lga,
             state,
-            phone,
+            contact,
             address,
-            cac,
+            government_id
         }
         const data = {
             email,
