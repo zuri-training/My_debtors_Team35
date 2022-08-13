@@ -11,26 +11,33 @@ function School(props) {
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
     const [propietor, setPropietor] = useState('')
+    const [lga, setLga] = useState('')
+    const [state, setState] = useState('')
+    const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('')
     const [cac, setCac] = useState('')
     const [is_school, setIsSchool] = useState(true)
     const [is_student , setIsStudent] = useState(false)
-    const [profile, setProfile] = useState({})
     
     const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         NProgress.start();
-        const data = {
+        const profile = {
             name,
+            propietor,
+            lga,
+            state,
+            phone,
+            address,
+            cac,
+        }
+        const data = {
             email,
+            profile,
             password,
             password2,
-            propietor,
-            phone,
-            cac,
-            profile,
             is_school: true,
             is_student: false
         }
@@ -89,10 +96,28 @@ function School(props) {
                          type="text" id="npropietor" name="npropietor" required />
                     </div>
                     <div>
+                        <label htmlFor="lga">LGA</label><br />
+                        <input
+                        onChange={(e) => setLga(e.target.value)}
+                         type="text" id="npropietor" name="npropietor" required />
+                    </div>
+                    <div>
+                        <label htmlFor="state">state</label><br />
+                        <input
+                        onChange={(e) => setState(e.target.value)}
+                         type="text" id="npropietor" name="npropietor" required />
+                    </div>
+                    <div>
                         <label  htmlFor="phonen">Phone Number</label><br />
                         <input 
                         onChange={(e) => setPhone(e.target.value)}
                         type="number" id="phonen" name="phonen" required />
+                    </div>
+                    <div>
+                        <label  htmlFor="address">Address</label><br />
+                        <input 
+                        onChange={(e) => setAddress(e.target.value)}
+                        type="text" id="phonen" name="phonen" required />
                     </div>
                     <div>
                         <label  htmlFor="paswd">Password</label><br />
