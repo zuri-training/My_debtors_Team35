@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { getDebtors } from '../services/debtorsService';
+import { getDebtors, addDebtors } from '../services/debtorsService';
 import { useState, useEffect } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
@@ -113,7 +113,52 @@ const SchoolMain = () => {
                         <div className="">Add Debt</div>
                     </div>
                     <Sidebar visible={visibleFullScreen} fullScreen onHide={() => setVisibleFullScreen(false)}>
-                        <h3>Full Screen Sidebar</h3>
+                        <h3>Added Debtors</h3>
+                        <form  action="#">
+                            <div>
+                                <label htmlFor="nstdnt">Name of Student</label><br />
+                                <input 
+                                onChange={(e) => setFirstName(e.target.value)}
+                                type="text" id="nstdnt" name="nstdnt" required />
+                            </div>
+                            <div>
+                                <label htmlFor="lstdnt">Last Name</label><br />
+                                <input
+                                onChange={(e) => setLastName(e.target.value)}
+                                type="text" id="lstdnt" name="lstdnt" required />
+                            </div>
+                            <div>
+                                <label htmlFor="stdnin">NIN</label><br />
+                                <input 
+                                onChange={(e) => setNin(e.target.value)}
+                                type="number" id="stdnin" name="stdnin" required />
+                            </div>
+                            <div>
+                                <label htmlFor="stdemail">Email Adress</label><br />
+                                <input 
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email" id="stdemail" name="stdemail" required />
+                            </div>
+                            <div>
+                                <label htmlFor="stnphon">Phone Number</label><br />
+                                <input 
+                                onChange={(e) => setPhone(e.target.value)}
+                                type="number" id="stnphon" name="stnphon" />
+                            </div>
+                            <div>
+                                <label htmlFor="sstdpaswd">Password</label><br />
+                                <input 
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password" id="sstdpaswd" name="sstdpaswd" required />
+                            </div>
+                            <div>
+                                <label htmlFor="sstdpaswd2">Confirm Password</label><br />
+                                <input
+                                onChange={(e) => setPassword2(e.target.value)}
+                                type="password" id="sstdpaswd2" name="sstdpaswd2" required />
+                            </div>
+                            <button type="submit" className="btn btn-sec btn-lag">Sign Up</button>
+                        </form>
                     </Sidebar>
                 </div>
                 <div className="school-main-right-inventory-box">
