@@ -1,12 +1,43 @@
 import Link from 'next/link'
 import React from 'react'
-import { getDebtors, addDebtors } from '../services/debtorsService';
+import { getDebtors, addDebtor } from '../services/debtorsService';
 import { useState, useEffect } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
+import NProgress from 'nprogress'
 
-const SchoolMain = () => {
+const SchoolMain = ({schoolProfile}) => {
     const [debtors, setDebtors] = useState([]);
+    const [student_government_id, setStudent_government_Id] = useState([]);
+    const government_id = schoolProfile.government_id
+    const school_name = schoolProfile.school_name
+    const [student_full_name, setStudent_full_name] = useState([]);
+    const [debt_amount, setDebt_amount] = useState([]);
+    const [debt_type, setDebt_type] = useState([]);
+    const [debt_status, setDebt_status] = useState([]);
+    const [debt_payment_date, setDebt_payment_date] = useState([]);
+    const handleAddDebtors = async (e) => {
+        e.preventDefault()
+        NProgress.start();
+        const data = {
+            student_government_id,
+            government_id,
+            student_full_name,
+            school_name,
+            debt_amount,
+            debt_status,
+            debt_type,
+            debt_payment_date
+        }
+        console.log(data)
+        addDebtor(data).then(response => {
+            console.log(response)
+        }).catch(error => {
+                alert(error)
+        }).finally(() => {
+            NProgress.done();
+        } )
+    }
 
     useEffect(() => {
         getDebtors().then(data => {
@@ -28,7 +59,6 @@ const SchoolMain = () => {
             </button>
         </React.Fragment>
     );
-
     return (
         <div className='school-main'>
             <div className="school-main-center">
@@ -75,26 +105,29 @@ const SchoolMain = () => {
                     <div className="main-center-bottom-debtors">
                         {
                             debtors.map(debtor => {
-                                const {student_full_name, student_government_id, debt_amount, debt_status, id} = debtor
-                                return (
-                                    <div className="main-center-bottom-debtors-debtor" key={id}>
-                                        <div className="main-center-bottom-debtors-debtor-profile-img">
-                                            <img src="/images/profile.png" alt="" />
+                                const school_government_id = government_id
+                                const {student_full_name, student_government_id, debt_amount, debt_status, id, } = debtor
+                                if (debtor.government_id === school_government_id) {
+                                    return (
+                                        <div className="main-center-bottom-debtors-debtor" key={id}>
+                                            <div className="main-center-bottom-debtors-debtor-profile-img">
+                                                <img src="/images/profile.png" alt="" />
+                                            </div>
+                                            <div className="main-center-bottom-debtors-debotor-name">
+                                                {student_full_name}
+                                            </div>
+                                            <div className="main-center-bottom-debtors-debtor-unique-id">
+                                                {student_government_id}
+                                            </div>
+                                            <div className="main-center-bottom-debtors-debtor-debt-amount">
+                                                {debt_amount}
+                                            </div>
+                                            <div className="main-center-bottom-debtors-debtor-debt-status new-debt st-bold">
+                                                {debt_status}
+                                            </div>
                                         </div>
-                                        <div className="main-center-bottom-debtors-debotor-name">
-                                            {student_full_name}
-                                        </div>
-                                        <div className="main-center-bottom-debtors-debtor-unique-id">
-                                            {student_government_id}
-                                        </div>
-                                        <div className="main-center-bottom-debtors-debtor-debt-amount">
-                                            {debt_amount}
-                                        </div>
-                                        <div className="main-center-bottom-debtors-debtor-debt-status new-debt st-bold">
-                                            {debt_status}
-                                        </div>
-                                    </div>
-                                )
+                                    )
+                                }
                             })
                         }
                     </div>
@@ -114,50 +147,51 @@ const SchoolMain = () => {
                     </div>
                     <Sidebar visible={visibleFullScreen} fullScreen onHide={() => setVisibleFullScreen(false)}>
                         <h3>Added Debtors</h3>
-                        <form  action="#">
+                        <form onSubmit={handleAddDebtors}  action="#">
                             <div>
-                                <label htmlFor="nstdnt">Name of Student</label><br />
+                                <label htmlFor="student_government_Id">Student Government Id</label><br />
                                 <input 
-                                onChange={(e) => setFirstName(e.target.value)}
+                                onChange={(e) => setStudent_government_Id(e.target.value)}
                                 type="text" id="nstdnt" name="nstdnt" required />
                             </div>
                             <div>
-                                <label htmlFor="lstdnt">Last Name</label><br />
-                                <input
-                                onChange={(e) => setLastName(e.target.value)}
-                                type="text" id="lstdnt" name="lstdnt" required />
-                            </div>
-                            <div>
-                                <label htmlFor="stdnin">NIN</label><br />
+                                <label htmlFor="studentFullName">Name of Student</label><br />
                                 <input 
-                                onChange={(e) => setNin(e.target.value)}
+                                onChange={(e) => setStudent_full_name(e.target.value)}
+                                type="text" id="nstdnt" name="nstdnt" required />
+                            </div>
+                            {/* <div>
+                                <label htmlFor="school_name">School Name</label><br />
+                                <input
+                                onChange={(e) => setSchool_name(e.target.value)}
+                                type="text" id="lstdnt" name="lstdnt" required />
+                            </div> */}
+                            <div>
+                                <label htmlFor="debt_amount">Debt Amount</label><br />
+                                <input 
+                                onChange={(e) => setDebt_amount(e.target.value)}
                                 type="number" id="stdnin" name="stdnin" required />
                             </div>
                             <div>
-                                <label htmlFor="stdemail">Email Adress</label><br />
+                                <label htmlFor="debt_type">Debt Type</label><br />
                                 <input 
-                                onChange={(e) => setEmail(e.target.value)}
-                                type="email" id="stdemail" name="stdemail" required />
+                                onChange={(e) => setDebt_type(e.target.value)}
+                                type="text" id="stdemail" name="stdemail" required />
                             </div>
                             <div>
-                                <label htmlFor="stnphon">Phone Number</label><br />
-                                <input 
-                                onChange={(e) => setPhone(e.target.value)}
-                                type="number" id="stnphon" name="stnphon" />
+                                <select name="debt_status" id="debt-status" onChange={(e) => setDebt_status(e.target.value)}>
+                                    <option value="PENDING">Pending</option>
+                                    <option value="ACTIVE">Active</option>
+                                    <option value="DENIED">Denied</option>
+                                </select>
                             </div>
                             <div>
-                                <label htmlFor="sstdpaswd">Password</label><br />
+                                <label htmlFor="debt_payment_date">Debt Payment Date</label><br />
                                 <input 
-                                onChange={(e) => setPassword(e.target.value)}
-                                type="password" id="sstdpaswd" name="sstdpaswd" required />
+                                onChange={(e) => setDebt_payment_date(e.target.value)}
+                                type="date" id="stdemail" name="stdemail" required />
                             </div>
-                            <div>
-                                <label htmlFor="sstdpaswd2">Confirm Password</label><br />
-                                <input
-                                onChange={(e) => setPassword2(e.target.value)}
-                                type="password" id="sstdpaswd2" name="sstdpaswd2" required />
-                            </div>
-                            <button type="submit" className="btn btn-sec btn-lag">Sign Up</button>
+                            <button type="submit" className="btn btn-sec btn-lag" onClick={handleAddDebtors}>Sign Up</button>
                         </form>
                     </Sidebar>
                 </div>

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { getSchoolProfile } from '../services/profileService'
 import NProgress from 'nprogress'
 
-const SchoolTopBar = ({ setToggle }, schoolProfile) => {
+const SchoolTopBar = ({ setToggle }) => {
 
-    const [schoolProf, setSchoolProfile] = useState({})
+    const [schoolProfile, setSchoolProfile] = useState({})
     const [user, setUser] = useState({})
+
+    console.log("top bar", schoolProfile)
 
     useEffect(() => {
         NProgress.start();
@@ -22,7 +24,7 @@ const SchoolTopBar = ({ setToggle }, schoolProfile) => {
             }
         }).finally(() => {
             NProgress.done();
-          } )
+        } )
     }, []);
 
     function toggleHam() {
@@ -38,7 +40,7 @@ const SchoolTopBar = ({ setToggle }, schoolProfile) => {
                 <h5>👋 Welcome to StuDebt</h5>
             </div>
             <div className="topbar-right">
-                <h5>{schoolProf.school_name}</h5>
+                <h5>{schoolProfile.school_name}</h5>
                 <div className="notification">
                     <img src="/images/notification.png" alt="" />
                 </div>

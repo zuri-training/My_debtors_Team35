@@ -7,23 +7,34 @@ import { useEffect, useState } from 'react';
 import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
 import { addDebtor } from './../../services/debtorsService';
 import { getSchoolProfile } from './../../services/profileService';
-
+import NProgress from 'nprogress';
 
 
 export default function Dashboard ( props ) {
     const [toggle, setToggle] = useState(false);
     const overview = true
 
-    const [schoolProfile, setSchoolProfile] = useState({});
+    const [schoolProfile, setSchoolProfile] = useState({})
 
     useEffect(() => {
+        NProgress.start();
         getSchoolProfile().then(data => {
-            setSchoolProfile(data);
+            setSchoolProfile(data.school_profile);
+            setUser(data.user);
         }).catch(error => {
-            console.log(error)
-        });
-    } , []);
-    console.log(schoolProfile)
+            if (error.response) {
+                console.log(error.response.data);
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log('Error', error.message);
+            }
+        }).finally(() => {
+            NProgress.done();
+        } )
+    }, []);
+
+    console.log("dash", schoolProfile)
 
     return (
         <div className='school-dashboard-layout'>
@@ -31,8 +42,8 @@ export default function Dashboard ( props ) {
                 
             </div>
             <Sidebar toggle={toggle} setToggle={setToggle} overview={overview} />
-            <SchoolTopBar setToggle={setToggle} schoolProfile={schoolProfile}/>
-            <SchoolMain />
+            <SchoolTopBar setToggle={setToggle} />
+            <SchoolMain schoolProfile={schoolProfile}/>
         </div>
     );
 }

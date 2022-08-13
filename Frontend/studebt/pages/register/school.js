@@ -40,7 +40,7 @@ function School(props) {
             is_school: true,
             is_student: false
         }
-       await register(data).then(response => {
+        await register(data).then(response => {
             console.log(response)
         }).catch(error => {
                 alert(error)
