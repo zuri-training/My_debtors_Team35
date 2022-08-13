@@ -73,3 +73,7 @@ __Authenticated Users__ - A user that has been registered on our platform either
     - Contend his/her debt <br/>
     - Log out 
 
+## Product Specialization ✔️
+* Mobile Phones
+* Tablets
+* Laptops
