@@ -15,3 +15,6 @@ The rate at which debt is killing the school business is quite alarming, and mos
 * [Contributors](#contributors)
 * [Documentation](#documentation)
 * [Acknowledgements](#acknowledgements)
+
+## About the Project 📖
+This is a platform that allows schools in a certain locality to list the directory of people owing them so as to avoid debtors applying to other schools with pending debts. The website will also enable schools to keep the debt summary (amount that has been paid and collected) and track debts of various students and also give the debtors access to challenge information put up by the schools. -Team 36
