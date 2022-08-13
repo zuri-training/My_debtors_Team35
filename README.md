@@ -45,3 +45,31 @@ This project was created with ![Visual Studio Code](https://img.shields.io/badge
 * __Project Management and Version Control__<br/>
         ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
+## Features 🔥
+__Unauthenticated users__ - A user that is yet to be registered on our platform
+ * The landing page (i.e. the website home page) consists of the following: <br/>
+       - The Hero page with a CTA to either “Sign Up” or “Login”, Circulars, FAQs, Contact Us.<br/>
+       - Why the platform is beneficial.<br/>
+       - Reviews from other proprietor/proprietress.<br/>
+       - Newsletter section.<br/>
+       - Footer Section.
+       
+__Authenticated Users__ - A user that has been registered on our platform either as a school or as a student.
+ * Registered as a school: <br/>
+ Upon registration and verification of the school using her CAC number. The school would be able to do the following:
+    - Log in to the website <br/>
+    - Update debtors record (i.e. add/remove debtors from her schools debtors list) <br/>
+    - School’s Dashboard <br/>
+    - Full access to Data <br/>
+    - Search for debtors record <br/>
+    - Comment on posts <br/>
+    - Change password <br/>
+    - Help & support <br/>
+    - Log out
+ * Registered as a student: <br/>
+ Upon registration and verification of the student using his/her NIN. The student would be able to do the following:
+    - Log in to the website using his/her NIN and password <br/>
+    - Access to only his/her profile <br/>
+    - Contend his/her debt <br/>
+    - Log out 
+
