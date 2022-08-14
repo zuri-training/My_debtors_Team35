@@ -7,8 +7,6 @@ const SchoolTopBar = ({ setToggle }) => {
     const [schoolProfile, setSchoolProfile] = useState({})
     const [user, setUser] = useState({})
 
-    console.log("top bar", schoolProfile)
-
     useEffect(() => {
         NProgress.start();
         getSchoolProfile().then(data => {
