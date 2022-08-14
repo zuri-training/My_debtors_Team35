@@ -8,8 +8,8 @@ import "../styles/utilities.css";
 import "../styles/DialogDemo.css";
 import '../styles/schoolDash.css'
 import '../styles/SchoolMenuPages.css'
-import '../styles/destop.css'
-import '../styles/mobile.css'
+// import '../styles/destop.css'
+// import '../styles/mobile.css'
 
 import '../styles/auth.css'
 
