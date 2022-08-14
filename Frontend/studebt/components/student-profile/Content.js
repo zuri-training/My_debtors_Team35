@@ -143,23 +143,19 @@ const DialogDemo = () => {
 
 export default function Content(props) {
 
-  const [depts, setDepts] = useState([]);
+  const [debts, setDebts] = useState([]);
   const [profile, setProfile] = useState({});
   const [user, setUser] = useState({});
-  const [Nin , setNin] = useState('');
-
 
   useEffect(() => {
     NProgress.start();
 
-    getStudentProfile().then(res => {
-      setProfile(res.profile);
-      setUser(res.user);
-      setNin(res.profile.student_government_id);
-      // get depts
-      console.log(res.profile.student_government_id);
-      getStudentDepts(res.profile.student_government_id).then(res => {
-        setDepts(res.depts);
+    getStudentProfile().then(response => {
+      console.log(response)
+      setProfile(response.profile);
+      setUser(response.user);
+      getStudentDepts(response.profile.student_government_id).then(res => {
+        setDebts(res);
         NProgress.done();
       }).catch(err => {
         console.log(err);
@@ -182,12 +178,12 @@ export default function Content(props) {
         <div className="col-1 gray md:text-center text-left xl:text-base lg:text-sm text-xs">
           S/N
         </div>
+        <div className="col-2 gray text-center xl:text-base lg:text-sm text-xs">
+          School Name
+        </div>
         <div className="col gray xl:text-base lg:text-sm text-xs">Reason</div>
         <div className="col-2 gray text-center xl:text-base lg:text-sm text-xs">
           Amount (N)
-        </div>
-        <div className="col-2 gray text-center xl:text-base lg:text-sm text-xs">
-          Class
         </div>
         <div className="md:col col-2 gray text-center xl:text-base lg:text-sm text-xs">
           Action
@@ -195,70 +191,29 @@ export default function Content(props) {
       </div>
       <hr className="mb-2"></hr>
       <div>
-        <div className="grid align-items-center py-2">
-          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
-            1
-          </div>
-          <div className="col xl:text-base lg:text-sm text-xs">
-            School fees 2018/2019 at Ezekiel College
-          </div>
-          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
-            20,000
-          </div>
-          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
-            SS3
-          </div>
-          <div className="md:col col-2 text-center">
-            <DialogDemo />
-          </div>
-        </div>
-        <div className="grid align-items-center py-2">
-          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
-            2
-          </div>
-          <div className="col xl:text-base lg:text-sm text-xs">
-            Feeding allowance{" "}
-          </div>
-          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
-            5,000
-          </div>
-          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
-            JSS1
-          </div>
-          <div className="md:col col-2 text-center">
-            <DialogDemo />
-          </div>
-        </div>
-        <div className="grid align-items-center py-2">
-          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
-            3
-          </div>
-          <div className="col xl:text-base lg:text-sm text-xs">School bus</div>
-          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
-            10,000
-          </div>
-          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
-            PRY1
-          </div>
-          <div className="md:col col-2 text-center">
-            <DialogDemo />
-          </div>
-        </div>
-        <div className="grid align-items-center py-2">
-          <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
-            4
-          </div>
-          <div className="col xl:text-base lg:text-sm text-xs">PTA Fees</div>
-          <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
-            1,000
-          </div>
-          <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
-            PRY6
-          </div>
-          <div className="md:col col-2 text-center">
-            <DialogDemo />
-          </div>
-        </div>
+
+        {debts.map((debt, index) => {
+          return (
+            <div key={index} className="grid align-items-center py-2">
+              <div className="col-1 md:text-center text-left gray xl:text-base lg:text-sm text-xs">
+                {debt.government_id}
+              </div>
+              <div className="col-2 text-center gray xl:text-base lg:text-sm text-xs">
+                { debt.school_name }
+              </div>
+              <div className="col xl:text-base lg:text-sm text-xs">
+                {debt.debt_type}
+              </div>
+              <div className="col-2 text-center xl:text-base lg:text-sm text-xs">
+                {debt.debt_amount}
+              </div>
+              <div className="md:col col-2 text-center">
+                <DialogDemo />
+              </div>
+            </div>
+          )
+        })}
+
       </div>
     </div>
   );
