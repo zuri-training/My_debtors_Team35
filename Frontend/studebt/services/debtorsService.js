@@ -38,7 +38,7 @@ export const addDebtor = (data) => {
     });
 }
 
-export const editDebtors = () => {
+export const editDebtors = ( data ) => {
     const cookies = document.cookie;
     const token = "";
 
@@ -55,19 +55,18 @@ export const editDebtors = () => {
 
     }
 
-    return fetch('https://studebt.herokuapp.com/api/debtorsapp/view-debtors/', {
-        method: 'POST',
+    const id = data.id;
+
+    return fetch(`https://studebt.herokuapp.com/api/debtorsapp/edit-debtor/${id}/`, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
         },
         credentials: 'include',
-        body: JSON.stringify({
-            refresh_token: token
-        })
+        body: JSON.stringify(data)
 
     }).then(response => {
-        deleteCookie('token');
         return response.json();
     }).catch(error => {
         if (error.response) {
@@ -78,6 +77,8 @@ export const editDebtors = () => {
             console.log('Error', error.message);
         }
     });
+    
+    
 }
 
 export const deleteDebtor = () => {

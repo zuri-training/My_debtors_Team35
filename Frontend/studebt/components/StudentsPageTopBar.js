@@ -10,8 +10,6 @@ const StudentsPageTopBar = ({ setToggle}) => {
                 <img src="/images/Menu-icon.svg" alt="" />
             </div>
             <div className="students-page-topbar-left">
-                <input type="text" placeholder='Search' />
-                <img src="/images/search.svg" alt="" />
             </div>
             <div className="students-page-topbar-right">
                 <h5>Name of School</h5>

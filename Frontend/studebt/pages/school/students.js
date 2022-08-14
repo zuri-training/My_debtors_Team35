@@ -5,7 +5,6 @@ import SchoolMenuStudentsMain from '../../components/SchoolMenuStudentsMain';
 import StudentsPageTopBar from '../../components/StudentsPageTopBar';
 import { useState } from 'react';
 
-
 export default function Dashboard ( props ) {
     const [toggle, setToggle] = useState(false)
     const student = true

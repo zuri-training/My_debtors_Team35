@@ -1,10 +1,18 @@
 import Link from 'next/link'
 import React from 'react'
 import { getDebtors } from '../services/debtorsService';
+import { editDebtors } from '../services/debtorsService';
 import { useState, useEffect } from 'react';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { InputText } from 'primereact/inputtext';
+import { Dropdown } from 'primereact/dropdown';
+import { Button } from 'primereact/button';
 
 const SchoolMenuStudentsMain = () => {
     const [debtors, setDebtors] = useState([]);
+    const [selectedDebtor, setSelectedDebtor] = useState(null)
+    const [globalFilter, setGlobalFilter] = useState(null);
 
     useEffect(() => {
         getDebtors().then(data => {
@@ -12,9 +20,50 @@ const SchoolMenuStudentsMain = () => {
         }).catch(error => {
             console.log(error)
         });
-    } , []);
-    
-     
+    }, []);
+
+    const STATUS = [
+        { label: 'Pending', value: 'PENDING' },
+        { label: 'Cleared', value: 'CLEARED' },
+        { label: 'Denied', value: 'DENIED' },
+    ];
+
+    const textEditor = (options) => {
+        return <InputText type="text" value={options.value} onChange={(e) => options.editorCallback(e.target.value)} />;
+    }
+
+    const statusEditor = (options) => {
+        return (
+            <Dropdown value={options.value} options={STATUS} onChange={(e) => options.editorCallback(e.value)} />
+        );
+    }
+
+    const header = (
+        <div className="table-header students-page-topbar-left w-full">
+            <span className="p-input-icon-left w-full">
+                <i className="pi pi-search" />
+                <InputText type="search" onInput={(e) => setGlobalFilter(e.target.value)} placeholder="Search..." />
+            </span>
+        </div>
+    );
+
+    const onDebtorEditComplete = (e) => {
+        let _debtors = [...debtors];
+        let { newData, index } = e;
+
+        _debtors[index] = newData;
+        setDebtors(_debtors);
+        editDebtors(newData).then(data => {
+            console.log(data)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setSelectedDebtor(null);
+        })
+    }
+
+
+
     return (
         <div className='school-menu-students-main'>
             <div className="main-center-top">
@@ -61,55 +110,23 @@ const SchoolMenuStudentsMain = () => {
                 </div>
             </div>
             <div className="school-menu-students-main-top-students-table">
-                <div className="school-menu-students-main-top-students-table-heading">
-                    <div className="school-menu-students-main-top-students-table-heading-SN table-heading">
-                        S/N
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-ID table-heading">
-                        ID NUMBER
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-name table-heading">
-                        NAME
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-amount table-heading">
-                        AMOUNT(N)
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-class table-heading">
-                        CLASS
-                    </div>
-                    <div className="school-menu-students-main-top-students-table-heading-edit table-heading">
-                        EDIT
-                    </div>
-                </div>
-                
-                {
-                    debtors.map(debtor => {
-                        console.log(debtor)
-                        const {id, student_government_id, student_full_name, debt_amount, current_class} = debtor
-                        return(
-                            <div className="school-menu-students-main-top-students-table-students-data" key={id}>
-                                <div className="school-menu-students-main-top-students-table-heading-SN table-data">
-                                    {id}
-                                </div>
-                                <div className="school-menu-students-main-top-students-table-heading-ID table-data">
-                                    {student_government_id}
-                                </div>
-                                <div className="school-menu-students-main-top-students-table-heading-name table-data">
-                                    {student_full_name}
-                                </div>
-                                <div className="school-menu-students-main-top-students-table-heading-amount table-data">
-                                    {debt_amount}
-                                </div>
-                                <div className="school-menu-students-main-top-students-table-heading-class table-data ">
-                                    {current_class}
-                                </div>
-                                <div className="school-menu-students-main-top-students-table-heading-edit table-data">
-                                    <img src="/images/Edit.svg" alt="" />
-                                </div>
-                            </div>
-                        )
-                    })
-                }
+
+                <DataTable
+
+                    value={debtors} editMode="row" dataKey="id" selection={selectedDebtor}
+                    header={header}
+                    globalFilter={globalFilter}
+                    onSelectionChange={e => setSelectedDebtor(e.value)}
+                    onRowEditComplete={onDebtorEditComplete}
+                    paginator rows={10} >
+                    <Column selectionMode="single" headerStyle={{ width: '3em' }}></Column>
+                    <Column field="student_government_id" header="S/N" sortable={true} />
+                    <Column field="student_full_name" header="STUDENT NAME" sortable={true} />
+                    <Column field="school_name" header="SCHOOL NAME" sortable={true} />
+                    <Column field="debt_amount" header="AMOUNT(N)" sortable={true} />
+                    <Column field="debt_status" header="STATUS" sortable={true} editor={statusEditor} />
+                    <Column rowEditor headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
+                </DataTable>
             </div>
         </div>
     )
