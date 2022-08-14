@@ -9,8 +9,8 @@ import NProgress from 'nprogress'
 const SchoolMain = ({schoolProfile}) => {
     const [debtors, setDebtors] = useState([]);
     const [student_government_id, setStudent_government_Id] = useState([]);
-    const government_id = schoolProfile.government_id
-    const school_name = schoolProfile.school_name
+    const government_id = schoolProfile.government_id ? schoolProfile.government_id : "";
+    const school_name = schoolProfile.school_name ? schoolProfile.school_name : "";
     const [student_full_name, setStudent_full_name] = useState([]);
     const [debt_amount, setDebt_amount] = useState([]);
     const [debt_type, setDebt_type] = useState([]);
@@ -104,7 +104,7 @@ const SchoolMain = ({schoolProfile}) => {
                 <div className="main-center-bottom">
                     <div className="main-center-bottom-debtors">
                         {
-                            debtors.map(debtor => {
+                           debtors ? debtors.map(debtor => {
                                 const school_government_id = government_id
                                 const {student_full_name, student_government_id, debt_amount, debt_status, id, } = debtor
                                 if (debtor.government_id === school_government_id) {
@@ -129,6 +129,7 @@ const SchoolMain = ({schoolProfile}) => {
                                     )
                                 }
                             })
+                            : " No Debtors Found. Please logout and try again!"
                         }
                     </div>
                 </div>

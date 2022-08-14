@@ -40,7 +40,7 @@ const SchoolTopBar = ({ setToggle }) => {
                 <h5>👋 Welcome to StuDebt</h5>
             </div>
             <div className="topbar-right">
-                <h5>{schoolProfile.school_name}</h5>
+                <h5>{schoolProfile.school_name ? schoolProfile.school_name : "" }</h5>
                 <div className="notification">
                     <img src="/images/notification.png" alt="" />
                 </div>
