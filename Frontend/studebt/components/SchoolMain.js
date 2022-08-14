@@ -7,6 +7,8 @@ import { Button } from 'primereact/button';
 import NProgress from 'nprogress'
 
 const SchoolMain = ({schoolProfile}) => {
+    const [searchInput, setSearchInput] = useState('');
+
     const [debtors, setDebtors] = useState([]);
     const [student_government_id, setStudent_government_Id] = useState([]);
     const government_id = schoolProfile.government_id
@@ -48,6 +50,7 @@ const SchoolMain = ({schoolProfile}) => {
     } , []);
 
     const [visibleFullScreen, setVisibleFullScreen] = useState(false);
+    const [searchScreen, setSearchScreen] = useState(false);
 
     const customIcons = (
         <React.Fragment>
@@ -72,15 +75,39 @@ const SchoolMain = ({schoolProfile}) => {
                             <span className='success'>+30%</span>
                         </div>
                     </div>
-                    <div className="search-container">
+                    <div className="search-container" >
                         <div className="search">
-                            <input type="text" placeholder='Search' />
-                            <img src="/images/search.svg" alt="" id='search-icon' />
+                            <input type="text" placeholder='Search'  onClick={() => setSearchScreen(true)}/>
+                            <img src="/images/search.svg" alt="" id='search-icon' onClick={() => setSearchScreen(true)} />
                         </div>
-                        <div className="add-debtor">
+                        <div className="add-debtor" onClick={() => setVisibleFullScreen(true)}>
                             <img src="/images/Plus.png" alt="" />
                         </div>
                     </div>
+                    <Sidebar visible={searchScreen} fullScreen onHide={() => setSearchScreen(false)} className="search-screen">
+                        <div className="search">
+                            <input type="text" placeholder='Search' onChange={(e) => setSearchInput(e.target.value)} onSubmit={() => setSearchScreen(true)}/>
+                            <img src="/images/search.svg" alt="" id='search-icon' />
+                        </div>
+                        <h4>Search result for {searchInput}</h4>
+                        {
+                            debtors.map(debtor => {
+                                if (debtor.student_government_id === searchInput){
+                                    return(
+                                        <div className="search-profile" key={debtor.id}>
+                                            <div className="search-profile-img">
+                                                <img src="/images/profile.png" alt="" />
+                                            </div>
+                                            <div className="search-profile-details">
+                                                <h5>{debtor.student_full_name}</h5>
+                                                <div className="lt-regular">{debtor.student_government_id}</div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })
+                        }
+                    </Sidebar>
                 </div>
                 <div className="main-center-chart">
                     <div className="main-center-chart-top">
