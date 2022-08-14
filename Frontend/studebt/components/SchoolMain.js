@@ -2,43 +2,50 @@ import Link from 'next/link'
 import React from 'react'
 import { getDebtors, addDebtor } from '../services/debtorsService';
 import { useState, useEffect } from 'react';
-import { Sidebar } from 'primereact/sidebar';
+import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
+import { Dropdown } from 'primereact/dropdown';
 import NProgress from 'nprogress'
+
 
 const SchoolMain = ({schoolProfile}) => {
     const [searchInput, setSearchInput] = useState('');
-
     const [debtors, setDebtors] = useState([]);
     const [student_government_id, setStudent_government_Id] = useState([]);
-    const government_id = schoolProfile.government_id
-    const school_name = schoolProfile.school_name
+    const government_id = schoolProfile.government_id ? schoolProfile.government_id : "";
+    const school_name = schoolProfile.school_name ? schoolProfile.school_name : "";
     const [student_full_name, setStudent_full_name] = useState([]);
     const [debt_amount, setDebt_amount] = useState([]);
     const [debt_type, setDebt_type] = useState([]);
     const [debt_status, setDebt_status] = useState([]);
     const [debt_payment_date, setDebt_payment_date] = useState([]);
+    const [showDialog, setShowDialog] = useState(false);
+
     const handleAddDebtors = async (e) => {
         e.preventDefault()
         NProgress.start();
+
         const data = {
             student_government_id,
             government_id,
             student_full_name,
             school_name,
             debt_amount,
-            debt_status,
+            debt_status: "PENDING",
             debt_type,
             debt_payment_date
         }
-        console.log(data)
-        addDebtor(data).then(response => {
+
+        console.log( "my data" + data.debt_status )
+
+        await addDebtor(data).then(response => {
             console.log(response)
         }).catch(error => {
-                alert(error)
+            alert(error)
         }).finally(() => {
+            setShowDialog(false)
             NProgress.done();
-        } )
+        })
     }
 
     useEffect(() => {
@@ -47,7 +54,13 @@ const SchoolMain = ({schoolProfile}) => {
         }).catch(error => {
             console.log(error)
         });
-    } , []);
+    }, []);
+
+    const STATUS = [
+        { label: 'Pending', value: 'PENDING' },
+        { label: 'Cleared', value: 'CLEARED' },
+        { label: 'Denied', value: 'DENIED' },
+    ];
 
     const [visibleFullScreen, setVisibleFullScreen] = useState(false);
     const [searchScreen, setSearchScreen] = useState(false);
@@ -131,9 +144,9 @@ const SchoolMain = ({schoolProfile}) => {
                 <div className="main-center-bottom">
                     <div className="main-center-bottom-debtors">
                         {
-                            debtors.map(debtor => {
+                            debtors.length > 0 ? debtors.map(debtor => {
                                 const school_government_id = government_id
-                                const {student_full_name, student_government_id, debt_amount, debt_status, id, } = debtor
+                                const { student_full_name, student_government_id, debt_amount, debt_status, id, } = debtor
                                 if (debtor.government_id === school_government_id) {
                                     return (
                                         <div className="main-center-bottom-debtors-debtor" key={id}>
@@ -156,6 +169,7 @@ const SchoolMain = ({schoolProfile}) => {
                                     )
                                 }
                             })
+                                : " No Debtors Found. Please logout and try again!"
                         }
                     </div>
                 </div>
@@ -168,59 +182,54 @@ const SchoolMain = ({schoolProfile}) => {
                             <div className="">Update Debt</div>
                         </div>
                     </Link>
-                    <div className="school-main-rights-debtors-edit-add-debt" onClick={() => setVisibleFullScreen(true)} >
+                    <div className="school-main-rights-debtors-edit-add-debt" onClick={() => setShowDialog(true)}>
                         <img src="/images/Plus.png" alt="" />
                         <div className="">Add Debt</div>
                     </div>
-                    <Sidebar visible={visibleFullScreen} fullScreen onHide={() => setVisibleFullScreen(false)}>
-                        <h3>Added Debtors</h3>
-                        <form onSubmit={handleAddDebtors}  action="#">
+                    <Dialog header="Add Debtor" visible={showDialog} style={{ width: '50vw' }} onHide={() => setShowDialog(false)}>
+                        <form className= "my-6" onSubmit={handleAddDebtors} action="#">
                             <div>
                                 <label htmlFor="student_government_Id">Student Government Id</label><br />
-                                <input 
-                                onChange={(e) => setStudent_government_Id(e.target.value)}
-                                type="text" id="nstdnt" name="nstdnt" required />
+                                <input
+                                    onChange={(e) => setStudent_government_Id(e.target.value)}
+                                    type="text" id="nstdnt" name="nstdnt" required />
                             </div>
                             <div>
                                 <label htmlFor="studentFullName">Name of Student</label><br />
-                                <input 
-                                onChange={(e) => setStudent_full_name(e.target.value)}
-                                type="text" id="nstdnt" name="nstdnt" required />
-                            </div>
-                            {/* <div>
-                                <label htmlFor="school_name">School Name</label><br />
                                 <input
-                                onChange={(e) => setSchool_name(e.target.value)}
-                                type="text" id="lstdnt" name="lstdnt" required />
-                            </div> */}
+                                    onChange={(e) => setStudent_full_name(e.target.value)}
+                                    type="text" id="nstdnt" name="nstdnt" required />
+                            </div>
+                  
                             <div>
                                 <label htmlFor="debt_amount">Debt Amount</label><br />
-                                <input 
-                                onChange={(e) => setDebt_amount(e.target.value)}
-                                type="number" id="stdnin" name="stdnin" required />
+                                <input
+                                    onChange={(e) => setDebt_amount(e.target.value)}
+                                    type="number" id="stdnin" name="stdnin" required />
                             </div>
                             <div>
                                 <label htmlFor="debt_type">Debt Type</label><br />
-                                <input 
-                                onChange={(e) => setDebt_type(e.target.value)}
-                                type="text" id="stdemail" name="stdemail" required />
+                                <input
+                                    onChange={(e) => setDebt_type(e.target.value)}
+                                    type="text" id="stdemail" name="stdemail" required />
                             </div>
                             <div>
-                                <select name="debt_status" id="debt-status" onChange={(e) => setDebt_status(e.target.value)}>
-                                    <option value="PENDING">Pending</option>
-                                    <option value="ACTIVE">Active</option>
-                                    <option value="DENIED">Denied</option>
-                                </select>
+                                {/* <select className="p-dropdown" name="debt_status" id="debt-status" onChange={(e) => setDebt_status(e.target.value)}>
+                                    <option className = "p-dropdown-item" value="PENDING">Pending</option>
+                                    <option className = "p-dropdown-item" value="CLEARED">Cleared</option>
+                                    <option className = "p-dropdown-item"  value="DENIED">Denied</option>
+                                </select> */}
+                                <Dropdown value={debt_status} options={STATUS} onChange={(e) => setDebt_status(e.value)} placeholder="Select Status" />
                             </div>
                             <div>
                                 <label htmlFor="debt_payment_date">Debt Payment Date</label><br />
-                                <input 
-                                onChange={(e) => setDebt_payment_date(e.target.value)}
-                                type="date" id="stdemail" name="stdemail" required />
+                                <input
+                                    onChange={(e) => setDebt_payment_date(e.target.value)}
+                                    type="date" id="stdemail" name="stdemail" required />
                             </div>
-                            <button type="submit" className="btn btn-sec btn-lag" onClick={handleAddDebtors}>Sign Up</button>
+                            <button type="submit" className="btn btn-sec btn-lag" >Add debtor</button>
                         </form>
-                    </Sidebar>
+                    </Dialog>
                 </div>
                 <div className="school-main-right-inventory-box">
                     <div className="school-main-right-inventory-box-top">
