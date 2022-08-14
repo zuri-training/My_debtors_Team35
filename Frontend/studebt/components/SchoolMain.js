@@ -4,6 +4,7 @@ import { getDebtors, addDebtor } from '../services/debtorsService';
 import { useState, useEffect } from 'react';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
+import { Sidebar } from 'primereact/sidebar';
 import { Dropdown } from 'primereact/dropdown';
 import NProgress from 'nprogress'
 
