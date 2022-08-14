@@ -12,6 +12,7 @@ The rate at which debt is killing the school business is quite alarming, and mos
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Collaboration](#collaboration)
+* [Roadmap](#roadmap)
 * [Contributors](#contributors)
 * [Documentation](#documentation)
 * [Acknowledgements](#acknowledgements)
@@ -95,9 +96,66 @@ __Authenticated Users__ - A user that has been registered on our platform either
 Project is : *in progress*
 
 ## Collaboration 🤝
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. Follow the following steps to collaborate:
-1. Fork the Project: Click the "Fork" button on the upper right corner of the Repo page.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**. 
+### Getting Started
+Setting up project locally is a pretty easy step.
+
+1. Clone the repo
+  ```sh
+  git clone https://github.com/zuri-training/My_debtors_Team35.git
+  ```
+2. Move into the project directory
+  ```
+  cd My_debtors_Team35
+  ```
+3. Create a virtual environment
+  ```
+  python -m virtualenv venv 
+  ```
+4. Activate the virtual environment
+  ```
+  venv\Scripts\activate
+  ```
+5. Move into the Backend Directory
+  ```
+  cd Backend
+  ```
+6. Install pip dependencies
+  ```
+  pip install -r requirements.txt
+  ```
+<br/>
+Create a new Postgres Database Using pgAdmin or psql on terminal
+
+Default user: `postgres` 
+
+Set the database name to `studebt_db1`
+
+Create a .env file inside the Backend directory and store `SECRET_KEY=''` and your postgres password `DB_PASSWORD=''` <br/>
+7. Move into the studebt directory
+   ```
+   cd studebt
+   ```
+8. Make Migrations
+  ```
+  py manage.py makemigrations
+  ```
+9. Migrate to Postres Database
+  ```
+  py manage.py migrate
+  ```
+10. Create a superuser
+   ```
+   py manage.py createsuperuser
+   ```
+11. Run Server
+   ```
+   py manage.py runserver
+   ```
+  
+## Roadmap 🚧
+See the [open issues](https://github.com/zuri-training/My_debtors_Team35/issues) for a list of proposed features (and known issues).
+
+
+
+ 
