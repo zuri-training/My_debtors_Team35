@@ -89,7 +89,7 @@ function HomeFooter(props) {
                     </section>
                 </div>
             </section>
-            <hr className='my-6 text-white' />
+            <hr style= {{ height: "1px"}} className='my-6 border-white border-1 w-full' />
             <section className="grid grid-nogutter" id="footer-links">
                 <div className="col-12 md:col-4">
                     <Link href="/">

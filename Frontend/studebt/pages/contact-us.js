@@ -36,36 +36,36 @@ export default function ContactUs(props) {
                 </h3>
             </section>
             <section className="flex align-items-center justify-content-center">
-                <div className="card md:w-6">
+                <div className="card md:w-6 m-0">
                     <div className="p-fluid grid">
                         {/* contact form here */}
                         <form
                             onSubmit={handleContact}
                             method="POST"
-                            className='w-full'>
-                            <div className="field col-12">
+                            className='w-full m-0'>
+                            <div style = {{ maxWidth: "auto", maxHeight: "auto"}} className="field col-12">
                                 <span className="p-float-label">
                                     <InputText id="inputtext" value={title} onChange={(e) => setTitle(e.target.value)} />
-                                    <label htmlFor="inputtext">Title</label>
+                                    <label className ="text-base" htmlFor="inputtext">Title</label>
                                 </span>
                             </div>
-                            <div className="field col-12">
+                            <div style = {{ maxWidth: "auto", maxHeight: "auto"}} className="field col-12">
                                 <span className="p-float-label">
                                     <InputText id="inputtext" value={email} onChange={(e) => setEmail(e.target.value)} />
-                                    <label htmlFor="inputtext">Email</label>
+                                    <label className ="text-base"  htmlFor="inputtext">Email</label>
                                 </span>
                             </div>
-                            <div className="field col-12">
+                            <div style = {{ maxWidth: "auto", maxHeight: "auto"}} className="field col-12">
                                 <span className="p-float-label">
                                     <InputTextarea id="textarea" value={message} onChange={(e) => setMessage(e.target.value)} rows={3} />
-                                    <label htmlFor="textarea">Message</label>
+                                    <label className ="text-base"  htmlFor="textarea">Message</label>
                                 </span>
                             </div>
-                            <div className="grid">
+                            <div style = {{ maxWidth: "auto", maxHeight: "auto"}} className="grid">
                                 <div className="field col-12 md:col-6">
                                     <Button label="Send message" type="submit" className="p-button-raised p-button-primary" />
                                 </div>
-                                <div className="field col-12 md:col-6">
+                                <div  className="field col-12 md:col-6">
                                     <Button label="Customer care" type="reset" className="p-button-raised p-button-outlined p-button-primary" icon="pi pi-phone" iconPos="right" />
                                 </div>
                             </div>
