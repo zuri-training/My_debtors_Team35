@@ -1,4 +1,4 @@
-import { useState, useEffect  } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import profilePics from "../../public/assets/images/profile-pics.png";
 import { getStudentProfile } from "../../services/profileService";
@@ -6,25 +6,24 @@ import NProgress from 'nprogress'
 
 export default function Hero(props) {
 
-  const [studentProfile, setStudentProfile] = useState({});
+  const [profile , setProfile] = useState({});
+  const [user , setUser] = useState({});
+
 
   useEffect(() => {
     NProgress.start();
-    getStudentProfile().then(data => {
-      setStudentProfile(data.user);
+
+    getStudentProfile().then(res => {
+      setProfile(res.profile);
+      setUser(res.user);
     }).catch(error => {
-      if (error.response) {
-        console.log(error.response.data);
-      } else if (error.request) {
-        console.log(error.request);
-      } else {
-        console.log('Error', error.message);
-      }
+      //alert(error)
     }).finally(() => {
       NProgress.done();
-    } )
-  }, []);
+    })
 
+    
+  }, [])
 
   return (
     <div className="main-hero col-12">
@@ -40,29 +39,31 @@ export default function Hero(props) {
           <div className="grid sm:px-0 px-2">
             <p className="sm:col-3 col-4 xl:text-base lg:text-sm text-xs">
               <span className="gray">First Name:</span>{" "}
-              <strong>{ studentProfile.first_name }</strong>
+              <strong>{user ? user.first_name : ""}</strong>
             </p>
             <p className="sm:col-3 col-4 xl:text-base lg:text-sm text-xs">
-              <span className="gray">Last Name:</span> <strong>{ studentProfile.last_name }</strong>
+              <span className="gray">Last Name:</span> <strong>{user ? user.last_name : ""}</strong>                
             </p>
             <p className="sm:col-3 col-4 xl:text-base lg:text-sm text-xs">
-              <span className="gray">Middle Name:</span>
-              <strong>{ studentProfile.middle_name }</strong>
+              <span className="gray">Middle Name:</span>{" "}
+              <strong>{user ? user.middle_name : ""}</strong>
             </p>
             <p className="sm:col-3 col-6 xl:text-base lg:text-sm text-xs">
               <span className="gray">Student ID:</span>{" "}
-              <strong>{ studentProfile.student_government_id }</strong>
+              <strong>{profile ? profile.student_government_id : ""}</strong>
             </p>
             <p className="sm:col-3 col-6 xl:text-base lg:text-sm text-xs">
-              <span className="gray">D.O.B:</span> <strong>{ studentProfile.dob }</strong>
+              <span className="gray">D.O.B:</span> <strong>23-09-2000</strong>
             </p>
             <p className="sm:col-3 col-12 xl:text-base lg:text-sm text-xs">
-              <span className="gray">Previous School:</span>
+              <span className="gray">Previous School:</span>{" "}
               <strong>Ezekiel College</strong>
             </p>
             <p className="sm:col-3 col-8 xl:text-base lg:text-sm text-xs">
-              <span className="gray">Contact Number:</span>
-              <strong>{ studentProfile.contact}</strong>
+              <span className="gray">Contact Number:</span>{" "}
+              <strong>
+                {profile ? profile.contact : ""}
+              </strong>
             </p>
             <p className="sm:col-3 col-4 xl:text-base lg:text-sm text-xs">
               <span className="gray">Sex:</span> <strong>Male</strong>
@@ -73,7 +74,7 @@ export default function Hero(props) {
             </p>
             <p className="sm:col-6 col-12 xl:text-base lg:text-sm text-xs">
               <span className="gray">Email:</span>{" "}
-              <strong>{ studentProfile.email }</strong>
+              <strong>{user ? user.email : ""}</strong>
             </p>
           </div>
         </div>

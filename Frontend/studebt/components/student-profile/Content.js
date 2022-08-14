@@ -1,10 +1,13 @@
 import { Button } from "primereact/button";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Dialog } from "primereact/dialog";
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 import { FileUpload } from "primereact/fileupload";
 import { Toast } from "primereact/toast";
+import { getStudentDepts } from '../../services/debtorsService';
+import { getStudentProfile } from "../../services/profileService";
+import NProgress from 'nprogress'
 
 export const Upload = () => {
   const toast = useRef(null);
@@ -139,6 +142,39 @@ const DialogDemo = () => {
 };
 
 export default function Content(props) {
+
+  const [depts, setDepts] = useState([]);
+  const [profile, setProfile] = useState({});
+  const [user, setUser] = useState({});
+  const [Nin , setNin] = useState('');
+
+
+  useEffect(() => {
+    NProgress.start();
+
+    getStudentProfile().then(res => {
+      setProfile(res.profile);
+      setUser(res.user);
+      setNin(res.profile.student_government_id);
+      // get depts
+      console.log(res.profile.student_government_id);
+      getStudentDepts(res.profile.student_government_id).then(res => {
+        setDepts(res.depts);
+        NProgress.done();
+      }).catch(err => {
+        console.log(err);
+      }).finally(() => {
+        NProgress.done();
+      })
+    }).catch(error => {
+      //alert(error)
+    }).finally(() => {
+      NProgress.done();
+    })
+
+
+  }, [])
+
   return (
     <div className="main-content col-12 p-4">
       <h5 className="subheading md:text-xl text-lg">Outstanding Debts</h5>
